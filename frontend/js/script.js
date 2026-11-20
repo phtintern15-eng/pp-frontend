@@ -309,6 +309,95 @@ if (document.readyState === 'complete' || document.readyState === 'interactive')
   setTimeout(init3DDropdowns, 120);
 }
 
+// Universal Mobile & Desktop Navigation Controller
+function initGlobalNavigationBar() {
+  const toggleBtn = document.getElementById('mobileMenuToggle') || document.querySelector('.mobile-menu-toggle');
+  const navList = document.getElementById('navLinks') || document.querySelector('.nav-links');
+  if (!toggleBtn || !navList) return;
+
+  function openDrawer() {
+    navList.classList.add('mobile-open');
+    navList.classList.add('is-open');
+    navList.classList.add('open');
+    toggleBtn.classList.add('active');
+    const icon = toggleBtn.querySelector('i');
+    if (icon) {
+      icon.className = 'fas fa-times';
+    }
+    document.body.classList.add('mobile-nav-open');
+  }
+
+  function closeDrawer() {
+    navList.classList.remove('mobile-open');
+    navList.classList.remove('is-open');
+    navList.classList.remove('open');
+    toggleBtn.classList.remove('active');
+    const icon = toggleBtn.querySelector('i');
+    if (icon) {
+      icon.className = 'fas fa-bars';
+    }
+    document.body.classList.remove('mobile-nav-open');
+  }
+
+  function toggleDrawer(e) {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    if (navList.classList.contains('mobile-open') || navList.classList.contains('is-open') || navList.classList.contains('open')) {
+      closeDrawer();
+    } else {
+      openDrawer();
+    }
+  }
+
+  // Bind click toggle
+  toggleBtn.onclick = toggleDrawer;
+
+  // Dedicated drawer close button (X) inside mobile drawer header
+  const closeBtn = document.getElementById('mobileDrawerClose') || navList.querySelector('.mobile-drawer-close');
+  if (closeBtn) {
+    closeBtn.onclick = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      closeDrawer();
+    };
+  }
+
+  // Close when clicking outside of drawer and toggle
+  document.addEventListener('click', function(e) {
+    if (navList.classList.contains('mobile-open') || navList.classList.contains('is-open') || navList.classList.contains('open')) {
+      if (!navList.contains(e.target) && !toggleBtn.contains(e.target)) {
+        closeDrawer();
+      }
+    }
+  });
+
+  // Close when clicking any nav link
+  navList.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      closeDrawer();
+    });
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+      closeDrawer();
+    }
+  });
+
+  window.openMobileNav = openDrawer;
+  window.closeMobileNav = closeDrawer;
+  window.toggleMobileNav = toggleDrawer;
+}
+window.initGlobalNavigationBar = initGlobalNavigationBar;
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initGlobalNavigationBar);
+} else {
+  initGlobalNavigationBar();
+}
+
 // Scroll detection for sticky nav
 function setupNavbarScroll() {
   const header = document.getElementById('navbar');

@@ -820,7 +820,8 @@
                 cpuUsageEl.textContent = `${cpuPercent.toFixed(2)}%`;
                 
                 if (cpuProgressBar) {
-                    cpuProgressBar.style.width = `${cpuPercent}%`;
+                    const displayCpu = Math.max(cpuPercent, 2.5);
+                    cpuProgressBar.style.width = `${displayCpu}%`;
                     // Update color based on usage
                     cpuProgressBar.className = 'progress-fill cpu-progress';
                     if (cpuPercent > 80) {
@@ -1026,3 +1027,19 @@
                 }
             }
         }
+
+        // Admin Dashboard Background Slider Rotation (Exact Home Page Timing & Transition)
+        (function initAdminDashboardHeroSlider() {
+            const slides = document.querySelectorAll('.admin-hero-slide');
+            if (!slides || slides.length === 0) return;
+            let currentSlide = 0;
+            const slideDuration = 3500; // 3.5 seconds matching Home Page
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            setInterval(nextSlide, slideDuration);
+        })();

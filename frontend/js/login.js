@@ -320,8 +320,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Check URL hash on load
-  if (window.location.hash === '#register' || window.location.pathname === '/register') {
+  // Check URL hash or path on load
+  if (window.location.hash === '#register' || window.location.pathname.includes('register')) {
     window.switchAuthMode('register');
   }
 });

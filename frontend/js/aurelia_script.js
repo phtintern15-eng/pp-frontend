@@ -1824,16 +1824,44 @@ function closePropertyInquiryModal() {
 // 7. Mobile Navigation Toggle Handler
 function initMobileMenu() {
   const toggle = document.getElementById('mobileMenuToggle');
-  const menu = document.getElementById('navMenu');
+  const menu = document.getElementById('navLinks') || document.getElementById('navMenu');
   if (toggle && menu) {
-    toggle.addEventListener('click', () => {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      menu.classList.toggle('mobile-open');
       menu.classList.toggle('open');
       const icon = toggle.querySelector('i');
       if (icon) {
-        if (menu.classList.contains('open')) {
+        if (menu.classList.contains('mobile-open') || menu.classList.contains('open')) {
           icon.classList.remove('fa-bars');
           icon.classList.add('fa-times');
         } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      }
+    });
+
+    const closeBtn = document.getElementById('mobileDrawerClose') || menu.querySelector('.mobile-drawer-close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        menu.classList.remove('mobile-open');
+        menu.classList.remove('open');
+        const icon = toggle.querySelector('i');
+        if (icon) {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('mobile-open');
+        menu.classList.remove('open');
+        const icon = toggle.querySelector('i');
+        if (icon) {
           icon.classList.remove('fa-times');
           icon.classList.add('fa-bars');
         }

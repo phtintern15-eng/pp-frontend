@@ -1023,31 +1023,31 @@
 
       const widget = document.createElement('div');
       widget.className = 'top-bar-item top-international-strip';
-      widget.style.cssText = 'display:inline-flex; align-items:center; gap:0.6rem;';
+      widget.style.cssText = 'display:inline-flex; align-items:center; gap:0.35rem;';
       widget.innerHTML = `
         <!-- Top Language Selector -->
-        <div style="background:rgba(212,175,55,0.12); padding:0.25rem 0.65rem; border-radius:6px; border:1px solid rgba(212,175,55,0.3); display:inline-flex; align-items:center; gap:0.35rem;">
-          <i class="fas fa-globe" style="color:#FFDF73; font-size:0.75rem;"></i>
-          <select class="language-select-ctrl" onchange="window.changeLanguage(this.value)" style="background:transparent; border:none; color:#FFDF73; font-weight:700; font-size:0.78rem; cursor:pointer; outline:none;">
-            <option value="en" ${currentLanguage === 'en' ? 'selected' : ''} style="background:#0F141A; color:#fff;">EN</option>
-            <option value="ar" ${currentLanguage === 'ar' ? 'selected' : ''} style="background:#0F141A; color:#fff;">العربية</option>
-            <option value="fr" ${currentLanguage === 'fr' ? 'selected' : ''} style="background:#0F141A; color:#fff;">FR</option>
-            <option value="es" ${currentLanguage === 'es' ? 'selected' : ''} style="background:#0F141A; color:#fff;">ES</option>
-            <option value="de" ${currentLanguage === 'de' ? 'selected' : ''} style="background:#0F141A; color:#fff;">DE</option>
-            <option value="zh" ${currentLanguage === 'zh' ? 'selected' : ''} style="background:#0F141A; color:#fff;">中文</option>
+        <div class="top-select-pill" style="background:#1B251A; padding:0.1rem 0.35rem; border-radius:4px; border:1px solid rgba(194,139,82,0.45); display:inline-flex; align-items:center; gap:0.25rem;">
+          <i class="fas fa-globe" style="color:#E6B87D; font-size:0.62rem;"></i>
+          <select class="language-select-ctrl" onchange="window.changeLanguage(this.value)" style="background:#1B251A; border:none; color:#F6E7B0; font-weight:700; font-size:0.64rem; cursor:pointer; outline:none; padding:0; margin:0;">
+            <option value="en" ${currentLanguage === 'en' ? 'selected' : ''} style="background:#1B251A; color:#fff;">EN</option>
+            <option value="ar" ${currentLanguage === 'ar' ? 'selected' : ''} style="background:#1B251A; color:#fff;">العربية</option>
+            <option value="fr" ${currentLanguage === 'fr' ? 'selected' : ''} style="background:#1B251A; color:#fff;">FR</option>
+            <option value="es" ${currentLanguage === 'es' ? 'selected' : ''} style="background:#1B251A; color:#fff;">ES</option>
+            <option value="de" ${currentLanguage === 'de' ? 'selected' : ''} style="background:#1B251A; color:#fff;">DE</option>
+            <option value="zh" ${currentLanguage === 'zh' ? 'selected' : ''} style="background:#1B251A; color:#fff;">中文</option>
           </select>
         </div>
 
         <!-- Top Currency Selector -->
-        <div style="background:rgba(212,175,55,0.12); padding:0.25rem 0.65rem; border-radius:6px; border:1px solid rgba(212,175,55,0.3); display:inline-flex; align-items:center; gap:0.35rem;">
-          <i class="fas fa-coins" style="color:#FFDF73; font-size:0.75rem;"></i>
-          <select class="currency-select-ctrl" onchange="window.updateAllPriceDisplays(this.value)" style="background:transparent; border:none; color:#FFDF73; font-weight:700; font-size:0.78rem; cursor:pointer; outline:none;">
-            <option value="USD" ${currentCurrency === 'USD' ? 'selected' : ''} style="background:#0F141A; color:#fff;">USD ($)</option>
-            <option value="AED" ${currentCurrency === 'AED' ? 'selected' : ''} style="background:#0F141A; color:#fff;">AED (د.إ)</option>
-            <option value="EUR" ${currentCurrency === 'EUR' ? 'selected' : ''} style="background:#0F141A; color:#fff;">EUR (€)</option>
-            <option value="GBP" ${currentCurrency === 'GBP' ? 'selected' : ''} style="background:#0F141A; color:#fff;">GBP (£)</option>
-            <option value="SGD" ${currentCurrency === 'SGD' ? 'selected' : ''} style="background:#0F141A; color:#fff;">SGD (S$)</option>
-            <option value="INR" ${currentCurrency === 'INR' ? 'selected' : ''} style="background:#0F141A; color:#fff;">INR (₹)</option>
+        <div class="top-select-pill" style="background:#1B251A; padding:0.1rem 0.35rem; border-radius:4px; border:1px solid rgba(194,139,82,0.45); display:inline-flex; align-items:center; gap:0.25rem;">
+          <i class="fas fa-coins" style="color:#E6B87D; font-size:0.62rem;"></i>
+          <select class="currency-select-ctrl" onchange="window.updateAllPriceDisplays(this.value)" style="background:#1B251A; border:none; color:#F6E7B0; font-weight:700; font-size:0.64rem; cursor:pointer; outline:none; padding:0; margin:0;">
+            <option value="USD" ${currentCurrency === 'USD' ? 'selected' : ''} style="background:#1B251A; color:#fff;">USD ($)</option>
+            <option value="AED" ${currentCurrency === 'AED' ? 'selected' : ''} style="background:#1B251A; color:#fff;">AED (د.إ)</option>
+            <option value="EUR" ${currentCurrency === 'EUR' ? 'selected' : ''} style="background:#1B251A; color:#fff;">EUR (€)</option>
+            <option value="GBP" ${currentCurrency === 'GBP' ? 'selected' : ''} style="background:#1B251A; color:#fff;">GBP (£)</option>
+            <option value="SGD" ${currentCurrency === 'SGD' ? 'selected' : ''} style="background:#1B251A; color:#fff;">SGD (S$)</option>
+            <option value="INR" ${currentCurrency === 'INR' ? 'selected' : ''} style="background:#1B251A; color:#fff;">INR (₹)</option>
           </select>
         </div>
       `;

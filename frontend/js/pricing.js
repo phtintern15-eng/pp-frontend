@@ -7,17 +7,23 @@ document.addEventListener("DOMContentLoaded", function () {
   "use strict";
 
   // 1. Mobile Menu Toggle
-  const mobileToggle = document.getElementById("mobileMenuToggle");
-  const navLinks = document.getElementById("navLinks");
-  if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener("click", function () {
-      navLinks.classList.toggle("is-open");
-      const icon = mobileToggle.querySelector("i");
-      if (icon) {
-        icon.classList.toggle("fa-bars");
-        icon.classList.toggle("fa-times");
-      }
-    });
+  if (typeof initGlobalNavigationBar === 'function') {
+    initGlobalNavigationBar();
+  } else {
+    const mobileToggle = document.getElementById("mobileMenuToggle");
+    const navLinks = document.getElementById("navLinks");
+    if (mobileToggle && navLinks) {
+      mobileToggle.addEventListener("click", function (e) {
+        e.stopPropagation();
+        navLinks.classList.toggle("mobile-open");
+        navLinks.classList.toggle("is-open");
+        const icon = mobileToggle.querySelector("i");
+        if (icon) {
+          icon.classList.toggle("fa-bars");
+          icon.classList.toggle("fa-times");
+        }
+      });
+    }
   }
 
   // 2. Pricing Plan Selection Highlights

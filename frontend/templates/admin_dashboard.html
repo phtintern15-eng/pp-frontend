@@ -54,11 +54,11 @@
 
 
 
-  <link rel="stylesheet" href="/css/admin_dashboard.css?v=20261117_overview_stats_fix_01">
+  <link rel="stylesheet" href="/css/admin_dashboard.css?v=20261120_home_bg_theme_final">
 
 
 
-  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261117_overview_stats_fix_01">
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261119_home_theme_align_02">
 
 
 
@@ -67,6 +67,16 @@
 
 
 <body class="dark-dashboard">
+
+    <!-- Luxury Background Image Slider (Matching Home Page) -->
+    <div class="admin-hero-bg" id="adminHeroBg">
+      <div class="admin-hero-slide active" style="background-image: url(/images/hero_luxury_villa.jpg);"></div>
+      <div class="admin-hero-slide" style="background-image: url(/images/hero_architecture.jpg);"></div>
+      <div class="admin-hero-slide" style="background-image: url(/images/hero_penthouse.jpg);"></div>
+      <div class="admin-hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85');"></div>
+      <div class="admin-hero-slide" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=85');"></div>
+      <div class="admin-hero-overlay"></div>
+    </div>
 
 
 
@@ -118,7 +128,7 @@
 
 
 
-                <a href="/admin-dashboard" data-nav="admin-dashboard" class="nav-item active">
+                <a href="#dashboard" data-nav="admin-dashboard" id="navItemDashboard" class="nav-item active">
 
 
 
@@ -202,7 +212,7 @@
 
 
 
-                <a href="/properties" data-nav="properties" class="nav-item">
+                <a href="/admin-properties" data-nav="properties" id="navItemProperties" class="nav-item">
 
 
 
@@ -969,7 +979,7 @@
 
 
 
-        <div class="dashboard-grid">
+        <div class="dashboard-grid" id="dashboardOverviewSection">
 
 
 
@@ -1423,51 +1433,29 @@
 
 
 
-                                    <div class="bandwidth-item">
+                                    <div class="bandwidth-item" style="display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 0.85rem 1.1rem !important; background: rgba(255, 255, 255, 0.05) !important; border: 1px solid rgba(212, 175, 55, 0.22) !important; border-radius: 12px !important;">
 
+                                        <div class="bandwidth-label" style="display: flex !important; align-items: center !important; gap: 0.65rem !important; font-weight: 600 !important; font-size: 0.92rem !important; color: #FFFFFF !important;">
 
+                                            <i class="fas fa-upload" style="color: #4ADE80 !important; font-size: 1.05rem !important;"></i> Sent
 
-                                        <div class="bandwidth-label">
+                                        </div>
 
-
-
-                                            <i class="fas fa-upload"></i> Sent
-
-
+                                        <div class="bandwidth-value" id="bandwidthSent" style="font-size: 1.25rem !important; font-weight: 800 !important; color: #FFFFFF !important; background: none !important; -webkit-text-fill-color: #FFFFFF !important; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;">0.00 MB</div>
 
                                     </div>
 
+                                    <div class="bandwidth-item" style="display: flex !important; justify-content: space-between !important; align-items: center !important; padding: 0.85rem 1.1rem !important; background: rgba(255, 255, 255, 0.05) !important; border: 1px solid rgba(212, 175, 55, 0.22) !important; border-radius: 12px !important;">
 
+                                        <div class="bandwidth-label" style="display: flex !important; align-items: center !important; gap: 0.65rem !important; font-weight: 600 !important; font-size: 0.92rem !important; color: #FFFFFF !important;">
 
-                                        <div class="bandwidth-value" id="bandwidthSent">0 MB</div>
+                                            <i class="fas fa-download" style="color: #60A5FA !important; font-size: 1.05rem !important;"></i> Received
 
+                                        </div>
 
+                                        <div class="bandwidth-value" id="bandwidthRecv" style="font-size: 1.25rem !important; font-weight: 800 !important; color: #FFFFFF !important; background: none !important; -webkit-text-fill-color: #FFFFFF !important; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;">0.00 MB</div>
 
-                                </div>
-
-
-
-                                    <div class="bandwidth-item">
-
-
-
-                                        <div class="bandwidth-label">
-
-
-
-                                            <i class="fas fa-download"></i> Received
-
-
-
-                            </div>
-
-
-
-                                        <div class="bandwidth-value" id="bandwidthRecv">0 MB</div>
-
-
-
-                        </div>
+                                    </div>
 
 
 
@@ -1901,6 +1889,160 @@
 
         </div>
 
+        <!-- ========================================================================== -->
+        <!-- EMBEDDED REGISTERED PROPERTIES VIEW FOR ADMIN -->
+        <!-- ========================================================================== -->
+        <div id="adminPropertiesSection" class="admin-property-register-section" style="display: none;">
+            <div class="property-register-container">
+                
+                <!-- Header Card -->
+                <div class="register-header-card">
+                    <div>
+                        <div class="register-title-badge">
+                            <i class="fas fa-building"></i> Master Property Register
+                        </div>
+                        <h1 class="register-title">Registered Properties</h1>
+                        <p class="register-subtitle">Comprehensive administrative inventory of all properties and their registered owners.</p>
+                    </div>
+                    <div class="register-header-actions">
+                        <button type="button" class="btn-register-action btn-outline" onclick="showDashboardOverview()">
+                            <i class="fas fa-tachometer-alt"></i> Dashboard Overview
+                        </button>
+                        <button type="button" class="btn-register-action btn-outline" onclick="loadAdminProperties()">
+                            <i class="fas fa-sync-alt"></i> Refresh Data
+                        </button>
+                        <a href="/property" target="_blank" class="btn-register-action btn-gold">
+                            <i class="fas fa-external-link-alt"></i> View Public Catalog
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Metrics Strip -->
+                <div class="property-metrics-strip">
+                    <div class="prop-metric-card">
+                        <div class="prop-metric-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div class="prop-metric-info">
+                            <span class="prop-metric-num" id="adminPropMetricTotal">75</span>
+                            <span class="prop-metric-lbl">Total Registered</span>
+                        </div>
+                    </div>
+                    <div class="prop-metric-card">
+                        <div class="prop-metric-icon" style="background: rgba(34, 197, 94, 0.15); color: #34D399;">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="prop-metric-info">
+                            <span class="prop-metric-num" id="adminPropMetricAvailable">--</span>
+                            <span class="prop-metric-lbl">Active & Available</span>
+                        </div>
+                    </div>
+                    <div class="prop-metric-card">
+                        <div class="prop-metric-icon" style="background: rgba(212, 175, 55, 0.15); color: #FFDF73;">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="prop-metric-info">
+                            <span class="prop-metric-num" id="adminPropMetricOwners">--</span>
+                            <span class="prop-metric-lbl">Registered Owners</span>
+                        </div>
+                    </div>
+                    <div class="prop-metric-card">
+                        <div class="prop-metric-icon" style="background: rgba(59, 130, 246, 0.15); color: #60A5FA;">
+                            <i class="fas fa-passport"></i>
+                        </div>
+                        <div class="prop-metric-info">
+                            <span class="prop-metric-num" id="adminPropMetricForeign">--</span>
+                            <span class="prop-metric-lbl">Foreign / NRI Eligible</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter Toolbar -->
+                <div class="property-filter-toolbar">
+                    <div class="prop-search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="adminPropSearchInput" placeholder="Search by title, location, or Property Owner (e.g. ravi, jyothi)..." oninput="filterAdminProperties()">
+                    </div>
+                    <div class="prop-filter-controls">
+                        <select id="adminPropTypeFilter" onchange="filterAdminProperties()">
+                            <option value="">All Categories</option>
+                            <option value="Villa">Luxury Villa</option>
+                            <option value="Apartment">Apartment</option>
+                            <option value="Penthouse">Penthouse</option>
+                            <option value="Estate">Heritage Estate</option>
+                        </select>
+                        <select id="adminPropAvailFilter" onchange="filterAdminProperties()">
+                            <option value="">All Statuses</option>
+                            <option value="available">Available Only</option>
+                            <option value="reserved">Reserved / Sold</option>
+                        </select>
+                        <button type="button" class="btn-clear-filters" onclick="resetAdminPropertyFilters()">
+                            <i class="fas fa-undo"></i> Reset Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Property Table Card -->
+                <div class="property-table-card">
+                    <div class="prop-table-meta">
+                        <div>
+                            <strong style="color: #FFFFFF; font-size: 1.05rem;">Registered Properties &amp; Owners</strong>
+                            <span id="adminPropCountBadge" style="margin-left: 0.75rem; color: #94A3B8; font-size: 0.85rem;">Loading registry...</span>
+                        </div>
+                    </div>
+                    <div class="prop-table-responsive">
+                        <table class="admin-properties-table">
+                            <thead>
+                                <tr>
+                                    <th style="width: 50px;">ID</th>
+                                    <th>Property</th>
+                                    <th>Property Owner</th>
+                                    <th>Location</th>
+                                    <th>Specifications</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th style="text-align: right;">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminPropertiesTableBody">
+                                <tr>
+                                    <td colspan="8" style="text-align: center; padding: 3rem; color: #94A3B8;">
+                                        <i class="fas fa-spinner fa-spin" style="font-size: 1.5rem; margin-right: 0.5rem; color: #D4AF37;"></i> Loading registered properties...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================================================== -->
+        <!-- VIEW PROPERTY DETAILS MODAL -->
+        <!-- ========================================================================== -->
+        <div id="viewPropertyModal" style="display: none; position: fixed; inset: 0; z-index: 9999; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 1.5rem;">
+            <div style="background: #0E1318; border: 1.5px solid rgba(212, 175, 55, 0.4); border-radius: 18px; max-width: 680px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 2rem; position: relative; box-shadow: 0 25px 60px rgba(0,0,0,0.8);">
+                <button type="button" onclick="closeViewPropertyModal()" style="position: absolute; top: 1.25rem; right: 1.25rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(212,175,55,0.3); color: #FFFFFF; width: 34px; height: 34px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; display: flex; align-items: center; justify-content: center;">&times;</button>
+                <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(212,175,55,0.2); padding-bottom: 1rem;">
+                    <div style="width: 44px; height: 44px; border-radius: 12px; background: rgba(212,175,55,0.15); display: flex; align-items: center; justify-content: center; color: #FFDF73; font-size: 1.2rem;">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div>
+                        <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.4rem; color: #FFFFFF; margin: 0;" id="viewModalTitle">Property Details</h2>
+                        <p style="font-size: 0.85rem; color: #94A3B8; margin: 3px 0 0 0;" id="viewModalSubtitle">ID #--</p>
+                    </div>
+                </div>
+                <div id="viewModalBody" style="color: #E2E8F0;">
+                    <!-- Populated dynamically via JS -->
+                </div>
+                <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem; border-top: 1px solid rgba(212,175,55,0.2); padding-top: 1rem;">
+                    <button type="button" onclick="closeViewPropertyModal()" style="background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); color: #CBD5E1; border-radius: 8px; padding: 0.6rem 1.4rem; cursor: pointer; font-weight: 600;">Close</button>
+                </div>
+            </div>
+        </div>
+
+
 
 
 
@@ -1908,7 +2050,7 @@
 
 
 
-  <script src="/js/admin_dashboard.js"></script>
+  <script src="/js/admin_dashboard.js?v=20261119_home_theme_align_02"></script>
 
 
 
@@ -1917,6 +2059,5 @@
 
 
 </html>
-
 
 

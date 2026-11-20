@@ -2,9 +2,8 @@
 # Frontend .gitignore - Web Assets & User Uploads
 # ==============================================================================
 
-# Dynamic User Uploads (Ignore user uploaded files, keep directory structure)
-uploads/*
-!uploads/.gitkeep
+# Dynamic User Uploads
+uploads/
 
 # Node Modules & Package Manager artifacts (if npm/yarn/pnpm are used)
 node_modules/

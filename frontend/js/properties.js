@@ -18,18 +18,20 @@
       window.addEventListener('resize', checkDevice);
 
       // Mobile Menu Toggle logic
-      document.addEventListener('DOMContentLoaded', function() {
+      function initPropertiesNav() {
         const toggleBtn = document.getElementById('mobileMenuToggle');
         const navList = document.getElementById('navLinks');
         if (toggleBtn && navList) {
           function openDrawer() {
             navList.classList.add('mobile-open');
+            navList.classList.add('open');
             const icon = toggleBtn.querySelector('i');
             if (icon) icon.className = 'fas fa-times';
             document.body.classList.add('mobile-nav-open');
           }
           function closeDrawer() {
             navList.classList.remove('mobile-open');
+            navList.classList.remove('open');
             const icon = toggleBtn.querySelector('i');
             if (icon) icon.className = 'fas fa-bars';
             document.body.classList.remove('mobile-nav-open');
@@ -37,7 +39,7 @@
           toggleBtn.onclick = function(e) {
             e.preventDefault();
             e.stopPropagation();
-            if (navList.classList.contains('mobile-open')) {
+            if (navList.classList.contains('mobile-open') || navList.classList.contains('open')) {
               closeDrawer();
             } else {
               openDrawer();
@@ -54,7 +56,7 @@
           }
 
           document.addEventListener('click', function(e) {
-            if (navList.classList.contains('mobile-open')) {
+            if (navList.classList.contains('mobile-open') || navList.classList.contains('open')) {
               if (!navList.contains(e.target) && !toggleBtn.contains(e.target)) {
                 closeDrawer();
               }
@@ -67,7 +69,13 @@
             });
           });
         }
-      });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPropertiesNav);
+      } else {
+        initPropertiesNav();
+      }
     })();
 
 function openLoginModal() {
