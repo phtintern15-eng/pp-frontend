@@ -58,7 +58,7 @@
 
 
 
-  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261119_home_theme_align_02">
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261120_clean_profile_v4">
 
 
 
@@ -84,6 +84,7 @@
 
 
 
+    <div class="admin-sidebar-overlay" id="adminSidebarOverlay"></div>
     <nav class="sidebar">
 
 
@@ -128,7 +129,7 @@
 
 
 
-                <a href="#dashboard" data-nav="admin-dashboard" id="navItemDashboard" class="nav-item active">
+                <a href="/admin-dashboard" data-nav="admin-dashboard" id="navItemDashboard" class="nav-item active">
 
 
 
@@ -489,136 +490,41 @@
 
 
         <!-- Top Navigation -->
-
-
-
         <div class="top-nav">
-
-
-
-            <button class="mobile-menu-toggle" id="mobileSidebarToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
-
-
-
-            <h1 class="page-title">Admin <span class="script-font">Dashboard</span></h1>
-
-
-
-            <div class="top-nav-actions">
-
-
-
-                <div class="search-box">
-
-
-
-                    <i class="fas fa-search"></i>
-
-
-
-                    <input type="text" placeholder="Search users, properties, or reports...">
-
-
-
-                </div>
-
-
-
-                <button class="notification-btn">
-
-
-
-                    <i class="fas fa-bell"></i>
-
-
-
-                    <span class="notification-badge">3</span>
-
-
-
-                </button>
-
-
-
-                <div class="user-profile" id="userProfileDropdown">
-
-
-
-                    <div class="user-avatar">
-
-
-
-                        <i class="fas fa-user-shield"></i>
-
-
-
-                    </div>
-
-
-
-                    <div class="user-info">
-
-
-
-                        <div class="user-name">Admin User</div>
-
-
-
-                        <div class="user-role">System Administrator</div>
-
-
-
-                    </div>
-
-
-
-                    <i class="fas fa-chevron-down dropdown-arrow"></i>
-
-
-
-                    
-
-
-
-                    <!-- User Dropdown Menu -->
-
-
-
-                    <div class="user-dropdown" id="userDropdown">
-
-
-
-                        <div class="dropdown-item" onclick="window.location.href='/settings'">
-                            <i class="fas fa-cog"></i>
-                            <span>Settings</span>
-                        </div>
-
-
-
-                    </div>
-
-
-
-                <!-- Direct Top Nav Logout Button -->
-
-                <button type="button" class="direct-logout-btn" onclick="logout()" title="Logout of your account" style="margin-left: 0.75rem;">
-
-                    <i class="fas fa-sign-out-alt"></i>
-
-                    <span>Logout</span>
-
-                </button>
-
-
-
-                </div>
-
-
-
+            <div class="top-nav-header-row">
+                <button class="mobile-menu-toggle" id="mobileSidebarToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+                <h1 class="page-title">Admin <span class="script-font">Dashboard</span></h1>
             </div>
 
+            <div class="top-nav-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search users, properties, or reports...">
+                </div>
 
+                <div class="top-nav-user-row">
+                    <button class="notification-btn" aria-label="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </button>
 
+                    <div class="user-profile" id="userProfileDropdown" style="cursor: default;">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <div class="user-info">
+                            <div class="user-name">Admin User</div>
+                            <div class="user-role">System Administrator</div>
+                        </div>
+                    </div>
+
+                    <!-- Direct Top Nav Logout Button -->
+                    <button type="button" class="direct-logout-btn" onclick="logout()" title="Logout of your account">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </button>
+                </div>
+            </div>
         </div>
 
 
@@ -1047,67 +953,67 @@
 
 
 
-                    <div class="overview-stats" style="display: grid !important; grid-template-columns: repeat(2, 1fr) !important; gap: 1.35rem !important; width: 100% !important; box-sizing: border-box !important;">
+                    <div class="overview-stats">
 
-                        <div class="stat-card" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; background: rgba(14, 20, 26, 0.88) !important; border: 1.5px solid rgba(212, 175, 55, 0.28) !important; border-radius: 18px !important; padding: 1.75rem 1.25rem 1.4rem !important; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important; box-sizing: border-box !important; width: 100% !important; overflow: hidden !important;">
+                        <div class="stat-card" >
 
-                            <div class="stat-number" id="totalUsers" style="font-family: 'Playfair Display', Georgia, serif !important; font-size: 2.35rem !important; font-weight: 800 !important; line-height: 1.15 !important; margin: 0 0 0.45rem 0 !important; background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; color: #D4AF37 !important; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important; width: 100% !important; text-align: center !important;">Loading...</div>
+                            <div class="stat-number" id="totalUsers">Loading...</div>
 
-                            <div class="stat-label" style="font-size: 0.88rem !important; font-weight: 700 !important; color: #FFFFFF !important; text-transform: uppercase !important; letter-spacing: 0.6px !important; margin: 0 0 0.55rem 0 !important; width: 100% !important; text-align: center !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;">Total Users</div>
+                            <div class="stat-label">Total Users</div>
 
-                            <div class="stat-change positive" id="usersChange" style="font-size: 0.82rem !important; font-weight: 700 !important; padding: 0.25rem 0.75rem !important; border-radius: 20px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 0 0.65rem 0 !important; line-height: 1.2 !important;">Loading...</div>
+                            <div class="stat-change positive" id="usersChange">Loading...</div>
 
-                            <div class="stat-breakdown" id="usersBreakdown" style="width: 100% !important; margin-top: 0.4rem !important; padding-top: 0.6rem !important; border-top: 1px solid rgba(212, 175, 55, 0.2) !important; text-align: center !important; box-sizing: border-box !important;">
+                            <div class="stat-breakdown" id="usersBreakdown">
 
-                                <small style="display: block !important; color: #CBD5E1 !important; font-size: 0.82rem !important; font-weight: 500 !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;">Owners: <span id="totalOwners" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span> | Consultants: <span id="totalConsultants" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span></small>
-
-                            </div>
-
-                        </div>
-
-                        <div class="stat-card" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; background: rgba(14, 20, 26, 0.88) !important; border: 1.5px solid rgba(212, 175, 55, 0.28) !important; border-radius: 18px !important; padding: 1.75rem 1.25rem 1.4rem !important; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important; box-sizing: border-box !important; width: 100% !important; overflow: hidden !important;">
-
-                            <div class="stat-number" id="totalProperties" style="font-family: 'Playfair Display', Georgia, serif !important; font-size: 2.35rem !important; font-weight: 800 !important; line-height: 1.15 !important; margin: 0 0 0.45rem 0 !important; background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; color: #D4AF37 !important; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important; width: 100% !important; text-align: center !important;">Loading...</div>
-
-                            <div class="stat-label" style="font-size: 0.88rem !important; font-weight: 700 !important; color: #FFFFFF !important; text-transform: uppercase !important; letter-spacing: 0.6px !important; margin: 0 0 0.55rem 0 !important; width: 100% !important; text-align: center !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;">Properties</div>
-
-                            <div class="stat-change positive" id="propertiesChange" style="font-size: 0.82rem !important; font-weight: 700 !important; padding: 0.25rem 0.75rem !important; border-radius: 20px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 0 0.65rem 0 !important; line-height: 1.2 !important;">Loading...</div>
-
-                            <div class="stat-breakdown" id="propertiesBreakdown" style="width: 100% !important; margin-top: 0.4rem !important; padding-top: 0.6rem !important; border-top: 1px solid rgba(212, 175, 55, 0.2) !important; text-align: center !important; box-sizing: border-box !important;">
-
-                                <small style="display: block !important; color: #CBD5E1 !important; font-size: 0.82rem !important; font-weight: 500 !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;">Active: <span id="activeProperties" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span> | Total: <span id="totalPropertiesCount" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span></small>
+                                <small>Owners: <span id="totalOwners" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span> | Consultants: <span id="totalConsultants" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span></small>
 
                             </div>
 
                         </div>
 
-                        <div class="stat-card" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; background: rgba(14, 20, 26, 0.88) !important; border: 1.5px solid rgba(212, 175, 55, 0.28) !important; border-radius: 18px !important; padding: 1.75rem 1.25rem 1.4rem !important; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important; box-sizing: border-box !important; width: 100% !important; overflow: hidden !important;">
+                        <div class="stat-card" >
 
-                            <div class="stat-number" id="totalRevenue" style="font-family: 'Playfair Display', Georgia, serif !important; font-size: 2.35rem !important; font-weight: 800 !important; line-height: 1.15 !important; margin: 0 0 0.45rem 0 !important; background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; color: #D4AF37 !important; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important; width: 100% !important; text-align: center !important;">Loading...</div>
+                            <div class="stat-number" id="totalProperties">Loading...</div>
 
-                            <div class="stat-label" style="font-size: 0.88rem !important; font-weight: 700 !important; color: #FFFFFF !important; text-transform: uppercase !important; letter-spacing: 0.6px !important; margin: 0 0 0.55rem 0 !important; width: 100% !important; text-align: center !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;">Total Revenue</div>
+                            <div class="stat-label">Properties</div>
 
-                            <div class="stat-change positive" id="revenueChange" style="font-size: 0.82rem !important; font-weight: 700 !important; padding: 0.25rem 0.75rem !important; border-radius: 20px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 0 0.65rem 0 !important; line-height: 1.2 !important;">Loading...</div>
+                            <div class="stat-change positive" id="propertiesChange">Loading...</div>
 
-                            <div class="stat-breakdown" id="revenueBreakdown" style="width: 100% !important; margin-top: 0.4rem !important; padding-top: 0.6rem !important; border-top: 1px solid rgba(212, 175, 55, 0.2) !important; text-align: center !important; box-sizing: border-box !important;">
+                            <div class="stat-breakdown" id="propertiesBreakdown">
 
-                                <small style="display: block !important; color: #CBD5E1 !important; font-size: 0.82rem !important; font-weight: 500 !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;">This Month: <span id="monthlyRevenue" style="color: #FFDF73 !important; font-weight: 700 !important;">$0</span></small>
+                                <small>Active: <span id="activeProperties" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span> | Total: <span id="totalPropertiesCount" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span></small>
 
                             </div>
 
                         </div>
 
-                        <div class="stat-card" style="display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; background: rgba(14, 20, 26, 0.88) !important; border: 1.5px solid rgba(212, 175, 55, 0.28) !important; border-radius: 18px !important; padding: 1.75rem 1.25rem 1.4rem !important; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important; box-sizing: border-box !important; width: 100% !important; overflow: hidden !important;">
+                        <div class="stat-card" >
 
-                            <div class="stat-number" id="conversionRate" style="font-family: 'Playfair Display', Georgia, serif !important; font-size: 2.35rem !important; font-weight: 800 !important; line-height: 1.15 !important; margin: 0 0 0.45rem 0 !important; background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important; color: #D4AF37 !important; text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6) !important; width: 100% !important; text-align: center !important;">Loading...</div>
+                            <div class="stat-number" id="totalRevenue">Loading...</div>
 
-                            <div class="stat-label" style="font-size: 0.88rem !important; font-weight: 700 !important; color: #FFFFFF !important; text-transform: uppercase !important; letter-spacing: 0.6px !important; margin: 0 0 0.55rem 0 !important; width: 100% !important; text-align: center !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;">Conversion Rate</div>
+                            <div class="stat-label">Total Revenue</div>
 
-                            <div class="stat-change positive" id="conversionChange" style="font-size: 0.82rem !important; font-weight: 700 !important; padding: 0.25rem 0.75rem !important; border-radius: 20px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; margin: 0 0 0.65rem 0 !important; line-height: 1.2 !important;">Loading...</div>
+                            <div class="stat-change positive" id="revenueChange">Loading...</div>
 
-                            <div class="stat-breakdown" id="conversionBreakdown" style="width: 100% !important; margin-top: 0.4rem !important; padding-top: 0.6rem !important; border-top: 1px solid rgba(212, 175, 55, 0.2) !important; text-align: center !important; box-sizing: border-box !important;">
+                            <div class="stat-breakdown" id="revenueBreakdown">
 
-                                <small style="display: block !important; color: #CBD5E1 !important; font-size: 0.82rem !important; font-weight: 500 !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;">Leads: <span id="totalLeads" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span> | Clients: <span id="totalClients" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span></small>
+                                <small>This Month: <span id="monthlyRevenue" style="color: #FFDF73 !important; font-weight: 700 !important;">$0</span></small>
+
+                            </div>
+
+                        </div>
+
+                        <div class="stat-card" >
+
+                            <div class="stat-number" id="conversionRate">Loading...</div>
+
+                            <div class="stat-label">Conversion Rate</div>
+
+                            <div class="stat-change positive" id="conversionChange">Loading...</div>
+
+                            <div class="stat-breakdown" id="conversionBreakdown">
+
+                                <small>Leads: <span id="totalLeads" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span> | Clients: <span id="totalClients" style="color: #FFDF73 !important; font-weight: 700 !important;">0</span></small>
 
                             </div>
 

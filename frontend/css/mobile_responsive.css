@@ -2563,32 +2563,25 @@ body:not(.dark-dashboard) .about-section .mini-lbl,
   box-shadow: 0 15px 40px rgba(36, 48, 35, 0.08) !important;
 }
 
-body:not(.dark-dashboard) .stat-card,
-body .stat-card,
-.stat-card {
+body:not(.dark-dashboard) .stat-card {
   background: #FBFBF6 !important;
   border: 1px solid #EAE5DC !important;
   border-radius: 14px !important;
   box-shadow: 0 4px 15px rgba(36, 48, 35, 0.04) !important;
 }
 
-body:not(.dark-dashboard) .stat-card:hover,
-body .stat-card:hover,
-.stat-card:hover {
+body:not(.dark-dashboard) .stat-card:hover {
   background: #FFFFFF !important;
   border-color: #C28B52 !important;
 }
 
-body:not(.dark-dashboard) .stat-icon,
-body .stat-icon,
-.stat-icon {
+body:not(.dark-dashboard) .stat-icon {
   background: #F3F5EE !important;
   border: 1px solid #EAE5DC !important;
   color: #C28B52 !important;
 }
 
-body:not(.dark-dashboard) .stat-card:hover .stat-icon,
-.stat-card:hover .stat-icon {
+body:not(.dark-dashboard) .stat-card:hover .stat-icon {
   background: #C28B52 !important;
   color: #FFFFFF !important;
   border-color: #C28B52 !important;
@@ -2596,9 +2589,7 @@ body:not(.dark-dashboard) .stat-card:hover .stat-icon,
 
 body:not(.dark-dashboard) .stat-value,
 body:not(.dark-dashboard) .stat-card .stat-value,
-body:not(.dark-dashboard) .stats-strip .stat-value,
-body .stat-value,
-.stat-value {
+body:not(.dark-dashboard) .stats-strip .stat-value {
   color: #243023 !important;
   font-family: 'Playfair Display', Georgia, serif !important;
   font-weight: 800 !important;
@@ -2606,9 +2597,7 @@ body .stat-value,
 
 body:not(.dark-dashboard) .stat-label,
 body:not(.dark-dashboard) .stat-card .stat-label,
-body:not(.dark-dashboard) .stats-strip .stat-label,
-body .stat-label,
-.stat-label {
+body:not(.dark-dashboard) .stats-strip .stat-label {
   color: #526053 !important;
   font-weight: 700 !important;
 }
@@ -5766,3 +5755,941 @@ body.dark-dashboard .activity-item {
 
 
 
+
+
+/* ==========================================================================
+   ADMIN DASHBOARD ULTRA-RESPONSIVE MOBILE LAYOUT ENGINE
+   Resolves:
+   - Sidebar toggle & overlay
+   - Header title & actions wrapping & alignment
+   - Search box scaling on 360px-480px viewports
+   - User profile dropdown vs logout action layout separation
+   - KPI Stat cards clean flex/grid proportions without overflow
+   ========================================================================== */
+
+/* Ensure admin top nav button and layout behaves seamlessly */
+.admin-sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+  transition: opacity 0.3s ease;
+}
+
+.admin-sidebar-overlay.active {
+  display: block;
+}
+
+@media (max-width: 992px) {
+  body.dark-dashboard .main-content {
+    margin-left: 0 !important;
+    padding: 1.25rem 1rem !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    box-sizing: border-box !important;
+  }
+
+  body.dark-dashboard .sidebar {
+    transform: translateX(-100%) !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    height: 100vh !important;
+    z-index: 10000 !important;
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  body.dark-dashboard .sidebar.open,
+  body.dark-dashboard .sidebar.show {
+    transform: translateX(0) !important;
+    box-shadow: 10px 0 40px rgba(0, 0, 0, 0.9) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Top Nav Container */
+  body.dark-dashboard .top-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+    padding: 1rem !important;
+    margin-bottom: 1.25rem !important;
+    border-radius: 16px !important;
+    background: rgba(14, 19, 24, 0.95) !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  /* Header row with toggle and title */
+  body.dark-dashboard .top-nav-header-row,
+  body.dark-dashboard .top-nav > :is(.page-title, .mobile-menu-toggle) {
+    display: flex !important;
+    align-items: center !important;
+  }
+
+  body.dark-dashboard .mobile-menu-toggle,
+  body.dark-dashboard #mobileSidebarToggle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 42px !important;
+    height: 42px !important;
+    min-width: 42px !important;
+    background: rgba(20, 27, 34, 0.95) !important;
+    color: #D4AF37 !important;
+    border: 1.5px solid rgba(212, 175, 55, 0.4) !important;
+    border-radius: 12px !important;
+    font-size: 1.15rem !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4) !important;
+  }
+
+  body.dark-dashboard .mobile-menu-toggle:hover,
+  body.dark-dashboard #mobileSidebarToggle:hover {
+    background: rgba(212, 175, 55, 0.2) !important;
+    color: #FFDF73 !important;
+    border-color: #D4AF37 !important;
+    transform: scale(1.04) !important;
+  }
+
+  body.dark-dashboard .page-title {
+    font-size: 1.4rem !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+  }
+
+  body.dark-dashboard .page-title .script-font {
+    font-size: 1.75rem !important;
+  }
+
+  /* Actions Container */
+  body.dark-dashboard .top-nav-actions {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Search Box Row */
+  body.dark-dashboard .search-box {
+    width: 100% !important;
+    order: 1 !important;
+  }
+
+  body.dark-dashboard .search-box input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.7rem 1rem 0.7rem 2.6rem !important;
+    font-size: 0.88rem !important;
+    border-radius: 12px !important;
+  }
+
+  body.dark-dashboard .search-box i {
+    left: 0.9rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* User controls row */
+  body.dark-dashboard .top-nav-user-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 0.65rem !important;
+    order: 2 !important;
+  }
+
+  body.dark-dashboard .user-profile {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    padding: 0.45rem 0.85rem !important;
+    border-radius: 14px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body.dark-dashboard .user-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 10px !important;
+    font-size: 1rem !important;
+  }
+
+  body.dark-dashboard .user-info {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+  }
+
+  body.dark-dashboard .user-name {
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    color: #FFFFFF !important;
+  }
+
+  body.dark-dashboard .user-role {
+    font-size: 0.72rem !important;
+    color: #94A3B8 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  body.dark-dashboard .notification-btn {
+    padding: 0.65rem !important;
+    font-size: 1rem !important;
+    width: 40px !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+  }
+
+  body.dark-dashboard .direct-logout-btn {
+    padding: 0.5rem 0.85rem !important;
+    font-size: 0.82rem !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Overview Stats & KPI Cards Grid */
+  body.dark-dashboard .dashboard-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+
+  body.dark-dashboard .dashboard-card {
+    border-radius: 16px !important;
+    overflow: hidden !important;
+  }
+
+  body.dark-dashboard .card-header {
+    padding: 1.15rem 1.25rem !important;
+  }
+
+  body.dark-dashboard .card-content {
+    padding: 1.15rem !important;
+  }
+
+  body.dark-dashboard .overview-stats,
+  .dashboard-card .overview-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.9rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-card,
+  .dashboard-card .overview-stats .stat-card {
+    padding: 1.25rem 0.85rem 1.15rem !important;
+    border-radius: 14px !important;
+    box-sizing: border-box !important;
+    min-width: 0 !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-number {
+    font-size: 1.95rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-label {
+    font-size: 0.78rem !important;
+    letter-spacing: 0.4px !important;
+    margin-bottom: 0.45rem !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-change {
+    font-size: 0.75rem !important;
+    padding: 0.2rem 0.6rem !important;
+    margin-bottom: 0.45rem !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-breakdown {
+    margin-top: 0.35rem !important;
+    padding-top: 0.45rem !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-breakdown small {
+    font-size: 0.74rem !important;
+    line-height: 1.3 !important;
+    word-break: break-word !important;
+  }
+}
+
+/* Extra Compact Phones: Samsung Galaxy A55 / iPhone SE / 360px-420px */
+@media (max-width: 440px) {
+  body.dark-dashboard .top-nav {
+    padding: 0.85rem !important;
+    gap: 0.85rem !important;
+  }
+
+  body.dark-dashboard .page-title {
+    font-size: 1.25rem !important;
+  }
+
+  body.dark-dashboard .page-title .script-font {
+    font-size: 1.55rem !important;
+  }
+
+  body.dark-dashboard .overview-stats,
+  .dashboard-card .overview-stats {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-card,
+  .dashboard-card .overview-stats .stat-card {
+    padding: 1.35rem 1rem !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-number {
+    font-size: 2.15rem !important;
+  }
+
+  body.dark-dashboard .overview-stats .stat-label {
+    font-size: 0.85rem !important;
+  }
+
+  body.dark-dashboard .user-role {
+    display: none !important;
+  }
+
+  body.dark-dashboard .user-name {
+    font-size: 0.84rem !important;
+  }
+}
+
+
+
+/* ==========================================================================
+   GLOBAL ADMIN TEMPLATE STANDARDIZATION & MOBILE RESPONSIVE ENGINE
+   Applies to all admin sub-pages:
+   /maintenance, /service-requests, /analytics, /users, /owners, /revenue,
+   /invoices, /reports, /security, /settings, /notifications, etc.
+   ========================================================================== */
+
+/* Universal Dark Luxury Fallback Background */
+body.dark-dashboard {
+  background-color: #243023 !important;
+  color: #FFFFFF !important;
+  overflow-x: hidden !important;
+}
+
+/* Base Top Nav Styling on Dark Dashboard */
+body.dark-dashboard .top-nav {
+  background: rgba(14, 19, 24, 0.92) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.28) !important;
+  border-radius: 18px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  padding: 1rem 1.5rem !important;
+  margin-bottom: 2rem !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  position: relative !important;
+  z-index: 100 !important;
+}
+
+body.dark-dashboard .breadcrumb {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-size: 0.95rem !important;
+  margin: 0 !important;
+}
+
+body.dark-dashboard .breadcrumb a {
+  color: #94A3B8 !important;
+  text-decoration: none !important;
+  font-weight: 500 !important;
+  transition: color 0.2s ease !important;
+}
+
+body.dark-dashboard .breadcrumb a:hover {
+  color: #D4AF37 !important;
+}
+
+body.dark-dashboard .breadcrumb span {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+body.dark-dashboard .breadcrumb i {
+  color: #D4AF37 !important;
+  font-size: 0.75rem !important;
+}
+
+/* Search Box within Top Nav */
+body.dark-dashboard .search-box {
+  position: relative !important;
+}
+
+body.dark-dashboard .search-box input {
+  background: rgba(8, 10, 13, 0.75) !important;
+  border: 1px solid rgba(212, 175, 55, 0.3) !important;
+  border-radius: 25px !important;
+  padding: 0.75rem 1rem 0.75rem 2.8rem !important;
+  color: #FFFFFF !important;
+  font-size: 0.88rem !important;
+  width: 280px !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+}
+
+body.dark-dashboard .search-box input:focus {
+  border-color: #D4AF37 !important;
+  background: rgba(14, 19, 24, 0.95) !important;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2) !important;
+}
+
+body.dark-dashboard .search-box i {
+  position: absolute !important;
+  left: 1rem !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  color: #D4AF37 !important;
+  font-size: 0.95rem !important;
+  pointer-events: none !important;
+}
+
+/* User Controls & Direct Logout */
+body.dark-dashboard .top-nav-user-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+body.dark-dashboard .user-profile {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.85rem !important;
+  padding: 0.5rem 1.15rem !important;
+  background: rgba(20, 27, 34, 0.8) !important;
+  border: 1px solid rgba(212, 175, 55, 0.28) !important;
+  border-radius: 25px !important;
+  cursor: default !important;
+  transition: all 0.3s ease !important;
+  position: relative !important;
+}
+
+body.dark-dashboard .user-avatar {
+  width: 36px !important;
+  height: 36px !important;
+  min-width: 36px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #ECC94B 0%, #D4AF37 50%, #B7950B 100%) !important;
+  color: #080A0D !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 800 !important;
+  font-size: 0.85rem !important;
+}
+
+body.dark-dashboard .user-info {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+body.dark-dashboard .user-name {
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.2 !important;
+}
+
+body.dark-dashboard .user-role {
+  color: #94A3B8 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.2 !important;
+}
+
+body.dark-dashboard .notification-btn {
+  position: relative !important;
+  background: rgba(20, 27, 34, 0.8) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  font-size: 1.1rem !important;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: all 0.3s ease !important;
+}
+
+body.dark-dashboard .notification-btn:hover {
+  background: rgba(212, 175, 55, 0.2) !important;
+  color: #FFDF73 !important;
+  border-color: #D4AF37 !important;
+}
+
+body.dark-dashboard .notification-badge {
+  position: absolute !important;
+  top: 0.25rem !important;
+  right: 0.25rem !important;
+  background: #EF4444 !important;
+  color: white !important;
+  font-size: 0.68rem !important;
+  padding: 0.15rem 0.35rem !important;
+  border-radius: 50% !important;
+  min-width: 16px !important;
+  text-align: center !important;
+  font-weight: 700 !important;
+}
+
+body.dark-dashboard .direct-logout-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  padding: 0.55rem 1rem !important;
+  background: rgba(239, 68, 68, 0.15) !important;
+  border: 1.5px solid rgba(239, 68, 68, 0.45) !important;
+  color: #FCA5A5 !important;
+  border-radius: 20px !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  white-space: nowrap !important;
+}
+
+body.dark-dashboard .direct-logout-btn:hover {
+  background: #EF4444 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Page Headers on Dark Dashboard */
+body.dark-dashboard .page-header {
+  margin-bottom: 2rem !important;
+}
+
+body.dark-dashboard .page-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.35rem !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.4rem !important;
+}
+
+body.dark-dashboard .page-subtitle {
+  color: #CBD5E1 !important;
+  font-size: 0.95rem !important;
+  margin: 0 !important;
+}
+
+/* Filter Tabs & Controls on Dark Dashboard */
+body.dark-dashboard .filter-tabs {
+  display: flex !important;
+  gap: 0.45rem !important;
+  background: rgba(14, 19, 24, 0.88) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.28) !important;
+  padding: 0.35rem !important;
+  border-radius: 14px !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  overflow-x: auto !important;
+  max-width: 100% !important;
+}
+
+body.dark-dashboard .filter-tab {
+  padding: 0.65rem 1.15rem !important;
+  border: none !important;
+  background: transparent !important;
+  color: #CBD5E1 !important;
+  border-radius: 10px !important;
+  cursor: pointer !important;
+  transition: all 0.25s ease !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
+  white-space: nowrap !important;
+}
+
+body.dark-dashboard .filter-tab:hover:not(.active) {
+  background: rgba(212, 175, 55, 0.15) !important;
+  color: #FFDF73 !important;
+}
+
+body.dark-dashboard .filter-tab.active {
+  background: linear-gradient(135deg, #ECC94B 0%, #D4AF37 50%, #B7950B 100%) !important;
+  color: #080A0D !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+}
+
+/* Action Buttons */
+body.dark-dashboard .action-btn {
+  padding: 0.7rem 1.25rem !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  transition: all 0.25s ease !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  border: none !important;
+  white-space: nowrap !important;
+}
+
+body.dark-dashboard .action-btn.btn-secondary {
+  background: rgba(20, 27, 34, 0.85) !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.35) !important;
+  color: #FFDF73 !important;
+}
+
+body.dark-dashboard .action-btn.btn-secondary:hover {
+  background: rgba(212, 175, 55, 0.2) !important;
+  border-color: #D4AF37 !important;
+  transform: translateY(-2px) !important;
+}
+
+body.dark-dashboard .action-btn.btn-primary {
+  background: linear-gradient(135deg, #ECC94B 0%, #D4AF37 50%, #B7950B 100%) !important;
+  color: #080A0D !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35) !important;
+}
+
+body.dark-dashboard .action-btn.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Stat Cards on Admin Sub-Pages (Maintenance, Requests, Reports, etc.) */
+body.dark-dashboard .maintenance-stats,
+body.dark-dashboard .service-stats,
+body.dark-dashboard .revenue-stats-overview,
+body.dark-dashboard .report-stats,
+body.dark-dashboard .owner-stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.25rem !important;
+  margin-bottom: 2rem !important;
+  width: 100% !important;
+}
+
+body.dark-dashboard .stat-card {
+  background: rgba(14, 20, 26, 0.88) !important;
+  border-radius: 18px !important;
+  padding: 1.5rem 1.25rem !important;
+  border: 1.5px solid rgba(212, 175, 55, 0.28) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  position: relative !important;
+  overflow: hidden !important;
+  transition: all 0.35s ease !important;
+}
+
+body.dark-dashboard .stat-card::before {
+  display: none !important;
+}
+
+body.dark-dashboard .stat-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.25) !important;
+}
+
+body.dark-dashboard .stat-header {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 0.85rem !important;
+  width: 100% !important;
+}
+
+body.dark-dashboard .stat-title {
+  font-size: 0.78rem !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px !important;
+  line-height: 1.2 !important;
+}
+
+body.dark-dashboard .stat-icon {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.2rem !important;
+  flex-shrink: 0 !important;
+}
+
+body.dark-dashboard .stat-icon.total {
+  background: rgba(212, 175, 55, 0.15) !important;
+  color: #D4AF37 !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+}
+
+body.dark-dashboard .stat-icon.pending {
+  background: rgba(251, 191, 36, 0.15) !important;
+  color: #FBBF24 !important;
+  border: 1px solid rgba(251, 191, 36, 0.35) !important;
+}
+
+body.dark-dashboard .stat-icon.in-progress,
+body.dark-dashboard .stat-icon.active {
+  background: rgba(56, 189, 248, 0.15) !important;
+  color: #38BDF8 !important;
+  border: 1px solid rgba(56, 189, 248, 0.35) !important;
+}
+
+body.dark-dashboard .stat-icon.completed {
+  background: rgba(74, 222, 128, 0.15) !important;
+  color: #4ADE80 !important;
+  border: 1px solid rgba(74, 222, 128, 0.35) !important;
+}
+
+body.dark-dashboard .stat-value {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.2rem !important;
+  font-weight: 800 !important;
+  line-height: 1.15 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 0.35rem !important;
+}
+
+body.dark-dashboard .stat-change {
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  color: #CBD5E1 !important;
+}
+
+body.dark-dashboard .stat-change.positive {
+  color: #4ADE80 !important;
+}
+
+/* ==========================================================================
+   MOBILE MEDIA QUERIES FOR ADMIN SUB-PAGES (max-width: 768px & 440px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  body.dark-dashboard .maintenance-stats,
+  body.dark-dashboard .service-stats,
+  body.dark-dashboard .revenue-stats-overview,
+  body.dark-dashboard .report-stats,
+  body.dark-dashboard .owner-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  body.dark-dashboard .top-nav {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+    padding: 1rem !important;
+    margin-bottom: 1.25rem !important;
+    border-radius: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body.dark-dashboard .top-nav-header-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  body.dark-dashboard .top-nav-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    width: 100% !important;
+  }
+
+  body.dark-dashboard .search-box {
+    width: 100% !important;
+  }
+
+  body.dark-dashboard .search-box input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0.7rem 1rem 0.7rem 2.6rem !important;
+    font-size: 0.88rem !important;
+    border-radius: 12px !important;
+  }
+
+  body.dark-dashboard .search-box i {
+    left: 0.9rem !important;
+  }
+
+  body.dark-dashboard .top-nav-user-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 0.65rem !important;
+  }
+
+  body.dark-dashboard .user-profile {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.65rem !important;
+    padding: 0.45rem 0.85rem !important;
+    border-radius: 14px !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body.dark-dashboard .user-avatar {
+    width: 36px !important;
+    height: 36px !important;
+    min-width: 36px !important;
+    border-radius: 10px !important;
+    font-size: 1rem !important;
+  }
+
+  body.dark-dashboard .user-info {
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+  }
+
+  body.dark-dashboard .user-name {
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    color: #FFFFFF !important;
+  }
+
+  body.dark-dashboard .user-role {
+    font-size: 0.72rem !important;
+    color: #94A3B8 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  body.dark-dashboard .direct-logout-btn {
+    padding: 0.5rem 0.85rem !important;
+    font-size: 0.82rem !important;
+    border-radius: 12px !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  body.dark-dashboard .page-header .page-title {
+    font-size: 1.85rem !important;
+  }
+
+  /* Controls (Filter Tabs & Action Buttons) */
+  body.dark-dashboard .maintenance-controls,
+  body.dark-dashboard .service-controls,
+  body.dark-dashboard .owner-controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 1rem !important;
+    width: 100% !important;
+  }
+
+  body.dark-dashboard .filter-tabs {
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body.dark-dashboard .maintenance-actions,
+  body.dark-dashboard .service-actions,
+  body.dark-dashboard .owner-actions {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 0.65rem !important;
+  }
+
+  body.dark-dashboard .maintenance-actions .action-btn,
+  body.dark-dashboard .service-actions .action-btn,
+  body.dark-dashboard .owner-actions .action-btn {
+    flex: 1 1 auto !important;
+    justify-content: center !important;
+  }
+
+  /* Stats 2x2 Grid */
+  body.dark-dashboard .maintenance-stats,
+  body.dark-dashboard .service-stats,
+  body.dark-dashboard .revenue-stats-overview,
+  body.dark-dashboard .report-stats,
+  body.dark-dashboard .owner-stats {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.85rem !important;
+  }
+
+  body.dark-dashboard .stat-card {
+    padding: 1.25rem 1rem !important;
+    border-radius: 14px !important;
+  }
+
+  body.dark-dashboard .stat-title {
+    font-size: 0.72rem !important;
+  }
+
+  body.dark-dashboard .stat-value {
+    font-size: 1.85rem !important;
+  }
+}
+
+@media (max-width: 440px) {
+  body.dark-dashboard .maintenance-stats,
+  body.dark-dashboard .service-stats,
+  body.dark-dashboard .revenue-stats-overview,
+  body.dark-dashboard .report-stats,
+  body.dark-dashboard .owner-stats {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  body.dark-dashboard .maintenance-actions,
+  body.dark-dashboard .service-actions,
+  body.dark-dashboard .owner-actions {
+    flex-direction: column !important;
+  }
+
+  body.dark-dashboard .maintenance-actions .action-btn,
+  body.dark-dashboard .service-actions .action-btn,
+  body.dark-dashboard .owner-actions .action-btn {
+    width: 100% !important;
+  }
+
+  body.dark-dashboard .user-role {
+    display: none !important;
+  }
+}

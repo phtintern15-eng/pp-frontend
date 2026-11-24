@@ -47,6 +47,10 @@ class NavigationManager {
 
 
             adminDashboard: '/admin-dashboard',
+            'admin-dashboard': '/admin-dashboard',
+            'admin_dashboard': '/admin-dashboard',
+            'admin-properties': '/admin-properties',
+            adminProperties: '/admin-properties',
 
 
 
@@ -1159,117 +1163,81 @@ function initGlobalMobileNavigation() {
 
 
     // 2. Dashboard Sidebar Toggle (Admin / Executive / Management)
-
-
-
     const sidebar = document.querySelector('.sidebar') || document.querySelector('.portal-sidebar');
+    let overlay = document.getElementById('adminSidebarOverlay') || document.querySelector('.admin-sidebar-overlay');
 
+    // Automatically create overlay if sidebar exists on page
+    if (sidebar && !overlay) {
+        overlay = document.createElement('div');
+        overlay.id = 'adminSidebarOverlay';
+        overlay.className = 'admin-sidebar-overlay';
+        document.body.appendChild(overlay);
+    }
 
+    function toggleAdminSidebar(e) {
+        if (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+        const activeSidebar = document.querySelector('.sidebar') || document.querySelector('.portal-sidebar');
+        if (!activeSidebar) return;
+        const activeOverlay = document.getElementById('adminSidebarOverlay') || document.querySelector('.admin-sidebar-overlay');
+        
+        const isOpen = activeSidebar.classList.toggle('open');
+        activeSidebar.classList.toggle('show', isOpen);
+        if (activeOverlay) {
+            activeOverlay.classList.toggle('active', isOpen);
+        }
+    }
 
-    const sidebarToggles = document.querySelectorAll('.mobile-menu-toggle, #sidebarToggle, #mobileSidebarToggle');
+    function closeAdminSidebar() {
+        const activeSidebar = document.querySelector('.sidebar') || document.querySelector('.portal-sidebar');
+        const activeOverlay = document.getElementById('adminSidebarOverlay') || document.querySelector('.admin-sidebar-overlay');
+        if (activeSidebar) {
+            activeSidebar.classList.remove('open');
+            activeSidebar.classList.remove('show');
+        }
+        if (activeOverlay) {
+            activeOverlay.classList.remove('active');
+        }
+    }
 
-
-
-    
-
-
-
-    if (sidebar && sidebarToggles.length > 0) {
-
-
-
-        sidebarToggles.forEach(function(btn) {
-
-
-
-            btn.addEventListener('click', function(e) {
-
-
-
-                e.stopPropagation();
-
-
-
-                sidebar.classList.toggle('open');
-
-
-
-                sidebar.classList.toggle('show');
-
-
-
-            });
-
-
-
+    // Direct event listener on overlay
+    if (overlay) {
+        overlay.addEventListener('click', function(e) {
+            e.stopPropagation();
+            closeAdminSidebar();
         });
+    }
 
-
-
-
-
-
-
-        document.addEventListener('click', function(e) {
-
-
-
-            if (window.innerWidth <= 820 && 
-
-
-
-                sidebar && 
-
-
-
-                (sidebar.classList.contains('open') || sidebar.classList.contains('show')) &&
-
-
-
-                !sidebar.contains(e.target)) {
-
-
-
-                let clickedToggle = false;
-
-
-
-                sidebarToggles.forEach(function(btn) {
-
-
-
-                    if (btn.contains(e.target)) clickedToggle = true;
-
-
-
-                });
-
-
-
-                if (!clickedToggle) {
-
-
-
-                    sidebar.classList.remove('open');
-
-
-
-                    sidebar.classList.remove('show');
-
-
-
-                }
-
-
-
+    // Delegated click handler on document to capture toggle buttons & outside clicks
+    document.addEventListener('click', function(e) {
+        const toggleBtn = e.target.closest('#mobileSidebarToggle, .mobile-menu-toggle, #sidebarToggle');
+        if (toggleBtn) {
+            // Ignore if button is public mobileMenuToggle and on a public page with navLinks
+            if (toggleBtn.id === 'mobileMenuToggle' && document.getElementById('navLinks') && !document.querySelector('.sidebar')) {
+                return;
             }
+            toggleAdminSidebar(e);
+            return;
+        }
 
+        const activeSidebar = document.querySelector('.sidebar') || document.querySelector('.portal-sidebar');
+        if (activeSidebar && (activeSidebar.classList.contains('open') || activeSidebar.classList.contains('show'))) {
+            if (!activeSidebar.contains(e.target)) {
+                closeAdminSidebar();
+            }
+        }
+    });
 
-
+    // Close sidebar on clicking any sidebar navigation link
+    if (sidebar) {
+        sidebar.addEventListener('click', function(e) {
+            const link = e.target.closest('a');
+            if (link && window.innerWidth <= 992) {
+                closeAdminSidebar();
+            }
         });
-
-
-
     }
 
 
