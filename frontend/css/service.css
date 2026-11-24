@@ -1,0 +1,651 @@
+/* ================= SERVICES PAGE LUXURY PALETTE (Cream, Forest Sage & Bronze) ================= */
+    :root {
+      --color-cream: #FBFBF9;
+      --color-sage-light: #F3F5EE;
+      --color-sage-border: #EAE5DC;
+      --color-forest: #243023;
+      --color-forest-dark: #1B251A;
+      --color-bronze: #C28B52;
+      --color-bronze-dark: #9C6C38;
+      --color-text-main: #232C22;
+      --color-text-muted: #5A6258;
+    }
+
+    body {
+      background-color: var(--color-cream) !important;
+      color: var(--color-text-main) !important;
+      font-family: 'Plus Jakarta Sans', 'Manrope', sans-serif !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Shift Brand Logo Two Steps to the Left (Matching All Other Pages) */
+    .site-header .brand-logo,
+    .brand-logo {
+      margin-left: -2.5rem !important;
+      margin-right: auto !important;
+    }
+
+    /* Top Navigation Header */
+    .site-header {
+      background-color: #FFFFFF !important;
+      border-bottom: 1.5px solid var(--color-sage-border) !important;
+      box-shadow: 0 4px 20px rgba(35, 44, 34, 0.04) !important;
+    }
+
+    .site-header .nav-links li a.nav-link {
+      color: var(--color-text-main) !important;
+      font-weight: 600 !important;
+      transition: color 0.25s ease !important;
+    }
+
+    .site-header .nav-links li a.nav-link:hover,
+    .site-header .nav-links li a.nav-link.active {
+      color: var(--color-bronze) !important;
+    }
+
+    .site-header .nav-actions button.nav-link {
+      color: var(--color-text-main) !important;
+    }
+
+    .saved-btn {
+      background: var(--color-sage-light) !important;
+      border: 1.5px solid var(--color-sage-border) !important;
+      color: var(--color-text-main) !important;
+      border-radius: 9999px !important;
+      padding: 0.55rem 1.15rem !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.45rem !important;
+      font-weight: 700 !important;
+      cursor: pointer !important;
+    }
+
+    .saved-btn:hover {
+      background: var(--color-forest) !important;
+      color: #FFFFFF !important;
+      border-color: var(--color-forest) !important;
+    }
+
+    .saved-badge {
+      background: var(--color-forest) !important;
+      color: #FFFFFF !important;
+      border-radius: 50% !important;
+      width: 20px !important;
+      height: 20px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 0.72rem !important;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-bronze) 0%, var(--color-bronze-dark) 100%) !important;
+      color: #FFFFFF !important;
+      font-weight: 700 !important;
+      border-radius: 9999px !important;
+      border: none !important;
+      cursor: pointer !important;
+      box-shadow: 0 4px 15px rgba(156, 108, 56, 0.3) !important;
+      transition: all 0.25s ease !important;
+      padding: 0.65rem 1.5rem !important;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #D49B60 0%, #AD7740 100%) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 22px rgba(194, 139, 82, 0.45) !important;
+    }
+
+    /* Page Hero Banner */
+    .page-hero {
+      position: relative !important;
+      min-height: 50vh !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      background: linear-gradient(180deg, rgba(20, 29, 21, 0.72) 0%, rgba(36, 48, 35, 0.86) 60%, rgba(20, 29, 21, 0.95) 100%),
+                  url('/images/hero_luxury_villa.jpg') center center / cover no-repeat !important;
+      text-align: center !important;
+      padding: 6.5rem 1.5rem 5.5rem !important;
+      border-bottom: 2px solid rgba(194, 139, 82, 0.4) !important;
+    }
+
+    .page-hero-content {
+      position: relative !important;
+      z-index: 2 !important;
+      max-width: 860px !important;
+      margin: 0 auto !important;
+    }
+
+    .section-tag {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.5rem !important;
+      background: rgba(36, 48, 35, 0.85) !important;
+      border: 1.5px solid var(--color-bronze) !important;
+      color: #FFF2B2 !important;
+      padding: 0.45rem 1.35rem !important;
+      border-radius: 9999px !important;
+      font-size: 0.85rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 1px !important;
+      text-transform: uppercase !important;
+      margin-bottom: 1.25rem !important;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .section-tag i {
+      color: var(--color-bronze) !important;
+    }
+
+    .page-hero-title {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-size: 3.6rem !important;
+      font-weight: 800 !important;
+      color: #FFFFFF !important;
+      margin-bottom: 1.25rem !important;
+      line-height: 1.18 !important;
+      letter-spacing: -0.5px !important;
+    }
+
+    .page-hero-title span {
+      color: #E6BC8A !important;
+      background: linear-gradient(135deg, #FFE8B8 0%, #C28B52 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    .page-hero-desc {
+      font-size: 1.15rem !important;
+      color: #E2E8DE !important;
+      max-width: 680px !important;
+      margin: 0 auto !important;
+      line-height: 1.75 !important;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-size: 2.6rem !important;
+      font-weight: 800 !important;
+      color: var(--color-forest) !important;
+      margin: 0.5rem 0 1rem !important;
+      letter-spacing: -0.5px !important;
+    }
+
+    .section-title span {
+      color: var(--color-bronze-dark) !important;
+    }
+
+    .section-subtitle {
+      color: var(--color-text-muted) !important;
+      font-size: 1.05rem !important;
+      line-height: 1.65 !important;
+    }
+
+    /* ================= UNIFIED LUXURY SERVICE CARDS (CRISP CONTRAST) ================= */
+    .service-card-luxury {
+      background: #FFFFFF !important;
+      border: 1.5px solid var(--color-sage-border) !important;
+      border-radius: 20px !important;
+      padding: 2.5rem 2rem !important;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      box-shadow: 0 8px 24px rgba(35, 44, 34, 0.05) !important;
+    }
+
+    .service-card-luxury:hover {
+      transform: translateY(-8px) !important;
+      border-color: var(--color-bronze) !important;
+      box-shadow: 0 20px 45px rgba(156, 108, 56, 0.18) !important;
+      background: #FFFFFF !important;
+    }
+
+    .service-icon-luxury {
+      width: 64px !important;
+      height: 64px !important;
+      border-radius: 16px !important;
+      background: var(--color-sage-light) !important;
+      border: 1.5px solid var(--color-sage-border) !important;
+      color: var(--color-forest) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 1.75rem !important;
+      margin-bottom: 1.5rem !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .service-card-luxury:hover .service-icon-luxury {
+      transform: scale(1.08) rotate(4deg) !important;
+      background: var(--color-forest) !important;
+      border-color: var(--color-bronze) !important;
+      color: #E6BC8A !important;
+      box-shadow: 0 6px 18px rgba(36, 48, 35, 0.25) !important;
+    }
+
+    .service-title-luxury {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      font-size: 1.45rem !important;
+      font-weight: 700 !important;
+      color: var(--color-forest) !important;
+      margin-bottom: 0.85rem !important;
+      letter-spacing: -0.3px !important;
+    }
+
+    .service-card-luxury:hover .service-title-luxury {
+      color: var(--color-forest) !important;
+    }
+
+    .service-desc-luxury {
+      color: var(--color-text-muted) !important;
+      font-size: 0.95rem !important;
+      line-height: 1.65 !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .service-feature-list {
+      list-style: none !important;
+      padding: 0 !important;
+      margin: 0 0 2rem 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.75rem !important;
+    }
+
+    .service-feature-list li {
+      font-size: 0.9rem !important;
+      color: var(--color-text-main) !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.65rem !important;
+      line-height: 1.4 !important;
+    }
+
+    .service-feature-list li i {
+      color: var(--color-bronze-dark) !important;
+      font-size: 0.85rem !important;
+      background: rgba(194, 139, 82, 0.12) !important;
+      width: 20px !important;
+      height: 20px !important;
+      border-radius: 50% !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+
+    /* Action Buttons Inside Service Cards */
+    .btn-card-action {
+      width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.5rem !important;
+      padding: 0.85rem 1.25rem !important;
+      border-radius: 9999px !important;
+      background: var(--color-sage-light) !important;
+      border: 1.5px solid var(--color-sage-border) !important;
+      color: var(--color-forest) !important;
+      font-weight: 700 !important;
+      font-size: 0.9rem !important;
+      cursor: pointer !important;
+      transition: all 0.25s ease !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+    }
+
+    .btn-card-action:hover {
+      background: linear-gradient(135deg, var(--color-bronze) 0%, var(--color-bronze-dark) 100%) !important;
+      color: #FFFFFF !important;
+      border-color: transparent !important;
+      box-shadow: 0 8px 22px rgba(194, 139, 82, 0.35) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    /* Four Stages Pillar Cards */
+    .pillars-grid {
+      display: grid !important;
+    }
+
+    .pillar-card {
+      background: #FFFFFF !important;
+      border: 1.5px solid var(--color-sage-border) !important;
+      border-radius: 20px !important;
+      padding: 2.25rem 1.85rem !important;
+      box-shadow: 0 8px 24px rgba(35, 44, 34, 0.05) !important;
+      transition: all 0.3s ease !important;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-6px) !important;
+      border-color: var(--color-bronze) !important;
+      box-shadow: 0 16px 36px rgba(156, 108, 56, 0.15) !important;
+    }
+
+    .pillar-icon {
+      width: 52px !important;
+      height: 52px !important;
+      border-radius: 14px !important;
+      background: linear-gradient(135deg, var(--color-forest) 0%, #152014 100%) !important;
+      color: #E6BC8A !important;
+      border: 1.5px solid var(--color-bronze) !important;
+      font-weight: 800 !important;
+      font-size: 1.3rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      margin-bottom: 1.35rem !important;
+      box-shadow: 0 6px 18px rgba(36, 48, 35, 0.2) !important;
+    }
+
+    .pillar-title {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      color: var(--color-forest) !important;
+      font-size: 1.3rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 0.75rem !important;
+    }
+
+    .pillar-desc {
+      color: var(--color-text-muted) !important;
+      font-size: 0.95rem !important;
+      line-height: 1.65 !important;
+      margin: 0 !important;
+    }
+
+    /* CTA Section */
+    .cta-banner-section {
+      padding: 6.5rem 1.5rem !important;
+      background: var(--color-forest) !important;
+      border-top: 2px solid rgba(194, 139, 82, 0.45) !important;
+      text-align: center !important;
+    }
+
+    .cta-banner-section .section-title {
+      color: #FFFFFF !important;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.85) !important;
+    }
+
+    .cta-banner-section .section-title span {
+      color: #F6E7B0 !important;
+      background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+    }
+
+    .cta-banner-section .section-subtitle {
+      color: #CBD5E1 !important;
+      text-shadow: 0 1px 10px rgba(0, 0, 0, 0.85) !important;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--color-forest-dark) !important;
+      border-top: 1.5px solid rgba(194, 139, 82, 0.35) !important;
+      padding: 4.5rem 0 2.5rem !important;
+      color: #C4CDC2 !important;
+    }
+
+    .site-footer a {
+      color: #E6BC8A !important;
+      transition: color 0.25s ease !important;
+    }
+
+    .site-footer a:hover {
+      color: #FFFFFF !important;
+      text-decoration: underline !important;
+    }
+
+    /* ================= LOGIN & REGISTER MODAL STYLES (Forest Sage + Bronze) ================= */
+    .modal-overlay,
+    #loginModal.modal-overlay,
+    #registerModal.modal-overlay {
+      position: fixed !important;
+      inset: 0 !important;
+      display: none !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 2rem 1rem !important;
+      background: rgba(18, 24, 18, 0.75) !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      overflow-y: auto !important;
+      z-index: 999999 !important;
+      box-sizing: border-box !important;
+    }
+
+    .modal-overlay.active,
+    #loginModal.modal-overlay.active,
+    #registerModal.modal-overlay.active {
+      display: flex !important;
+    }
+
+    .login-modal,
+    .register-modal,
+    #loginModal .login-modal,
+    #registerModal .register-modal {
+      background: var(--color-forest) !important;
+      background-color: var(--color-forest) !important;
+      border: 1.5px solid rgba(194, 139, 82, 0.55) !important;
+      border-radius: 28px !important;
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55), 0 0 25px rgba(194, 139, 82, 0.2) !important;
+      color: #FFFFFF !important;
+      padding: 2.75rem 2.5rem !important;
+      position: relative !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      margin: auto !important;
+    }
+
+    .login-modal {
+      max-width: 480px !important;
+    }
+
+    .register-modal,
+    #registerModal .register-modal {
+      max-width: 620px !important;
+      max-height: 88vh !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      overscroll-behavior: contain !important;
+      scrollbar-width: thin !important;
+      scrollbar-color: var(--color-bronze) var(--color-forest-dark) !important;
+    }
+
+    .modal-header,
+    .login-modal .modal-header,
+    .register-modal .modal-header {
+      display: block !important;
+      text-align: center !important;
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      margin-bottom: 1.75rem !important;
+      width: 100% !important;
+    }
+
+    .modal-title,
+    .login-modal h2,
+    .register-modal h2 {
+      font-family: 'Playfair Display', Georgia, serif !important;
+      color: #FFFFFF !important;
+      font-size: 2.1rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 0.35rem !important;
+    }
+
+    .modal-subtitle,
+    .login-modal p.modal-subtitle,
+    .register-modal p.modal-subtitle {
+      color: #C4CDC2 !important;
+      font-size: 0.95rem !important;
+      text-align: center !important;
+    }
+
+    .login-modal label,
+    .register-modal label,
+    .login-form label,
+    .register-form label {
+      color: var(--color-bronze) !important;
+      font-size: 0.8rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.8px !important;
+      margin-bottom: 0.45rem !important;
+      display: block !important;
+    }
+
+    .login-modal input,
+    .register-modal input,
+    .register-modal select,
+    .foreign-select {
+      background: var(--color-forest-dark) !important;
+      background-color: var(--color-forest-dark) !important;
+      border: 1.5px solid rgba(194, 139, 82, 0.4) !important;
+      color: #FFFFFF !important;
+      font-size: 0.95rem !important;
+      font-weight: 500 !important;
+      border-radius: 12px !important;
+      padding: 0.85rem 1.15rem !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      outline: none !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .login-modal input::placeholder,
+    .register-modal input::placeholder {
+      color: #7A8678 !important;
+    }
+
+    .login-modal input:focus,
+    .register-modal input:focus,
+    .register-modal select:focus {
+      background: #141D13 !important;
+      border-color: var(--color-bronze) !important;
+      box-shadow: 0 0 0 3px rgba(194, 139, 82, 0.25) !important;
+    }
+
+    .modal-close {
+      position: absolute !important;
+      top: 1.25rem !important;
+      right: 1.25rem !important;
+      background: var(--color-forest-dark) !important;
+      border: 1px solid rgba(194, 139, 82, 0.4) !important;
+      color: #C4CDC2 !important;
+      width: 36px !important;
+      height: 36px !important;
+      border-radius: 50% !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 1.25rem !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .modal-close:hover {
+      background: var(--color-bronze) !important;
+      color: #FFFFFF !important;
+    }
+
+    .user-type-selector {
+      display: flex !important;
+      gap: 0.5rem !important;
+      background: var(--color-forest-dark) !important;
+      padding: 0.35rem !important;
+      border-radius: 9999px !important;
+      border: 1px solid rgba(194, 139, 82, 0.35) !important;
+      margin-bottom: 1.5rem !important;
+    }
+
+    .user-type-selector .user-type-btn {
+      flex: 1 !important;
+      padding: 0.75rem 0.6rem !important;
+      border-radius: 9999px !important;
+      border: none !important;
+      background: transparent !important;
+      color: #C4CDC2 !important;
+      font-weight: 700 !important;
+      font-size: 0.88rem !important;
+      cursor: pointer !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 0.45rem !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .user-type-selector .user-type-btn.active {
+      background: var(--color-bronze) !important;
+      color: #FFFFFF !important;
+      box-shadow: 0 4px 14px rgba(194, 139, 82, 0.4) !important;
+    }
+
+    .foreign-buyer-card {
+      background: var(--color-forest-dark) !important;
+      border: 1.5px solid rgba(194, 139, 82, 0.35) !important;
+      border-radius: 16px !important;
+      padding: 1.25rem 1.4rem !important;
+      margin-top: 1.25rem !important;
+      margin-bottom: 1.25rem !important;
+    }
+
+    .foreign-toggle-pill {
+      background: #141D13 !important;
+      border: 1px solid rgba(194, 139, 82, 0.35) !important;
+      border-radius: 9999px !important;
+      padding: 0.25rem !important;
+      display: inline-flex !important;
+      gap: 0.35rem !important;
+    }
+
+    .foreign-toggle-btn {
+      padding: 0.35rem 0.95rem !important;
+      border-radius: 9999px !important;
+      border: none !important;
+      background: transparent !important;
+      color: #C4CDC2 !important;
+      font-weight: 700 !important;
+      font-size: 0.78rem !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .foreign-toggle-btn.is-active {
+      background: var(--color-bronze) !important;
+      color: #FFFFFF !important;
+    }
+
+    .modal-btn,
+    .login-modal .modal-btn,
+    .register-modal .modal-btn {
+      background: linear-gradient(135deg, var(--color-bronze) 0%, var(--color-bronze-dark) 100%) !important;
+      color: #FFFFFF !important;
+      font-size: 1rem !important;
+      font-weight: 700 !important;
+      border-radius: 9999px !important;
+      padding: 0.95rem 1.5rem !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      cursor: pointer !important;
+      width: 100% !important;
+      box-shadow: 0 6px 18px rgba(156, 108, 56, 0.4) !important;
+      transition: all 0.25s ease !important;
+      margin-top: 1.15rem !important;
+    }
+
+    .modal-btn:hover {
+      background: linear-gradient(135deg, #D49B60 0%, #AD7740 100%) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 8px 22px rgba(194, 139, 82, 0.5) !important;
+    }
+
+    @media (max-width: 900px) {
+      .page-hero-title { font-size: 2.5rem !important; }
+      .pillars-grid { grid-template-columns: 1fr !important; }
+      .site-header .brand-logo, .brand-logo { margin-left: 0 !important; }
+    }

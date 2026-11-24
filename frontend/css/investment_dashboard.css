@@ -1,0 +1,693 @@
+/* ==============================================================================
+   investment_dashboard.css
+   Unified Architectural Luxury Theme
+   100% Identical Color Palette & Design System with Home & Foreign Investors
+   Palette: Cream Base (#FBFBF6), Sage Subtle (#D8DFD0, #EAE5DC),
+            Forest Sage (#243023), Warm Bronze (#C28B52 / #9C6C38),
+            Deep Charcoal Typography (#232C22 / #1E293B)
+   ============================================================================== */
+
+:root {
+  --color-cream-base: #FBFBF6;
+  --color-cream-surface: #F5F6F0;
+  --color-cream-card: #FFFFFF;
+  --color-cream-card-soft: #F2F4EC;
+
+  --color-sage-light: #E8ECE3;
+  --color-sage-subtle: #D8DFD0;
+  --color-sage-border: #EAE5DC;
+  --color-sage-mid: #94A38C;
+  --color-sage-primary: #586B54;
+  --color-sage-dark: #374635;
+  --color-sage-deep: #243023;
+  --color-forest: #243023;
+  --color-forest-dark: #1B251A;
+
+  --color-gold: #9C6C38;
+  --color-gold-light: #C28B52;
+  --color-gold-bright: #D8A268;
+  --color-gold-dark: #6E4921;
+
+  --color-bronze: #C28B52;
+  --color-bronze-dark: #9C6C38;
+  --color-bronze-light: #C28B52;
+  --color-bronze-border: rgba(156, 108, 56, 0.3);
+  --color-bronze-soft: rgba(156, 108, 56, 0.12);
+
+  --color-text-main: #232C22;
+  --color-text-title: #0F172A;
+  --color-text-body: #1E293B;
+  --color-text-secondary: #4A5648;
+  --color-text-muted: #526053;
+
+  --home-cream-bg: #FBFBF6;
+  --home-card-bg: #FFFFFF;
+  --home-subtle-sage: #F3F5EE;
+  --home-forest-sage: #243023;
+  --home-sage-border: #EAE5DC;
+  --home-bronze: #9C6C38;
+  --home-bronze-gold: #C28B52;
+  --home-charcoal: #232C22;
+}
+
+body.investment-dashboard-page,
+body {
+  background-color: var(--color-cream-base) !important;
+  color: var(--color-text-body) !important;
+  font-family: 'Plus Jakarta Sans', 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ================= 1. Top Announcement Bar ================= */
+.top-bar {
+  background: var(--color-forest) !important;
+  border-bottom: 1px solid rgba(194, 139, 82, 0.35) !important;
+  color: #E6BC8A !important;
+  font-size: 0.82rem !important;
+}
+
+.top-bar i {
+  color: var(--color-bronze) !important;
+}
+
+.currency-badge {
+  background: rgba(194, 139, 82, 0.25) !important;
+  color: #FFF2B2 !important;
+  border: 1px solid rgba(194, 139, 82, 0.45) !important;
+  border-radius: 6px !important;
+  padding: 0.2rem 0.65rem !important;
+  font-weight: 700 !important;
+}
+
+/* ================= 2. Site Header Navigation ================= */
+.site-header {
+  position: sticky !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 1000 !important;
+  background-color: #FFFFFF !important;
+  border-bottom: 1.5px solid var(--color-sage-border) !important;
+  box-shadow: 0 4px 20px rgba(35, 44, 34, 0.04) !important;
+  padding: 0.65rem 0 !important;
+}
+
+.site-header .brand-logo {
+  background: var(--color-forest) !important;
+  border: 1.5px solid rgba(194, 139, 82, 0.55) !important;
+  border-radius: 9999px !important;
+  padding: 0.45rem 1.15rem 0.45rem 0.85rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  box-shadow: 0 4px 14px rgba(36, 48, 35, 0.22) !important;
+}
+
+.site-header .nav-links li a.nav-link {
+  color: var(--color-text-main) !important;
+  font-weight: 600 !important;
+  transition: color 0.25s ease !important;
+}
+
+.site-header .nav-links li a.nav-link:hover,
+.site-header .nav-links li a.nav-link.active {
+  color: var(--color-bronze-dark) !important;
+  font-weight: 700 !important;
+}
+
+.saved-btn {
+  background: var(--color-sage-light) !important;
+  border: 1.5px solid var(--color-sage-border) !important;
+  color: var(--color-text-main) !important;
+  border-radius: 9999px !important;
+  padding: 0.55rem 1.15rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.45rem !important;
+  font-weight: 700 !important;
+  cursor: pointer !important;
+}
+
+.saved-btn:hover {
+  background: var(--color-forest) !important;
+  color: #FFFFFF !important;
+  border-color: var(--color-forest) !important;
+}
+
+.saved-badge {
+  background: var(--color-forest) !important;
+  color: #FFFFFF !important;
+  border-radius: 50% !important;
+  width: 20px !important;
+  height: 20px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 0.72rem !important;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--color-bronze) 0%, var(--color-bronze-dark) 100%) !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+  border-radius: 9999px !important;
+  border: none !important;
+  cursor: pointer !important;
+  box-shadow: 0 4px 15px rgba(156, 108, 56, 0.3) !important;
+  transition: all 0.25s ease !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #D49B60 0%, #AD7740 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 22px rgba(194, 139, 82, 0.45) !important;
+}
+
+/* ================= 3. Hero Section (Matching Foreign Investors Page) ================= */
+.hero-international {
+  position: relative !important;
+  min-height: 52vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: linear-gradient(180deg, rgba(20, 29, 21, 0.78) 0%, rgba(36, 48, 35, 0.88) 60%, rgba(20, 29, 21, 0.95) 100%),
+              url('/images/hero_architecture.jpg') center center / cover no-repeat !important;
+  text-align: center !important;
+  padding: 6.5rem 1.5rem 5rem !important;
+  border-bottom: 2px solid rgba(194, 139, 82, 0.4) !important;
+}
+
+.hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 1140px !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+.hero-badge-global {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  background: rgba(36, 48, 35, 0.85) !important;
+  border: 1.5px solid var(--color-bronze) !important;
+  color: #FFF2B2 !important;
+  padding: 0.45rem 1.35rem !important;
+  border-radius: 9999px !important;
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3) !important;
+}
+
+.hero-badge-global i {
+  color: var(--color-bronze) !important;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 3.5rem !important;
+  font-weight: 800 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 1.25rem !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.5px !important;
+}
+
+.hero-title span {
+  color: #E6BC8A !important;
+  background: linear-gradient(135deg, #FFE8B8 0%, #C28B52 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.hero-desc {
+  font-size: 1.15rem !important;
+  color: #E2E8DE !important;
+  max-width: 760px !important;
+  margin: 0 auto 2.25rem !important;
+  line-height: 1.75 !important;
+}
+
+/* ================= 4. Section Wrappers & Canonical Headings ================= */
+.section-wrap {
+  max-width: 1240px !important;
+  margin: 0 auto !important;
+  padding: 5.5rem 1.5rem !important;
+}
+
+.section-eyebrow {
+  color: var(--color-bronze-dark) !important;
+  font-weight: 700 !important;
+  font-size: 0.85rem !important;
+  letter-spacing: 2.5px !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.section-heading-dark {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.5rem !important;
+  font-weight: 800 !important;
+  color: var(--color-forest) !important;
+  margin: 0.4rem 0 1rem !important;
+  letter-spacing: -0.5px !important;
+}
+
+.section-subtitle-dark {
+  color: var(--color-text-muted) !important;
+  font-size: 1.05rem !important;
+  max-width: 720px !important;
+  margin: 0 auto !important;
+  line-height: 1.65 !important;
+}
+
+/* Grids */
+.grid-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 2.5rem !important;
+}
+
+.grid-3 {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 2rem !important;
+}
+
+.grid-4 {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+/* ================= 5. Canonical Luxury Cards ================= */
+.card-luxury {
+  background: #FFFFFF !important;
+  border: 1.5px solid var(--color-sage-border) !important;
+  border-radius: 20px !important;
+  padding: 2.25rem 2rem !important;
+  box-shadow: 0 10px 30px rgba(35, 44, 34, 0.06) !important;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.card-luxury:hover {
+  border-color: var(--color-bronze) !important;
+  transform: translateY(-6px) !important;
+  box-shadow: 0 20px 45px rgba(156, 108, 56, 0.18) !important;
+}
+
+.card-luxury h3 {
+  color: var(--color-forest) !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+}
+
+.card-luxury p {
+  color: var(--color-text-muted) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.6 !important;
+}
+
+/* ================= 6. Market Trends Benchmark Hub Table ================= */
+.hub-table-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid var(--color-sage-border) !important;
+  border-radius: 24px !important;
+  padding: 2.5rem !important;
+  box-shadow: 0 15px 45px rgba(35, 44, 34, 0.08) !important;
+}
+
+.hub-table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin-top: 1.5rem !important;
+  text-align: left !important;
+}
+
+.hub-table th {
+  background: #243023 !important;
+  color: #FFFFFF !important;
+  font-size: 0.82rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.2px !important;
+  padding: 1.15rem 1.2rem !important;
+  font-weight: 700 !important;
+  border: none !important;
+}
+
+.hub-table th:first-child {
+  border-top-left-radius: 12px !important;
+}
+
+.hub-table th:last-child {
+  border-top-right-radius: 12px !important;
+}
+
+.hub-table td {
+  padding: 1.2rem 1.2rem !important;
+  border-bottom: 1px solid var(--color-sage-border) !important;
+  font-size: 0.95rem !important;
+  color: var(--color-text-main) !important;
+  background: #FFFFFF !important;
+  transition: background 0.2s ease !important;
+}
+
+.hub-table tr:nth-child(even) td {
+  background: #FAFBF8 !important;
+}
+
+.hub-table tr:hover td {
+  background: #F3F5EE !important;
+}
+
+/* ================= 7. Sub-Registrar Guidance Calculator Suite ================= */
+.sr-valuation-suite {
+  background: #FFFFFF !important;
+  border: 1.5px solid var(--color-sage-border) !important;
+  border-radius: 24px !important;
+  padding: 3rem 2.75rem !important;
+  box-shadow: 0 15px 45px rgba(35, 44, 34, 0.08) !important;
+  margin-top: 3.5rem !important;
+}
+
+.sr-label {
+  font-size: 0.85rem !important;
+  font-weight: 700 !important;
+  color: var(--color-text-main) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.75px !important;
+}
+
+.sr-select,
+.sr-input {
+  width: 100% !important;
+  background: #F5F6F0 !important;
+  border: 1.5px solid var(--color-sage-border) !important;
+  border-radius: 10px !important;
+  padding: 0.85rem 1rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  color: var(--color-text-main) !important;
+  outline: none !important;
+  transition: all 0.25s ease !important;
+  box-sizing: border-box !important;
+}
+
+.sr-select:focus,
+.sr-input:focus {
+  background: #FFFFFF !important;
+  border-color: var(--color-bronze) !important;
+  box-shadow: 0 0 12px rgba(194, 139, 82, 0.25) !important;
+}
+
+.sr-results-box {
+  margin-top: 2rem !important;
+  background: #F3F5EE !important;
+  border: 2px solid var(--color-bronze) !important;
+  border-radius: 18px !important;
+  padding: 2rem !important;
+  color: var(--color-text-main) !important;
+  display: none;
+}
+
+/* ================= 8. Dark Luxury Banner (Relocation Mandate) ================= */
+.section-dark-banner {
+  background: #0F1710 !important;
+  border-radius: 28px !important;
+  border: 1.5px solid rgba(194, 139, 82, 0.55) !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.55) !important;
+  padding: 3.5rem 3rem !important;
+  color: #FFFFFF !important;
+  margin-top: 4.5rem !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+}
+
+.relocation-banner-grid {
+  display: grid !important;
+  grid-template-columns: 1.15fr 0.85fr !important;
+  gap: 3.5rem !important;
+  align-items: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.relocation-info-col {
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.relocation-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  background: rgba(194, 139, 82, 0.25) !important;
+  border: 1.5px solid rgba(194, 139, 82, 0.6) !important;
+  padding: 0.4rem 1.15rem !important;
+  border-radius: 9999px !important;
+  color: #FFF2B2 !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  margin-bottom: 1.25rem !important;
+  max-width: 100% !important;
+  flex-wrap: wrap !important;
+}
+
+.relocation-banner-heading,
+.section-dark-banner h2,
+body .section-dark-banner h2 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.6rem !important;
+  color: #FFFFFF !important;
+  line-height: 1.25 !important;
+  margin: 0 0 1rem !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.7) !important;
+  word-break: break-word !important;
+}
+
+.relocation-heading-highlight,
+.section-dark-banner h2 span,
+body .section-dark-banner h2 span {
+  background: linear-gradient(135deg, #FFE8B8 0%, #C28B52 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #E6B87D !important;
+}
+
+.relocation-banner-desc,
+.section-dark-banner p,
+body .section-dark-banner p {
+  color: #F1F5F9 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.7 !important;
+  margin-bottom: 1.75rem !important;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;
+}
+
+.relocation-bullets-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.15rem !important;
+  width: 100% !important;
+}
+
+.relocation-bullet-item {
+  display: flex !important;
+  align-items: flex-start !important;
+  gap: 0.65rem !important;
+  min-width: 0 !important;
+}
+
+.dark-banner-form-card {
+  background: rgba(27, 37, 26, 0.95) !important;
+  border: 1.5px solid rgba(194, 139, 82, 0.5) !important;
+  border-radius: 18px !important;
+  padding: 2rem !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3) !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+}
+
+.dark-banner-form-title,
+.dark-banner-form-card h3,
+body .dark-banner-form-card h3 {
+  color: #FFFFFF !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+  font-size: 1.35rem !important;
+  margin-bottom: 0.5rem !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.7) !important;
+  flex-wrap: wrap !important;
+  word-break: break-word !important;
+}
+
+.dark-banner-form-desc,
+.dark-banner-form-card p,
+body .dark-banner-form-card p {
+  color: #CBD5E1 !important;
+  font-size: 0.88rem !important;
+  margin-bottom: 1.25rem !important;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important;
+}
+
+.dark-banner-form-fields {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.dark-banner-form-card input {
+  background: #FFFFFF !important;
+  color: #1A241A !important;
+  border: 1.5px solid #EAE5DC !important;
+  padding: 0.8rem 1rem !important;
+  border-radius: 8px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  font-size: 0.92rem !important;
+  outline: none !important;
+}
+
+.dark-banner-form-card input:focus {
+  border-color: var(--color-bronze, #C28B52) !important;
+  box-shadow: 0 0 10px rgba(194, 139, 82, 0.25) !important;
+}
+
+.btn-relocation-submit,
+.dark-banner-form-card button,
+.dark-banner-form-card .btn-primary {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 0.85rem 1rem !important;
+  font-weight: 700 !important;
+  border: none !important;
+  font-size: 0.92rem !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  text-align: center !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  line-height: 1.35 !important;
+}
+
+/* ================= 9. Responsive Adjustments ================= */
+@media (max-width: 992px) {
+  .hero-title { font-size: 2.6rem !important; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+  .grid-3 { grid-template-columns: 1fr !important; }
+  .grid-2 { grid-template-columns: 1fr !important; }
+  .relocation-banner-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2.5rem !important;
+  }
+  .section-dark-banner {
+    padding: 2.75rem 2rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-wrap {
+    padding: 3rem 1rem !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .hero-international {
+    padding: 4.5rem 1rem 3rem !important;
+  }
+  .hub-table-card {
+    padding: 1.5rem 1rem !important;
+    border-radius: 16px !important;
+  }
+  .sr-valuation-suite {
+    padding: 1.75rem 1.15rem !important;
+    border-radius: 16px !important;
+    margin-top: 2.5rem !important;
+  }
+  .section-dark-banner {
+    padding: 2rem 1.25rem !important;
+    border-radius: 20px !important;
+    margin-top: 2.5rem !important;
+  }
+  .relocation-banner-heading,
+  .section-dark-banner h2,
+  body .section-dark-banner h2 {
+    font-size: 1.85rem !important;
+    line-height: 1.3 !important;
+  }
+  .dark-banner-form-card {
+    padding: 1.5rem 1.15rem !important;
+    border-radius: 14px !important;
+  }
+  .dark-banner-form-title,
+  .dark-banner-form-card h3 {
+    font-size: 1.2rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title { font-size: 1.85rem !important; }
+  .grid-4 { grid-template-columns: 1fr !important; }
+  .hub-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .section-dark-banner {
+    padding: 1.5rem 1rem !important;
+    border-radius: 16px !important;
+    margin-top: 2rem !important;
+  }
+  .relocation-banner-grid {
+    gap: 1.75rem !important;
+  }
+  .relocation-banner-heading,
+  .section-dark-banner h2,
+  body .section-dark-banner h2 {
+    font-size: 1.5rem !important;
+  }
+  .relocation-badge {
+    font-size: 0.75rem !important;
+    padding: 0.35rem 0.85rem !important;
+    letter-spacing: 1px !important;
+  }
+  .relocation-bullets-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+  .dark-banner-form-card {
+    padding: 1.25rem 0.95rem !important;
+    border-radius: 12px !important;
+  }
+  .dark-banner-form-title,
+  .dark-banner-form-card h3 {
+    font-size: 1.15rem !important;
+  }
+  .btn-relocation-submit,
+  .dark-banner-form-card button,
+  .dark-banner-form-card .btn-primary {
+    font-size: 0.82rem !important;
+    padding: 0.8rem 0.65rem !important;
+  }
+}

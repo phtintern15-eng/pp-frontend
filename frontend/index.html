@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Properties | Architectural Luxury Estates & Modern Sanctuaries</title>
+  <meta name="description"
+    content="Discover extraordinary architectural residences, private waterfront villas, and skyline penthouses curated by Prime Properties.">
+  <meta name="keywords" content="luxury real estate, architectural homes, penthouses, luxury villas, Prime Properties">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/prime_logo.png">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Nextora Google Fonts: Manrope + Cormorant Garamond -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Core Architectural Stylesheet -->
+  <link rel="stylesheet" href="/css/index.css?v=20261113_universal_login_final">
+  <link rel="stylesheet" href="/css/index_custom.css?v=20261113_universal_login_final">
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261116_chatbot_text_visible_final">
+</head>
+
+<body>
+
+  <!-- ================= Top Announcement Bar ================= -->
+  <aside class="top-bar" aria-label="Direct Concierge and Operating Hours">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>Direct Concierge: <a href="tel:+918045678900" class="top-bar-link">+91 80 4567 8900</a></span>
+        </div>
+        <div class="top-bar-item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:inquiries@primeproperties.com" class="top-bar-link">inquiries@primeproperties.com</a></span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item">
+          <i class="fas fa-clock"></i>
+          <span>Mon - Sat: 9:00 AM - 7:00 PM IST</span>
+        </div>
+        <div class="top-bar-item">
+          <span class="currency-badge">IND</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= Navigation Header ================= -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="/" class="brand-logo" aria-label="Prime Property Real Estate">
+        <img src="/images/prime_logo.png" alt="Prime Property Real Estate" class="brand-main-logo">
+      </a>
+
+      <!-- Desktop & Mobile Nav Links -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li class="mobile-drawer-header">
+            <span class="mobile-drawer-title"><i class="fas fa-compass" style="color: var(--color-gold, #C28B52); margin-right: 0.5rem;"></i> Navigation</span>
+            <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+          </li>
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/property" class="nav-link">Properties</a></li>
+          <li><a href="/foreign-investors" class="nav-link" style="color: #9C6C38; font-weight: 700;"><i
+                class="fas fa-passport"></i> Foreign Buyers</a></li>
+          <li><a href="/investment-dashboard" class="nav-link"><i class="fas fa-chart-pie"></i> Investments</a></li>
+          <li><a href="/service" class="nav-link">Services</a></li>
+          <li><a href="/about" class="nav-link">About Us</a></li>
+          <li><a href="/pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li class="mobile-drawer-auth">
+            <button type="button" onclick="openLoginModal()" class="btn-drawer-login">
+              <i class="fas fa-user"></i> Login
+            </button>
+            <button type="button" onclick="openRegisterModal()" class="btn-drawer-register">
+              <i class="fas fa-user-plus"></i> Register
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions -->
+      <div class="nav-actions">
+        <button class="saved-btn" id="savedPropertiesBtn" title="View Saved Collections">
+          <i class="fas fa-bookmark" style="color: var(--color-gold);"></i>
+          <span>Saved</span>
+          <span class="saved-badge" id="savedCountBadge">0</span>
+        </button>
+
+        <div id="navAuthContainer" style="display: inline-flex; align-items: center; gap: 0.85rem;">
+          <button onclick="openLoginModal()" class="nav-link"
+            style="font-weight: 600; background: none; border: none; cursor: pointer;">
+            <i class="fas fa-user"></i> Login
+          </button>
+          <button onclick="openRegisterModal()" class="btn-primary"
+            style="padding: 0.55rem 1.35rem; font-size: 0.85rem;">
+            Register
+          </button>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= 1. Architectural Hero Section ================= -->
+    <section class="hero-section" id="home">
+      <!-- Background Looping Slider -->
+      <div class="hero-slider" id="heroSlider">
+        <div class="hero-slide active" data-theme="dark" style="background-image: url(/images/hero_luxury_villa.jpg);"></div>
+        <div class="hero-slide" data-theme="light" style="background-image: url(/images/hero_architecture.jpg);"></div>
+        <div class="hero-slide" data-theme="dark" style="background-image: url(/images/hero_penthouse.jpg);"></div>
+        <div class="hero-slide" data-theme="light"
+          style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85');">
+        </div>
+        <div class="hero-slide" data-theme="light"
+          style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=85');">
+        </div>
+      </div>
+      <div class="hero-slider-overlay"></div>
+
+      <!-- Slider Pagination Indicators -->
+      <div class="hero-slider-dots" id="heroSliderDots">
+        <button class="hero-slider-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="hero-slider-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="hero-slider-dot" data-slide="2" aria-label="Slide 3"></button>
+        <button class="hero-slider-dot" data-slide="3" aria-label="Slide 4"></button>
+        <button class="hero-slider-dot" data-slide="4" aria-label="Slide 5"></button>
+      </div>
+
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <i class="fas fa-home" style="font-size: 0.8rem; color: #f78c0f;"></i>
+          <span>Make Every Space Unique &amp; Inspiring</span>
+        </div>
+
+        <h1 class="hero-title">Find Your Luxury Dream Home</h1>
+
+        <p class="hero-description">Curated architectural properties in prime locations.</p>
+
+        <!-- Architectural Digest Ultra-Slim Floating Glass Pill Concierge -->
+        <div class="hero-search-wrapper" id="heroSearchWrapper" style="max-width: 780px !important; margin: 0 auto !important;">
+          <!-- Core Country Inquiry Box -->
+          <div class="inquiry-box">
+            <div class="inquiry-header">
+              <i class="fas fa-compass" style="color: #b38b59;"></i>
+              <span>In which country are you interested to buy property?</span>
+            </div>
+
+            <div class="inquiry-controls">
+              <div class="inquiry-select-wrap">
+                <i class="fas fa-earth-americas select-globe-icon"></i>
+                <select id="homeCountrySelect" class="inquiry-country-select">
+                  <option value="in" selected>🇮🇳 India (Mumbai, Bengaluru, Goa, Delhi NCR)</option>
+                  <option value="ae">🇦🇪 UAE (Dubai, Abu Dhabi)</option>
+                  <option value="us">🇺🇸 USA (California, New York, Texas, Florida)</option>
+                  <option value="uk">🇬🇧 United Kingdom (London, Cotswolds, Chelsea)</option>
+                  <option value="ca">🇨🇦 Canada (Toronto, Vancouver, Montreal)</option>
+                  <option value="au">🇦🇺 Australia (Sydney, Melbourne, Gold Coast)</option>
+                  <option value="sg">🇸🇬 Singapore (Orchard, Sentosa Cove, Nassim)</option>
+                  <option value="fr">🇫🇷 France (Paris, French Riviera, Saint-Tropez)</option>
+                  <option value="de">🇩🇪 Germany (Munich, Berlin, Lake Starnberg)</option>
+                  <option value="ch">🇨🇭 Switzerland (Geneva, Zurich, St. Moritz)</option>
+                  <option value="jp">🇯🇵 Japan (Tokyo, Kyoto, Niseko)</option>
+                </select>
+                <i class="fas fa-chevron-down select-chevron-icon"></i>
+              </div>
+
+              <button type="button" id="btnHomeViewProperties" onclick="navigateToCountryProperties()" class="btn-view-properties">
+                View Properties <i class="fas fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+          
+          
+
+          <div class="hero-quick-filters ad-filters">
+            <span class="quick-filter-label"><i class="fas fa-fingerprint"></i> Curated Portfolios:</span>
+            <button type="button" class="quick-filter-chip" onclick="quickFilterHero('waterfront')">
+              Waterfront Sanctuaries
+            </button>
+            <button type="button" class="quick-filter-chip" onclick="quickFilterHero('penthouse')">
+              Skyline Penthouses
+            </button>
+            <button type="button" class="quick-filter-chip" onclick="quickFilterHero('villa')">
+              Architectural Estates
+            </button>
+            <button type="button" class="quick-filter-chip" onclick="quickFilterHero('bangalore')">
+              Bangalore Reserve
+            </button>
+          </div>
+
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 4. About Us Architectural Story ================= -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <!-- Left Visual Composition: Architectural Glass Atelier -->
+          <div class="about-visual">
+            <div class="about-visual-backdrop"></div>
+            <div class="about-img-frame main-frame">
+              <img class="about-img-main" src="/images/hero_luxury_villa.jpg" alt="Prime Architectural Villa">
+              <div class="about-img-overlay"></div>
+              <div class="about-img-tag">
+                <i class="fas fa-map-marker-alt"></i> Bel Air Atelier · 2024
+              </div>
+            </div>
+
+            <div class="about-img-frame sub-frame">
+              <img class="about-img-secondary"
+                src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=85"
+                alt="Luxury Interior Living Space">
+              <div class="about-img-overlay"></div>
+            </div>
+
+            <!-- Floating 3D Prestige Experience Badge -->
+            <div class="experience-badge">
+              <div class="exp-badge-glow"></div>
+              <div class="exp-years-wrap">
+                <span class="exp-years">15</span><span class="exp-plus">+</span>
+              </div>
+              <div class="exp-divider"></div>
+              <div class="exp-text">
+                <strong>Years Of</strong>
+                <span>Architectural Mastery</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content Info: High-End Magazine Editorial -->
+          <div class="about-content">
+            <div class="section-tag">
+              <i class="fas fa-gem" style="color: #9C6C38;"></i> About Us
+            </div>
+            <h2 class="section-title">Trusted Luxury Real Estate Partners</h2>
+            <p class="about-story">We make luxury buying simple.</p>
+
+            <!-- 4 Core Pillars: 2x2 Glassmorphic Cards with Gold Corner Accents -->
+            <div class="pillars-grid">
+              <div class="pillar-card">
+                <div class="pillar-top">
+                  <div class="pillar-icon"><i class="fas fa-gem"></i></div>
+                  <span class="pillar-num">01</span>
+                </div>
+                <h3 class="pillar-title">Curated Portfolio</h3>
+                <p class="pillar-desc">Verified luxury properties only.</p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-top">
+                  <div class="pillar-icon"><i class="fas fa-file-contract"></i></div>
+                  <span class="pillar-num">02</span>
+                </div>
+                <h3 class="pillar-title">Discreet Escrow</h3>
+                <p class="pillar-desc">Safe, private legal closing.</p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-top">
+                  <div class="pillar-icon"><i class="fas fa-user-tie"></i></div>
+                  <span class="pillar-num">03</span>
+                </div>
+                <h3 class="pillar-title">VIP Concierge</h3>
+                <p class="pillar-desc">24/7 dedicated private support.</p>
+              </div>
+
+              <div class="pillar-card">
+                <div class="pillar-top">
+                  <div class="pillar-icon"><i class="fas fa-globe-americas"></i></div>
+                  <span class="pillar-num">04</span>
+                </div>
+                <h3 class="pillar-title">Global Network</h3>
+                <p class="pillar-desc">Prime worldwide partner network.</p>
+              </div>
+            </div>
+
+            <!-- Bottom Editorial Call To Action & Metrics -->
+            <div class="about-footer-row">
+              <div class="about-actions">
+                <a href="#contact" class="btn-primary">
+                  <i class="fas fa-paper-plane"></i>
+                  <span>Inquire With Us</span>
+                </a>
+                <a href="/about" class="btn-outline">
+                  <span>Company Heritage</span>
+                  <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+              <div class="about-stats-mini">
+                <div class="mini-stat">
+                  <span class="mini-val">$4.2B+</span>
+                  <span class="mini-lbl">Transacted</span>
+                </div>
+                <div class="mini-stat-sep"></div>
+                <div class="mini-stat">
+                  <span class="mini-val">99.4%</span>
+                  <span class="mini-lbl">Private Closings</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Nextora Signature Facilities & Services Showcase ================= -->
+    <section class="nextora-facilities-section" id="services">
+      <div class="container">
+        <div class="nextora-facilities-header">
+          <div class="section-tag">
+            <i class="fas fa-sparkles" style="color: #C28B52;"></i> Exceptional Capabilities
+          </div>
+          <h2 class="section-title">Premium Services Tailored For You</h2>
+          <p class="section-subtitle">Complete support from search to settlement.</p>
+        </div>
+
+        <div class="nextora-facilities-grid">
+          <div class="nextora-facility-card">
+            <div class="facility-icon-box">
+              <i class="fas fa-search-location"></i>
+            </div>
+            <h3 class="facility-title">Private Portfolio Search</h3>
+            <p class="facility-desc">Discreet off-market property search.</p>
+          </div>
+
+          <div class="nextora-facility-card">
+            <div class="facility-icon-box">
+              <i class="fas fa-shield-halved"></i>
+            </div>
+            <h3 class="facility-title">Verified Escrow & Trust</h3>
+            <p class="facility-desc">Secure escrow and legal trust.</p>
+          </div>
+
+          <div class="nextora-facility-card">
+            <div class="facility-icon-box">
+              <i class="fas fa-helicopter"></i>
+            </div>
+            <h3 class="facility-title">VIP Concierge & Travel</h3>
+            <p class="facility-desc">Private travel and viewings.</p>
+          </div>
+
+          <div class="nextora-facility-card">
+            <div class="facility-icon-box">
+              <i class="fas fa-chart-pie"></i>
+            </div>
+            <h3 class="facility-title">Architectural Valuation</h3>
+            <p class="facility-desc">Accurate luxury property appraisal.</p>
+          </div>
+
+          <div class="nextora-facility-card"
+            onclick="if(window.openVirtualTourModal){ window.openVirtualTourModal('Bel-Air Skyline Architectural Villa'); setTimeout(() => switchTourMode('video'), 150); } else { window.location.href='/foreign-buyers'; }"
+            style="cursor: pointer;" title="Click to Watch AI 8K Video Walkthrough">
+            <div class="facility-icon-box">
+              <i class="fas fa-play-circle" style="color: #C28B52;"></i>
+            </div>
+            <h3 class="facility-title">AI 4K / 8K Walkthroughs</h3>
+            <p class="facility-desc">Virtual 4K video tours.</p>
+          </div>
+
+          <div class="nextora-facility-card">
+            <div class="facility-icon-box">
+              <i class="fas fa-plane-arrival" style="color: #34D399;"></i>
+            </div>
+            <h3 class="facility-title">Full Relocation &amp; Settlement</h3>
+            <p class="facility-desc">Seamless relocation and visas.</p>
+          </div>
+
+          <div class="nextora-facility-card">
+            <div class="facility-icon-box">
+              <i class="fas fa-chart-line" style="color: #C28B52;"></i>
+            </div>
+            <h3 class="facility-title">Market Trend Intelligence</h3>
+            <p class="facility-desc">Market trends and ROI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 5. Testimonials Section: The Collector's Circle ================= -->
+    <section class="testimonials-section">
+      <div class="testimonials-ambient-glow"></div>
+      <div class="container">
+        <!-- Prestige Header with Luxury Accents -->
+        <div class="testimonials-header-wrap">
+          <div class="section-tag">
+            <i class="fas fa-crown" style="color: #9C6C38;"></i> Testimonials
+          </div>
+          <h2 class="section-title">Trusted By High-Profile Buyers</h2>
+          <p class="testimonials-subhead">Real experiences from happy homeowners.</p>
+        </div>
+
+        <!-- Bespoke Luxury Card Gallery -->
+        <div class="testimonials-grid">
+          <!-- Card 1: Beverly Hills Estate (Tech Founder) -->
+          <div class="testimonial-card featured-client-card">
+            <div class="testimonial-watermark-quote">“</div>
+            <div class="testimonial-top">
+              <div class="stars-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <div class="acquisition-badge">
+                <i class="fas fa-certificate"></i> Verified Off-Market Escrow
+              </div>
+            </div>
+
+            <p class="testimonial-quote">
+              "Prime Properties located our family's Beverly Hills estate completely off-market within 14 days. Their
+              confidential negotiation and attention to architectural craftsmanship was unmatched."
+            </p>
+
+            <div class="testimonial-estate-tag">
+              <i class="fas fa-map-marker-alt"></i> Bel Air Hillside Sanctuary · $28.5M
+            </div>
+
+            <div class="client-meta">
+              <div class="client-avatar-wrap">
+                <img class="client-photo"
+                  src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
+                  alt="Sophia Sterling">
+                <div class="client-verified-tick"><i class="fas fa-check"></i></div>
+              </div>
+              <div class="client-details">
+                <div class="client-name">Sophia Sterling</div>
+                <div class="client-role">Private Tech Founder, San Francisco</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Architectural Studio (Marcus Thornton) - Featured Center Spotlight -->
+          <div class="testimonial-card center-spotlight-card">
+            <div class="spotlight-gold-ribbon">
+              <i class="fas fa-award"></i> Architectural Critique
+            </div>
+            <div class="testimonial-watermark-quote">“</div>
+            <div class="testimonial-top">
+              <div class="stars-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <div class="acquisition-badge gold-badge">
+                <i class="fas fa-compass-drafting"></i> Design Integrity Audit
+              </div>
+            </div>
+
+            <p class="testimonial-quote">
+              "As an architect, I am exceptionally critical of property curation. Prime Properties represents only truly
+              distinguished designs with pure spatial integrity and timeless balance."
+            </p>
+
+            <div class="testimonial-estate-tag">
+              <i class="fas fa-map-marker-alt"></i> Modernist Brutalist Retreat · Aspen
+            </div>
+
+            <div class="client-meta">
+              <div class="client-avatar-wrap">
+                <img class="client-photo"
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80"
+                  alt="Marcus Thornton">
+                <div class="client-verified-tick"><i class="fas fa-check"></i></div>
+              </div>
+              <div class="client-details">
+                <div class="client-name">Marcus Thornton</div>
+                <div class="client-role">Principal Architect, Thornton Studio</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Tribeca Penthouse (Claire DuPont) -->
+          <div class="testimonial-card">
+            <div class="testimonial-watermark-quote">“</div>
+            <div class="testimonial-top">
+              <div class="stars-rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"></i>
+              </div>
+              <div class="acquisition-badge">
+                <i class="fas fa-shield-alt"></i> Sovereign Trust Closing
+              </div>
+            </div>
+
+            <p class="testimonial-quote">
+              "Acquiring our Tribeca penthouse through Prime Properties was an effortlessly smooth experience. Their
+              wealth advisory and legal escrow team handled every international detail with absolute discretion."
+            </p>
+
+            <div class="testimonial-estate-tag">
+              <i class="fas fa-map-marker-alt"></i> Tribeca Sky Duplex · New York
+            </div>
+
+            <div class="client-meta">
+              <div class="client-avatar-wrap">
+                <img class="client-photo"
+                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=200&q=80"
+                  alt="Claire DuPont">
+                <div class="client-verified-tick"><i class="fas fa-check"></i></div>
+              </div>
+              <div class="client-details">
+                <div class="client-name">Claire DuPont</div>
+                <div class="client-role">Managing Partner, Geneva Capital</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Interactive Global Trust & Media Banner -->
+        <div class="testimonials-trust-bar">
+          <div class="trust-stat">
+            <span class="trust-val">100%</span>
+            <span class="trust-lbl">Confidential Escrow</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-stat">
+            <span class="trust-val">14 Days</span>
+            <span class="trust-lbl">Avg. Off-Market Matching</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-stat">
+            <span class="trust-val">12</span>
+            <span class="trust-lbl">Global Capital Hubs</span>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-stat">
+            <span class="trust-val">5.0 ★</span>
+            <span class="trust-lbl">Private Client Rating</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 6. Contact / Schedule Tour Section: The Private Client Suite ================= -->
+    <section class="contact-section" id="contact">
+      <div class="contact-ambient-radial"></div>
+      <div class="container">
+        <!-- Section Header -->
+        <div class="contact-header-wrap">
+          <div class="section-tag">
+            <i class="fas fa-key"></i> Bespoke Acquisition Advisory
+          </div>
+          <h2 class="section-title">Book A Private Consultation</h2>
+          <p class="contact-subhead">Speak with our property advisors today.</p>
+        </div>
+
+        <div class="contact-suite-card">
+          <!-- Left Concierge Atelier -->
+          <div class="contact-atelier-pane">
+            <div class="atelier-top">
+              <div class="atelier-badge">
+                <i class="fas fa-shield-alt"></i> Sovereign Discretion Guaranteed
+              </div>
+              <h3 class="atelier-title">Flagship Advisory Desk</h3>
+              <p class="atelier-description">Private tours and bespoke advisory.</p>
+            </div>
+
+            <div class="atelier-contact-cards">
+              <div class="atelier-contact-item">
+                <div class="atelier-icon"><i class="fas fa-building"></i></div>
+                <div class="atelier-item-info">
+                  <span class="atelier-label">Global Flagship</span>
+                  <strong class="atelier-val">9450 Wilshire Blvd, Beverly Hills, CA 90212</strong>
+                  <span class="atelier-sub">Private Suite 1400 · Valet Available</span>
+                </div>
+              </div>
+
+              <div class="atelier-contact-item">
+                <div class="atelier-icon"><i class="fas fa-phone-alt"></i></div>
+                <div class="atelier-item-info">
+                  <span class="atelier-label">Direct Concierge Line</span>
+                  <strong class="atelier-val">+91 80 4567 8900 &middot; +91 98800 12345</strong>
+                  <span class="atelier-sub">Available 24/7</span>
+                </div>
+              </div>
+
+              <div class="atelier-contact-item">
+                <div class="atelier-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <div class="atelier-item-info">
+                  <span class="atelier-label">Encrypted Correspondence</span>
+                  <strong class="atelier-val">concierge@primeproperties.com</strong>
+                  <span class="atelier-sub">Encrypted and confidential</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Representative Persona Card -->
+            <div class="atelier-advisor-pill">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                alt="Lead Advisor" class="advisor-thumb">
+              <div class="advisor-info">
+                <strong>Julian Vance</strong>
+                <span>Private Client Advisor</span>
+              </div>
+              <div class="advisor-status">
+                <span class="status-dot"></span> Active Desk
+              </div>
+            </div>
+
+            <div class="atelier-nda-notice">
+              <i class="fas fa-file-contract"></i>
+              <span>All inquiries strictly confidential (NDA).</span>
+            </div>
+          </div>
+
+          <!-- Right Booking & Portfolio Inquiry Engine -->
+          <div class="contact-form-pane">
+            <div class="form-pane-header">
+              <div class="form-pane-title-wrap">
+                <h3 class="form-pane-title">Private Portfolio Inquiry</h3>
+                <p class="form-pane-sub">Fill details for fast callback.</p>
+              </div>
+              <div class="form-confidential-pill">
+                <i class="fas fa-lock"></i> Confidential 256-Bit SSL
+              </div>
+            </div>
+
+            <!-- Inquiry Mode Selector -->
+            <div class="inquiry-type-selector">
+              <button type="button" class="inquiry-tab active" onclick="switchInquiryType(this, 'Private Tour')">
+                <i class="fas fa-walking"></i> Private Tour
+              </button>
+              <button type="button" class="inquiry-tab" onclick="switchInquiryType(this, 'Portfolio Acquisition')">
+                <i class="fas fa-gem"></i> Acquisition
+              </button>
+              <button type="button" class="inquiry-tab" onclick="switchInquiryType(this, 'Architectural Advisory')">
+                <i class="fas fa-drafting-compass"></i> Architecture Advisory
+              </button>
+            </div>
+
+            <form id="tourContactForm" class="inquiry-luxury-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="formName">Full Name *</label>
+                  <div class="input-icon-wrap">
+                    <i class="fas fa-user-tie"></i>
+                    <input type="text" id="formName" placeholder="Your full name" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="formEmail">Email Address *</label>
+                  <div class="input-icon-wrap">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="formEmail" placeholder="name@example.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="formPhone">Phone Number</label>
+                  <div class="input-icon-wrap">
+                    <i class="fas fa-phone-alt"></i>
+                    <input type="tel" id="formPhone" placeholder="+91 98800 12345">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="formProperty">Select Property</label>
+                  <div class="input-icon-wrap">
+                    <i class="fas fa-landmark"></i>
+                    <select id="formProperty">
+                      <option value="General Portfolio Inquiry">General Curated Portfolio</option>
+                      <option value="The Bel-Air Glass Pavilion">The Bel-Air Glass Pavilion (₹4,85,00,000)</option>
+                      <option value="Skyline Horizon Penthouse">Skyline Horizon Penthouse (₹6,20,00,000)</option>
+                      <option value="Azure Shoreline Ocean Villa">Azure Shoreline Ocean Villa (₹5,40,00,000)</option>
+                      <option value="Nordic Minimalist Loft">Nordic Minimalist Loft (₹1,45,000/mo)</option>
+                      <option value="The Aspen Ridge Chalet">The Aspen Ridge Chalet (₹3,95,00,000)</option>
+                      <option value="The Metropolitan Oasis Residence">The Metropolitan Oasis Residence (₹1,90,000/mo)
+                      </option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-group full-width">
+                  <label for="formMessage">Message / Requirements</label>
+                  <div class="input-icon-wrap textarea-wrap">
+                    <i class="fas fa-pen-nib"></i>
+                    <textarea id="formMessage" rows="3"
+                      placeholder="Tell us your preferences..."></textarea>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Submit Button with Gold Sheen and Lock Badge -->
+              <div class="form-submit-row">
+                <button type="submit" class="btn-primary form-submit-btn">
+                  <span>Send Inquiry</span>
+                  <i class="fas fa-arrow-right"></i>
+                </button>
+                <div class="submit-reassurance">
+                  <i class="fas fa-clock"></i> Response within 4 hours
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= 7. Footer Section ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Bio -->
+        <div class="footer-brand">
+          <a href="/" class="brand-logo" style="margin-bottom: 1.25rem;" aria-label="Prime Property Real Estate">
+            <img src="/images/prime_logo.png" alt="Prime Property Real Estate"
+              class="footer-main-logo">
+          </a>
+          <p class="footer-desc">
+            Curating world-class luxury sanctuaries.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link"><i class="fas fa-chevron-right"></i> Home Page</a></li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Luxury Catalog</a></li>
+            <li><a href="/about" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="/service" class="footer-link"><i class="fas fa-chevron-right"></i> Services & Concierge</a>
+            </li>
+            <li><a href="/pricing" class="footer-link"><i class="fas fa-chevron-right"></i> Owner Plans</a></li>
+            <li><a href="#contact" class="footer-link"><i class="fas fa-chevron-right"></i> Private Inquiries</a></li>
+          </ul>
+        </div>
+
+        <!-- Property Categories -->
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul class="footer-links">
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Modernist Villas</a></li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Skyline Penthouses</a></li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Waterfront Properties</a>
+            </li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Ski Chalets & Retreats</a>
+            </li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Prime Commercial</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-col">
+          <h4>Quarterly Gazette</h4>
+          <p style="font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.75rem; color: #E2E8F0; font-weight: 500;">
+            Get private off-market listings.
+          </p>
+          <div class="newsletter-box">
+            <form id="newsletterForm" class="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+          <small style="display: block; margin-top: 0.75rem; color: #E2E8F0; font-weight: 600; font-weight: 500; font-size: 0.78rem;">
+            We respect your privacy. Strict discretion guaranteed.
+          </small>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Prime Properties International Inc. All rights reserved. Equal Housing Opportunity.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Legal Disclosure</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= Interactive Property Details Modal ================= -->
+  <div class="modal-overlay" id="propertyModal" role="dialog" aria-modal="true" aria-label="Property Details Modal"
+    onclick="if(event.target === this) closePropertyModal()">
+    <div class="modal-wrapper">
+      <button class="modal-close-btn" onclick="closePropertyModal()" aria-label="Close modal" title="Close Details">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="modal-content">
+        <div class="modal-media" id="modalMedia"></div>
+        <div class="modal-body" id="modalDetails"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Saved Properties Drawer Modal ================= -->
+  <div class="saved-drawer-overlay" id="savedDrawerOverlay" onclick="closeSavedDrawer(event)">
+    <div class="saved-drawer" onclick="event.stopPropagation()">
+      <div class="saved-drawer-header">
+        <h3><i class="fas fa-bookmark"></i> Saved Properties</h3>
+        <button class="saved-drawer-close" onclick="closeSavedDrawer()" aria-label="Close saved drawer">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="saved-drawer-body" id="savedDrawerList">
+        <!-- Rendered dynamically -->
+      </div>
+      <div class="saved-drawer-footer">
+        <button class="btn-outline" style="flex: 1;" onclick="closeSavedDrawer()">Continue Browsing</button>
+        <button class="btn-primary" style="flex: 1.5;" onclick="clearAllSavedProperties()">Clear All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Login Modal ================= -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="login-modal">
+      <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title" style="color: #C28B52 !important;">Welcome Back</h2>
+        <p class="modal-subtitle" style="color: #C28B52 !important; opacity: 0.95;">Sign in to your Prime Properties account</p>
+      </div>
+      <!-- Google Sign-In Option -->
+      <button type="button" class="google-auth-btn" onclick="handleGoogleAuth('Sign In')">
+        <svg class="google-svg-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+        </svg>
+        <span>Continue with Google</span>
+      </button>
+      <div class="auth-divider">
+        <span>OR SIGN IN WITH EMAIL</span>
+      </div>
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="email" style="color: #C28B52 !important; font-weight: 700; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.6px;">Email Address</label>
+          <input type="email" id="email" placeholder="e.g. admin@primeproperties.com" required>
+        </div>
+        <div class="form-group" style="position: relative;">
+          <label for="password" style="color: #C28B52 !important; font-weight: 700; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.6px;">Password</label>
+          <div style="position: relative; display: flex; align-items: center;">
+            <input type="password" id="password" placeholder="Enter your password" required style="width: 100%; padding-right: 2.75rem;">
+            <button type="button" class="modal-password-toggle" id="togglePassword" aria-label="Toggle password visibility" title="Show password" style="position: absolute; right: 0.85rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: #C28B52; cursor: pointer; font-size: 1rem; padding: 0.25rem; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        <div class="login-remember-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.65rem 1rem;">
+          <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+            <label class="login-remember-label" for="rememberMe" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 0.5rem !important; margin-bottom: 0 !important; cursor: pointer !important; color: #C28B52 !important; font-size: 0.88rem !important; font-weight: 600 !important; text-transform: none !important; letter-spacing: normal !important;">
+              <input type="checkbox" id="rememberMe" class="login-remember-checkbox" style="width: 17px !important; height: 17px !important; accent-color: #C28B52 !important; margin: 0 !important; cursor: pointer !important; flex-shrink: 0 !important; display: inline-block !important;">
+              <span style="color: #C28B52 !important; display: inline-block !important;">Remember me</span>
+            </label>
+            <label class="login-show-password-label" for="modalShowPasswordCheckbox" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 0.5rem !important; margin-bottom: 0 !important; cursor: pointer !important; color: #C28B52 !important; font-size: 0.88rem !important; font-weight: 600 !important; text-transform: none !important; letter-spacing: normal !important;">
+              <input type="checkbox" id="modalShowPasswordCheckbox" style="width: 17px !important; height: 17px !important; accent-color: #C28B52 !important; margin: 0 !important; cursor: pointer !important; flex-shrink: 0 !important; display: inline-block !important;">
+              <span style="color: #C28B52 !important; display: inline-block !important;">Show password</span>
+            </label>
+          </div>
+          <a href="#" onclick="event.preventDefault(); alert('For account security, please contact our concierge desk at concierge@primeproperties.com or call +91 (80) 4123-4567 to verify your identity and reset your credentials.');" style="color: #C28B52 !important; font-size: 0.88rem !important; font-weight: 600 !important; text-decoration: none !important;">Forgot password?</a>
+        </div>
+        <button type="submit" class="modal-btn">Sign In to Portfolio</button>
+      </form>
+      <div class="modal-footer" style="color: #C28B52 !important;">
+        Don't have an account? <a href="#" onclick="event.preventDefault(); switchToRegister();" style="color: #C28B52 !important; font-weight: 700 !important; text-decoration: underline !important;">Create an account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Registration Modal ================= -->
+  <div class="modal-overlay" id="registerModal">
+    <div class="register-modal">
+      <button class="modal-close" onclick="closeRegisterModal()">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title" style="color: #FFFFFF !important; font-family: 'Playfair Display', Georgia, serif !important; font-weight: 700 !important; font-size: 2.15rem !important; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;">Join <span style="background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #D4AF37;">Prime Properties</span></h2>
+        <p class="modal-subtitle" style="color: #CBD5E1 !important; font-size: 0.95rem !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;">Select your account profile to get started</p>
+      </div>
+      <!-- Google Sign-Up Option -->
+      <button type="button" class="google-auth-btn" onclick="handleGoogleAuth('Sign Up')">
+        <svg class="google-svg-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+        </svg>
+        <span>Sign up with Google</span>
+      </button>
+      <div class="auth-divider">
+        <span>OR REGISTER WITH DETAILS</span>
+      </div>
+      <div class="user-type-selector">
+        <button type="button" class="user-type-btn active" data-type="buyer" id="buyerTypeBtn">
+          <i class="fas fa-key"></i> <span>Buyer / Investor</span>
+        </button>
+        <button type="button" class="user-type-btn" data-type="owner" id="ownerTypeBtn">
+          <i class="fas fa-home"></i> <span>Property Owner</span>
+        </button>
+        <button type="button" class="user-type-btn" data-type="consultant" id="consultantTypeBtn">
+          <i class="fas fa-user-tie"></i> <span>Consultant</span>
+        </button>
+      </div>
+
+      <!-- Buyer / Investor Registration Form -->
+      <form class="register-form active" id="buyerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="buyerFirstName">First Name *</label>
+            <input type="text" id="buyerFirstName" required>
+          </div>
+          <div class="form-group">
+            <label for="buyerLastName">Last Name *</label>
+            <input type="text" id="buyerLastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="buyerEmail">Email Address *</label>
+          <input type="email" id="buyerEmail" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="buyerPhone">Phone Number</label>
+            <input type="tel" id="buyerPhone">
+          </div>
+          <div class="form-group">
+            <label for="buyerPreferredCity">Preferred Acquisition City</label>
+            <input type="text" id="buyerPreferredCity" placeholder="e.g. Bangalore, Dubai, London">
+          </div>
+        </div>
+
+        <!-- ================= Overseas / Foreign Buyer Interactive Section ================= -->
+        <div class="foreign-buyer-card">
+          <div class="foreign-header-row">
+            <label class="foreign-title-label">
+              <i class="fas fa-globe-americas"></i> Are you an Overseas / Foreign Buyer or NRI?
+            </label>
+            <div class="foreign-toggle-pill">
+              <button type="button" id="buyerIsForeignerYes" onclick="setForeignBuyerMode(true, 'buyer')"
+                class="foreign-toggle-btn is-active">YES</button>
+              <button type="button" id="buyerIsForeignerNo" onclick="setForeignBuyerMode(false, 'buyer')"
+                class="foreign-toggle-btn">NO</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Foreign Buyer Expansion Fields -->
+          <div id="buyerForeignFieldsContainer">
+            <div class="form-row" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label for="buyerResidenceCountry" class="foreign-field-label">
+                  <i class="fas fa-map-marker-alt" style="color: #C28B52;"></i> Current Country of Residence *
+                </label>
+                <select id="buyerResidenceCountry" class="foreign-select">
+                  <option value="United Arab Emirates">United Arab Emirates (UAE)</option>
+                  <option value="United States" selected>United States of America</option>
+                  <option value="United Kingdom">United Kingdom (UK)</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Germany">Germany</option>
+                  <option value="France">France</option>
+                  <option value="Saudi Arabia">Saudi Arabia</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="Other">Other Foreign Country</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="buyerTargetPurchaseCountry" class="foreign-field-label">
+                  <i class="fas fa-landmark" style="color: #34D399;"></i> Where do you want to buy property / land? *
+                </label>
+                <select id="buyerTargetPurchaseCountry" class="foreign-select"
+                  style="border-color: rgba(52, 211, 153, 0.45) !important;">
+                  <option value="India" selected>India (Bangalore, Mumbai, Goa, Delhi-NCR)</option>
+                  <option value="United States">United States (New York, Miami, Aspen, LA)</option>
+                  <option value="United Arab Emirates">United Arab Emirates (Dubai, Abu Dhabi)</option>
+                  <option value="United Kingdom">United Kingdom (London, Surrey)</option>
+                  <option value="Global Portfolio">Multi-Country Global Portfolio</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 0.85rem;">
+              <label for="buyerCitizenshipStatus" class="foreign-field-label">
+                <i class="fas fa-passport" style="color: #C28B52;"></i> Citizenship / Legal Status
+              </label>
+              <select id="buyerCitizenshipStatus" class="foreign-select">
+                <option value="nri">Non-Resident Indian (NRI - Indian Passport abroad)</option>
+                <option value="oci">Overseas Citizen of India (OCI Card Holder)</option>
+                <option value="foreign_national">Foreign National (Non-Indian Citizen)</option>
+                <option value="foreign_corporate">Foreign Corporate / Institutional Fund</option>
+              </select>
+            </div>
+
+            <!-- Interactive Yes / No Overseas Buyer Questionnaire -->
+            <div class="foreign-quiz-card">
+              <div class="foreign-quiz-header">
+                <i class="fas fa-clipboard-check"></i> Remote Acquisition & Legal Readiness (Yes / No)
+              </div>
+
+              <input type="hidden" id="quiz_buyer_need_poa" value="yes">
+              <input type="hidden" id="quiz_buyer_repatriate_funds" value="yes">
+              <input type="hidden" id="quiz_buyer_tax_lawyer" value="yes">
+
+              <!-- Question 1 -->
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-file-signature"></i>
+                  <div>
+                    <span>Do you require Embassy POA for remote paperless closing?</span>
+                    <small>Our legal desk arranges embassy consular attestation so you close without flying in.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active"
+                    onclick="toggleQuizOption(this, 'buyer_need_poa', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn"
+                    onclick="toggleQuizOption(this, 'buyer_need_poa', 'no')">NO</button>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-exchange-alt"></i>
+                  <div>
+                    <span>Will you repatriate rental yields & capital gains abroad?</span>
+                    <small>100% compliant NRE/NRO repatriable banking setup with Form 15CA/CB documentation.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active"
+                    onclick="toggleQuizOption(this, 'buyer_repatriate_funds', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn"
+                    onclick="toggleQuizOption(this, 'buyer_repatriate_funds', 'no')">NO</button>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-balance-scale"></i>
+                  <div>
+                    <span>Do you require a dedicated cross-border tax lawyer consultation?</span>
+                    <small>Pair with an accredited international real estate attorney before purchase.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active"
+                    onclick="toggleQuizOption(this, 'buyer_tax_lawyer', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn"
+                    onclick="toggleQuizOption(this, 'buyer_tax_lawyer', 'no')">NO</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="buyerPassword">Password *</label>
+          <input type="password" id="buyerPassword" required>
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="buyerConfirmPassword">Confirm Password *</label>
+          <input type="password" id="buyerConfirmPassword" required>
+        </div>
+
+        <button type="submit" class="modal-btn">Create Buyer Account</button>
+      </form>
+
+      <!-- Consultant Registration Form -->
+      <form class="register-form" id="consultantForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="consultantFirstName">First Name *</label>
+            <input type="text" id="consultantFirstName" required>
+          </div>
+          <div class="form-group">
+            <label for="consultantLastName">Last Name *</label>
+            <input type="text" id="consultantLastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="consultantEmail">Email Address *</label>
+          <input type="email" id="consultantEmail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="consultantPhone">Phone Number</label>
+          <input type="tel" id="consultantPhone">
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="consultantPassword">Password *</label>
+          <input type="password" id="consultantPassword" required>
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="consultantConfirmPassword">Confirm Password *</label>
+          <input type="password" id="consultantConfirmPassword" required>
+        </div>
+
+        <button type="submit" class="modal-btn">Create Consultant Account</button>
+      </form>
+
+      <!-- Owner Registration Form -->
+      <form class="register-form" id="ownerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ownerFirstName">First Name *</label>
+            <input type="text" id="ownerFirstName" required>
+          </div>
+          <div class="form-group">
+            <label for="ownerLastName">Last Name *</label>
+            <input type="text" id="ownerLastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ownerEmail">Email Address *</label>
+          <input type="email" id="ownerEmail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="ownerPhone">Phone Number</label>
+          <input type="tel" id="ownerPhone">
+        </div>
+
+        <div class="form-group">
+          <label for="ownerCompany">Company / Estate Portfolio</label>
+          <input type="text" id="ownerCompany" placeholder="e.g. Apex Living Group">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ownerPropertyCount">Properties Count</label>
+            <select id="ownerPropertyCount" required>
+              <option value="1-5">1 - 5 Properties</option>
+              <option value="6-20">6 - 20 Properties</option>
+              <option value="21-50">21 - 50 Properties</option>
+              <option value="50+">50+ Properties</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ownerLocation">Primary City / Region</label>
+            <input type="text" id="ownerLocation" placeholder="e.g. Dubai, London, New York, Mumbai">
+          </div>
+        </div>
+
+        <!-- ================= Overseas / Foreign Buyer Interactive Section ================= -->
+        <div class="foreign-buyer-card">
+          <div class="foreign-header-row">
+            <label class="foreign-title-label">
+              <i class="fas fa-globe-americas"></i> Are you an Overseas / Foreign Buyer or NRI?
+            </label>
+            <div class="foreign-toggle-pill">
+              <button type="button" id="isForeignerYes" onclick="setForeignBuyerMode(true)"
+                class="foreign-toggle-btn is-active">YES</button>
+              <button type="button" id="isForeignerNo" onclick="setForeignBuyerMode(false)"
+                class="foreign-toggle-btn">NO</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Foreign Buyer Expansion Fields (Enabled by Default or on YES) -->
+          <div id="foreignFieldsContainer">
+            <div class="form-row" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label for="residenceCountry" class="foreign-field-label">
+                  <i class="fas fa-map-marker-alt" style="color: #C28B52;"></i> Current Country of Residence *
+                </label>
+                <select id="residenceCountry" class="foreign-select">
+                  <option value="United Arab Emirates">United Arab Emirates (UAE)</option>
+                  <option value="United States" selected>United States of America</option>
+                  <option value="United Kingdom">United Kingdom (UK)</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Germany">Germany</option>
+                  <option value="France">France</option>
+                  <option value="Saudi Arabia">Saudi Arabia</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="Other">Other Foreign Country</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="targetPurchaseCountry" class="foreign-field-label">
+                  <i class="fas fa-landmark" style="color: #34D399;"></i> Where do you want to buy property / land? *
+                </label>
+                <select id="targetPurchaseCountry" class="foreign-select"
+                  style="border-color: rgba(52, 211, 153, 0.45) !important;">
+                  <option value="India" selected>India (Bangalore, Mumbai, Goa, Delhi-NCR)</option>
+                  <option value="United States">United States (New York, Miami, Aspen, LA)</option>
+                  <option value="United Arab Emirates">United Arab Emirates (Dubai, Abu Dhabi)</option>
+                  <option value="United Kingdom">United Kingdom (London, Surrey)</option>
+                  <option value="Global Portfolio">Multi-Country Global Portfolio</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 0.85rem;">
+              <label for="citizenshipStatus" class="foreign-field-label">
+                <i class="fas fa-passport" style="color: #C28B52;"></i> Citizenship / Legal Status
+              </label>
+              <select id="citizenshipStatus" class="foreign-select">
+                <option value="nri">Non-Resident Indian (NRI - Indian Passport abroad)</option>
+                <option value="oci">Overseas Citizen of India (OCI Card Holder)</option>
+                <option value="foreign_national">Foreign National (Non-Indian Citizen)</option>
+                <option value="foreign_corporate">Foreign Corporate / Institutional Fund</option>
+              </select>
+            </div>
+
+            <!-- Interactive Yes / No Overseas Buyer Questionnaire -->
+            <div class="foreign-quiz-card">
+              <div class="foreign-quiz-header">
+                <i class="fas fa-clipboard-check"></i> Remote Acquisition & Legal Readiness (Yes / No)
+              </div>
+
+              <!-- Hidden inputs to track answers if needed -->
+              <input type="hidden" id="quiz_need_poa" value="yes">
+              <input type="hidden" id="quiz_repatriate_funds" value="yes">
+              <input type="hidden" id="quiz_tax_lawyer" value="yes">
+
+              <!-- Question 1 -->
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-file-signature"></i>
+                  <div>
+                    <span>Do you require Embassy POA for remote paperless closing?</span>
+                    <small>Our legal desk arranges embassy consular attestation so you close without flying in.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active"
+                    onclick="toggleQuizOption(this, 'need_poa', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn"
+                    onclick="toggleQuizOption(this, 'need_poa', 'no')">NO</button>
+                </div>
+              </div>
+
+              <!-- Question 2 -->
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-exchange-alt"></i>
+                  <div>
+                    <span>Will you repatriate rental yields & capital gains abroad?</span>
+                    <small>100% compliant NRE/NRO repatriable banking setup with Form 15CA/CB documentation.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active"
+                    onclick="toggleQuizOption(this, 'repatriate_funds', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn"
+                    onclick="toggleQuizOption(this, 'repatriate_funds', 'no')">NO</button>
+                </div>
+              </div>
+
+              <!-- Question 3 -->
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-balance-scale"></i>
+                  <div>
+                    <span>Do you require a dedicated cross-border tax lawyer consultation?</span>
+                    <small>Pair with an accredited international real estate attorney before purchase.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active"
+                    onclick="toggleQuizOption(this, 'tax_lawyer', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn"
+                    onclick="toggleQuizOption(this, 'tax_lawyer', 'no')">NO</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subscriptionPlan">Subscription Tier</label>
+          <select id="subscriptionPlan" required>
+            <option value="Executive">Executive Member</option>
+            <option value="Presidential">Presidential Portfolio</option>
+            <option value="Enterprise">Enterprise Elite</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="ownerPassword">Password *</label>
+          <input type="password" id="ownerPassword" required>
+        </div>
+
+        <div class="form-group">
+          <label for="ownerConfirmPassword">Confirm Password *</label>
+          <input type="password" id="ownerConfirmPassword" required>
+        </div>
+
+        <button type="submit" class="modal-btn">Create Owner Account</button>
+      </form>
+
+      <div class="modal-footer">
+        Already registered? <a href="#" onclick="event.preventDefault(); switchToLogin();">Log in here</a>
+      </div>
+    </div>
+  </div>
+
+    <!-- Mobile Auto-Detection & Quick Action Bar (Auto-Detects Mobile vs Laptop) -->
+  <div class="mobile-action-bar" id="mobileActionBar">
+    <a href="/property" class="mobile-action-btn">
+      <i class="fas fa-building"></i>
+      <span>Properties</span>
+    </a>
+    <a href="tel:+918045678900" class="mobile-action-btn">
+      <i class="fas fa-phone-alt"></i>
+      <span>Call Desk</span>
+    </a>
+    <a href="https://wa.me/918045678900" target="_blank" class="mobile-action-btn primary">
+      <i class="fab fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+    <a href="#contact" class="mobile-action-btn">
+      <i class="fas fa-envelope-open-text"></i>
+      <span>Inquire</span>
+    </a>
+  </div>
+  <script src="/js/index.js"></script>
+  
+<!-- Core JavaScript Libraries -->
+  <script src="/js/auth.js?v=20261116_google_contrast_fix_03"></script>
+  <script src="/js/page-transition.js?v=20261015_13"></script>
+  <script src="/js/script.js?v=20261113_saved_drawer_fix_final"></script>
+  <script src="/js/international.js?v=20261113_chatbot_contrast_fix_01"></script>
+  <script src="/js/ai_chatbot.js?v=20261116_chatbot_text_visible_final"></script>
+</body>
+
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>System Settings - Prime Property Management</title>
+
+    <link rel="icon" type="image/png" href="/images/prime_logo.png">
+
+    <link rel="stylesheet" href="/css/index.css?v=20261023_emerald_slate_01">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <script src="/js/auth.js"></script>
+
+    <script src="/js/page-transition.js?v=20261015_13"></script>
+
+    <script src="/js/navigation.js"></script>
+
+  <link rel="stylesheet" href="/css/settings.css">
+
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261116_chatbot_text_visible_final">
+
+</head>
+
+<body class="dark-dashboard">
+
+    <!-- Sidebar Navigation -->
+
+    <nav class="sidebar">
+
+        <div class="sidebar-header">
+
+            <a href="/admin-dashboard" class="sidebar-logo">
+
+                <img src="/images/prime_logo.png" alt="Prime Property" style="height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));">
+
+                <span class="script-font">Prime Property</span>
+
+            </a>
+
+        </div>
+
+        
+
+        <div class="sidebar-nav">
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">Dashboard</div>
+
+                <a href="/admin-dashboard" data-nav="admin-dashboard" class="nav-item">
+
+                    <i class="fas fa-tachometer-alt"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="/analytics" data-nav="analytics" class="nav-item">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <span>Analytics</span>
+
+                </a>
+
+                <a href="/notifications" data-nav="notifications" class="nav-item">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span>Notifications</span>
+
+                    <span class="nav-badge">5</span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">Management</div>
+
+                <a href="/users" data-nav="users" class="nav-item">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>Users</span>
+
+                </a>
+
+                <a href="/admin-properties" data-nav="properties" class="nav-item">
+
+                    <i class="fas fa-building"></i>
+
+                    <span>Properties</span>
+
+                </a>
+
+                <a href="/owners" data-nav="owners" class="nav-item">
+
+                    <i class="fas fa-user-tie"></i>
+
+                    <span>Property Owners</span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">Financial</div>
+
+                <a href="/revenue" data-nav="revenue" class="nav-item">
+
+                    <i class="fas fa-dollar-sign"></i>
+
+                    <span>Revenue</span>
+
+                </a>
+
+                <a href="/invoices" data-nav="invoices" class="nav-item">
+
+                    <i class="fas fa-file-invoice"></i>
+
+                    <span>Invoices</span>
+
+                </a>
+
+                <a href="/reports" data-nav="reports" class="nav-item">
+
+                    <i class="fas fa-chart-pie"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">System</div>
+
+                <a href="/maintenance" data-nav="maintenance" class="nav-item">
+
+                    <i class="fas fa-tools"></i>
+
+                    <span>Maintenance</span>
+
+                </a>
+
+                <a href="/settings" data-nav="settings" class="nav-item active">
+
+                    <i class="fas fa-cog"></i>
+
+                    <span>Settings</span>
+
+                </a>
+
+                <a href="/security" data-nav="security" class="nav-item">
+
+                    <i class="fas fa-shield-alt"></i>
+
+                    <span>Security</span>
+
+                </a>
+
+                <a href="/backup" data-nav="backup" class="nav-item">
+
+                    <i class="fas fa-database"></i>
+
+                    <span>Backup</span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="nav-section logout-section" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.15);">
+
+                <div class="nav-section-title">Session</div>
+
+                <a href="#" onclick="logout(); return false;" class="nav-item logout-nav-item" style="color: #F87171 !important;">
+
+                    <i class="fas fa-sign-out-alt" style="color: #EF4444 !important;"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <!-- Top Navigation -->
+
+        <div class="top-nav">
+
+            <div class="nav-left">
+
+                <button class="mobile-menu-toggle" id="mobileSidebarToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+
+                <div class="breadcrumb">
+
+                    <a href="/admin-dashboard" data-nav="admin-dashboard">Dashboard</a>
+
+                    <i class="fas fa-chevron-right"></i>
+
+                    <span>System Settings</span>
+
+                </div>
+
+            </div>
+
+            <div class="nav-right">
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input type="text" placeholder="Search settings...">
+
+                </div>
+
+                <button class="notification-btn">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span class="notification-badge">5</span>
+
+                </button>
+
+                <div class="user-profile" id="userProfileDropdown" >
+
+                    <div class="user-avatar">AU</div>
+
+                    <div class="user-info">
+
+                        <div class="user-name">Admin User</div>
+
+                        <div class="user-role">System Administrator</div>
+
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                </div>
+
+
+
+                <!-- Direct Top Nav Logout Button -->
+
+                <button type="button" class="direct-logout-btn" onclick="logout()" title="Logout of your account" style="margin-left: 0.75rem;">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Page Content -->
+
+        <div class="page-content">
+
+            <div class="page-header settings-luxury-header">
+
+                <div class="page-header-main">
+
+                    <div class="header-prestige-tag">
+
+                        <i class="fas fa-shield-halved"></i> Executive Governance & Infrastructure
+
+                    </div>
+
+                    <h1 class="page-title">System <span class="script-font">Settings</span></h1>
+
+                    <p class="page-subtitle">Configure global property management parameters, high-security vault protocols, encrypted backups, and private communication channels.</p>
+
+                </div>
+
+
+
+                <div class="header-metrics-strip">
+
+                    <div class="header-metric-pill">
+
+                        <span class="metric-dot"></span>
+
+                        <div class="metric-text">
+
+                            <strong>Platform Status</strong>
+
+                            <span>Operational 99.98%</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="header-metric-pill">
+
+                        <i class="fas fa-database"></i>
+
+                        <div class="metric-text">
+
+                            <strong>Vault Storage</strong>
+
+                            <span>2.4 GB / 50 GB</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="header-metric-pill">
+
+                        <i class="fas fa-lock"></i>
+
+                        <div class="metric-text">
+
+                            <strong>Encryption</strong>
+
+                            <span>TLS 1.3 · AES-256</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Quick Filter Tabs -->
+
+            <div class="settings-category-nav">
+
+                <button class="category-tab active" data-category="all" onclick="filterSettingsCategory('all', this)">
+
+                    <i class="fas fa-layer-group"></i> All Modules
+
+                </button>
+
+                <button class="category-tab" data-category="general" onclick="filterSettingsCategory('general', this)">
+
+                    <i class="fas fa-sliders"></i> General & Localization
+
+                </button>
+
+                <button class="category-tab" data-category="notifications" onclick="filterSettingsCategory('notifications', this)">
+
+                    <i class="fas fa-bell"></i> Alerts & Dispatch
+
+                </button>
+
+                <button class="category-tab" data-category="security" onclick="filterSettingsCategory('security', this)">
+
+                    <i class="fas fa-fingerprint"></i> Vault & Access
+
+                </button>
+
+                <button class="category-tab" data-category="backup" onclick="filterSettingsCategory('backup', this)">
+
+                    <i class="fas fa-database"></i> Cloud Backups
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Settings Container -->
+
+            <div class="settings-container">
+
+                <!-- General Settings -->
+
+                <div class="settings-card" data-category="general">
+
+                    <div class="settings-header">
+
+                        <div class="settings-icon">
+
+                            <i class="fas fa-sliders"></i>
+
+                        </div>
+
+                        <div class="settings-header-text">
+
+                            <h3 class="settings-title">General & Brand Configuration</h3>
+
+                            <span class="settings-category-badge">Core Engine</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="settings-content">
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Organization Brand Name</div>
+
+                                <div class="setting-description">The master architectural brand shown on client decks, invoices, and watermark portals</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <input type="text" class="input-field" value="Prime Properties Global">
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Primary Portal Language</div>
+
+                                <div class="setting-description">Default localized interface for international buyers and investors</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <select class="input-field">
+
+                                    <option value="en">English (US / UK)</option>
+
+                                    <option value="fr">French (Français)</option>
+
+                                    <option value="de">German (Deutsch)</option>
+
+                                    <option value="ar">Arabic (العربية)</option>
+
+                                    <option value="es">Spanish (Español)</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Default Financial Timezone</div>
+
+                                <div class="setting-description">Audit clock used for legal contracts, bidding rounds, and escrow timestamps</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <select class="input-field">
+
+                                    <option value="UTC-5">Eastern Time (New York · UTC-5)</option>
+
+                                    <option value="UTC-8">Pacific Time (Los Angeles · UTC-8)</option>
+
+                                    <option value="UTC+0">Greenwich Mean Time (London · UTC+0)</option>
+
+                                    <option value="UTC+1">Central European (Zurich · UTC+1)</option>
+
+                                    <option value="UTC+4">Gulf Standard (Dubai · UTC+4)</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="settings-card-footer">
+
+                            <span class="settings-sync-status"><i class="fas fa-check-circle"></i> Synced with Central Cluster</span>
+
+                            <button class="save-btn">
+
+                                <i class="fas fa-save"></i>
+
+                                Save Parameters
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Notification Settings -->
+
+                <div class="settings-card" data-category="notifications">
+
+                    <div class="settings-header">
+
+                        <div class="settings-icon">
+
+                            <i class="fas fa-bell"></i>
+
+                        </div>
+
+                        <div class="settings-header-text">
+
+                            <h3 class="settings-title">Alerts & Private Dispatch</h3>
+
+                            <span class="settings-category-badge">Real-Time</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="settings-content">
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Executive Email Briefings</div>
+
+                                <div class="setting-description">Receive immediate encrypted emails when high-value offers or inquiries occur</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <div class="toggle-switch active"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">SMS / WhatsApp VIP Pings</div>
+
+                                <div class="setting-description">Direct hotline alert for verified $10M+ acquisitions and escrow releases</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <div class="toggle-switch active"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Browser Push Notifications</div>
+
+                                <div class="setting-description">Real-time desktop alerts for concierge appointment requests</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <div class="toggle-switch active"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="settings-card-footer">
+
+                            <span class="settings-sync-status"><i class="fas fa-signal"></i> 3 Endpoints Active</span>
+
+                            <button class="save-btn">
+
+                                <i class="fas fa-save"></i>
+
+                                Save Dispatch
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Security Settings -->
+
+                <div class="settings-card" data-category="security">
+
+                    <div class="settings-header">
+
+                        <div class="settings-icon">
+
+                            <i class="fas fa-shield-halved"></i>
+
+                        </div>
+
+                        <div class="settings-header-text">
+
+                            <h3 class="settings-title">Vault Security & Access</h3>
+
+                            <span class="settings-category-badge gold-tag">High Assurance</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="settings-content">
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Hardware Two-Factor (2FA)</div>
+
+                                <div class="setting-description">Enforce TOTP or FIDO2 hardware keys for all administrative and advisor access</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <div class="toggle-switch active"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Auto-Lock Inactivity Timeout</div>
+
+                                <div class="setting-description">Automatic workstation session termination after idle duration</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <input type="number" class="input-field" value="20" min="5" max="480">
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Cryptographic Password Standard</div>
+
+                                <div class="setting-description">Minimum complexity enforced for system-level users and escrow brokers</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <select class="input-field">
+
+                                    <option value="strong" selected>Institutional Grade (16+ chars, entropy check)</option>
+
+                                    <option value="medium">Standard Corporate (12+ chars, mixed)</option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                        <div class="settings-card-footer">
+
+                            <span class="settings-sync-status"><i class="fas fa-shield-alt"></i> ISO/IEC 27001 Standard</span>
+
+                            <button class="save-btn">
+
+                                <i class="fas fa-save"></i>
+
+                                Update Security
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Backup Settings -->
+
+                <div class="settings-card" data-category="backup">
+
+                    <div class="settings-header">
+
+                        <div class="settings-icon">
+
+                            <i class="fas fa-database"></i>
+
+                        </div>
+
+                        <div class="settings-header-text">
+
+                            <h3 class="settings-title">Cloud Backups & Cold Storage</h3>
+
+                            <span class="settings-category-badge">Immutable</span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="settings-content">
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Automated Geo-Redundant Snapshot</div>
+
+                                <div class="setting-description">Nightly encrypted snapshots replicated across Zurich and Northern Virginia</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <div class="toggle-switch active"></div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Legal Document Retention Cycle</div>
+
+                                <div class="setting-description">Retention window for signed escrow agreements and property blueprints (days)</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <input type="number" class="input-field" value="365" min="30" max="3650">
+
+                            </div>
+
+                        </div>
+
+                        <div class="setting-item">
+
+                            <div class="setting-info">
+
+                                <div class="setting-label">Latest Snapshot Health</div>
+
+                                <div class="setting-description">Verified checksum: SHA-256 e8f3...a9b2</div>
+
+                            </div>
+
+                            <div class="setting-control">
+
+                                <span class="backup-live-pill"><i class="fas fa-check-double"></i> Healthy · 42 mins ago</span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="settings-card-footer">
+
+                            <button class="backup-now-btn" onclick="triggerImmediateBackup(this)">
+
+                                <i class="fas fa-cloud-arrow-up"></i> Backup Now
+
+                            </button>
+
+                            <button class="save-btn">
+
+                                <i class="fas fa-save"></i>
+
+                                Save Schedule
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+  <script src="/js/settings.js"></script>
+
+</body>
+
+</html>

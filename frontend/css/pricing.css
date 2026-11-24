@@ -1,0 +1,548 @@
+body {
+  font-family: 'Manrope', sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+.page-hero {
+  position: relative;
+  min-height: 48vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 35%, rgba(7, 9, 12, 0.4) 0%, rgba(7, 9, 12, 0.85) 100%),
+    url('/images/hero_architecture.jpg') center center / cover no-repeat;
+  text-align: center;
+  padding: 6rem 1.5rem 5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.page-hero-title {
+  font-family: var(--font-serif);
+  font-size: 3.8rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.85);
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.page-hero-title span {
+  background: linear-gradient(135deg, #FFDF73 0%, #f78c0f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.page-hero-desc {
+  font-size: 1.2rem;
+  color: #CBD3DD;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.pricing-grid-luxury {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.25rem;
+  margin-top: 3.5rem;
+  align-items: stretch;
+}
+
+.pricing-card-luxury {
+  background: #FFFFFF !important;
+  border: 1.5px solid #D8DFD0 !important;
+  border-radius: var(--radius-md);
+  padding: 3.25rem 2.25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06) !important;
+  transition: all var(--transition-smooth);
+}
+
+.pricing-card-luxury:hover {
+  transform: translateY(-8px);
+  border-color: #C28B52 !important;
+  box-shadow: 0 20px 45px rgba(36, 48, 35, 0.12) !important;
+}
+
+.pricing-card-luxury.featured {
+  background: linear-gradient(180deg, #18221B 0%, #0D1612 100%) !important;
+  border: 1.5px solid #D4AF37 !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 25px rgba(212, 175, 55, 0.25) !important;
+  transform: scale(1.04);
+}
+
+.pricing-card-luxury.featured:hover {
+  transform: scale(1.04) translateY(-8px);
+  box-shadow: 0 35px 75px rgba(0, 0, 0, 0.55), 0 0 35px rgba(212, 175, 55, 0.35) !important;
+}
+
+.pricing-badge-luxury {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #F3E099 0%, #D4AF37 100%) !important;
+  color: #06080B !important;
+  padding: 0.35rem 1.45rem;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 800 !important;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5) !important;
+}
+
+/* Tier Titles */
+.pricing-card-luxury .tier-name {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  font-weight: 800 !important;
+  color: #0F172A !important;
+  margin-bottom: 0.5rem;
+}
+
+.pricing-card-luxury.featured .tier-name,
+div.pricing-card-luxury.featured h3.tier-name {
+  color: #FFFFFF !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Tier Descriptions */
+.pricing-card-luxury .tier-desc {
+  font-size: 0.95rem;
+  color: #475569 !important;
+  margin-bottom: 2rem;
+  min-height: 45px;
+  line-height: 1.6;
+}
+
+.pricing-card-luxury.featured .tier-desc,
+div.pricing-card-luxury.featured p.tier-desc {
+  color: #E2E8F0 !important;
+}
+
+/* Price Display Container */
+.pricing-card-luxury .tier-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  margin-bottom: 2.25rem;
+  border-bottom: 1px solid #E2E8F0 !important;
+  padding-bottom: 2rem;
+}
+
+.pricing-card-luxury.featured .tier-price {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Currency Symbol */
+.pricing-card-luxury .price-currency {
+  font-size: 1.5rem;
+  color: #9C6C38 !important;
+  font-weight: 800 !important;
+}
+
+.pricing-card-luxury.featured .price-currency {
+  color: #FFDF73 !important;
+}
+
+/* Price Amount */
+.pricing-card-luxury .price-amount {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 800 !important;
+  color: #0F172A !important; /* Pitch dark slate - 100% visible on white cards */
+  line-height: 1;
+}
+
+.pricing-card-luxury.featured .price-amount {
+  color: #FFFFFF !important; /* Crisp white - 100% visible on dark featured card */
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Price Period (/ month) */
+.pricing-card-luxury .price-period {
+  font-size: 0.92rem;
+  color: #64748B !important;
+  font-weight: 600 !important;
+}
+
+.pricing-card-luxury.featured .price-period {
+  color: #CBD5E1 !important;
+}
+
+/* Features List */
+.pricing-card-luxury .tier-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pricing-card-luxury .tier-features li {
+  font-size: 0.925rem;
+  color: #1E293B !important;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+}
+
+.pricing-card-luxury .tier-features li i {
+  color: #9C6C38 !important;
+  font-size: 0.85rem;
+}
+
+.pricing-card-luxury.featured .tier-features li {
+  color: #F1F5F9 !important;
+}
+
+.pricing-card-luxury.featured .tier-features li i {
+  color: #FFDF73 !important;
+}
+
+/* Buttons in Pricing Cards */
+.pricing-card-luxury .btn-outline {
+  border: 1.5px solid #0F172A !important;
+  color: #0F172A !important;
+  background: transparent !important;
+  font-weight: 700 !important;
+  transition: all 0.3s ease !important;
+}
+
+.pricing-card-luxury .btn-outline:hover {
+  background: #0F172A !important;
+  color: #FFFFFF !important;
+  border-color: #0F172A !important;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25) !important;
+}
+
+/* ==============================================================================
+   Detailed Privilege Matrix: Full Architectural Table Format
+   ============================================================================== */
+.comparison-container {
+  background: #0C1611 !important;
+  background: linear-gradient(180deg, #132219 0%, #0A120D 100%) !important;
+  border: 1.5px solid rgba(194, 139, 82, 0.45) !important;
+  border-radius: 20px !important;
+  overflow-x: auto !important;
+  margin-top: 3.5rem !important;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45), 0 0 25px rgba(212, 175, 55, 0.12) !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+/* Custom Scrollbar for Matrix */
+.comparison-container::-webkit-scrollbar {
+  height: 8px !important;
+}
+.comparison-container::-webkit-scrollbar-track {
+  background: #080D07 !important;
+  border-radius: 999px !important;
+}
+.comparison-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, #9C6C38 0%, #D4AF37 50%, #F6E7B0 100%) !important;
+  border-radius: 999px !important;
+}
+
+.luxury-table {
+  width: 100% !important;
+  min-width: 880px !important; /* Full table layout without squashing */
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin: 0 !important;
+}
+
+/* Table Column Widths & Layout */
+.luxury-table colgroup col:first-child { width: 34% !important; }
+.luxury-table colgroup col:not(:first-child) { width: 22% !important; }
+
+/* Table Headers */
+.luxury-table thead tr th {
+  background: #08100C !important;
+  padding: 1.6rem 1.4rem !important;
+  border-bottom: 2px solid rgba(194, 139, 82, 0.55) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+  vertical-align: bottom !important;
+}
+.luxury-table thead tr th:last-child {
+  border-right: none !important;
+}
+
+.matrix-th-feature {
+  text-align: left !important;
+  padding-left: 2rem !important;
+}
+.matrix-header-eyebrow {
+  display: block !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  color: #C28B52 !important;
+  margin-bottom: 0.35rem !important;
+}
+.matrix-header-title {
+  display: block !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+}
+
+.matrix-th-plan {
+  text-align: center !important;
+  position: relative !important;
+}
+.matrix-plan-name {
+  display: block !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 0.35rem !important;
+}
+.matrix-plan-price {
+  display: block !important;
+  font-size: 0.95rem !important;
+  font-weight: 700 !important;
+  color: #F6E7B0 !important;
+}
+.matrix-plan-price sub {
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  color: #94A3B8 !important;
+}
+.matrix-plan-badge {
+  display: inline-block !important;
+  background: linear-gradient(135deg, #F3E099 0%, #D4AF37 100%) !important;
+  color: #06080B !important;
+  font-size: 0.65rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  padding: 0.2rem 0.65rem !important;
+  border-radius: 999px !important;
+  margin-bottom: 0.45rem !important;
+}
+
+/* Category Section Rows */
+.matrix-category-row td {
+  background: rgba(194, 139, 82, 0.12) !important;
+  color: #F6E7B0 !important;
+  font-size: 0.8rem !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.5px !important;
+  padding: 0.85rem 2rem !important;
+  border-top: 1px solid rgba(194, 139, 82, 0.3) !important;
+  border-bottom: 1px solid rgba(194, 139, 82, 0.3) !important;
+  text-align: left !important;
+}
+.matrix-category-row td i {
+  color: #FFDF73 !important;
+  margin-right: 0.5rem !important;
+}
+
+/* Table Cells */
+.luxury-table tbody tr td {
+  padding: 1.15rem 1.4rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.5 !important;
+  vertical-align: middle !important;
+}
+.luxury-table tbody tr td:last-child {
+  border-right: none !important;
+}
+
+/* Row Hover */
+.luxury-table tbody tr:not(.matrix-category-row):hover td {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Feature Name Column (Col 1) */
+.matrix-feature-name {
+  text-align: left !important;
+  padding-left: 2rem !important;
+  color: #FFFFFF !important;
+  font-weight: 700 !important;
+}
+
+/* Plan Values (Cols 2, 3, 4) */
+.matrix-value {
+  text-align: center !important;
+  color: #E2E8F0 !important;
+  font-weight: 500 !important;
+}
+
+/* Highlight Featured Column (Presidential - Col 3) */
+.featured-col {
+  background: rgba(212, 175, 55, 0.05) !important;
+  border-left: 1px solid rgba(212, 175, 55, 0.25) !important;
+  border-right: 1px solid rgba(212, 175, 55, 0.25) !important;
+}
+.matrix-th-plan.featured-col {
+  background: rgba(18, 30, 22, 0.95) !important;
+  border-left: 1px solid rgba(212, 175, 55, 0.35) !important;
+  border-right: 1px solid rgba(212, 175, 55, 0.35) !important;
+}
+
+/* Checkmarks & Highlights */
+.check-gold {
+  color: #FFDF73 !important;
+  font-size: 1.1rem !important;
+  text-shadow: 0 0 10px rgba(255, 223, 115, 0.6) !important;
+}
+.matrix-highlight {
+  color: #FFDF73 !important;
+  font-weight: 700 !important;
+}
+.matrix-muted {
+  color: #94A3B8 !important;
+  font-style: italic !important;
+}
+
+/* Footer Action Row */
+.luxury-table tfoot tr td {
+  background: #08100C !important;
+  padding: 1.5rem 1.4rem !important;
+  border-top: 2px solid rgba(194, 139, 82, 0.4) !important;
+  border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
+  vertical-align: middle !important;
+}
+.luxury-table tfoot tr td:last-child {
+  border-right: none !important;
+}
+
+.matrix-footer-label {
+  text-align: left !important;
+  padding-left: 2rem !important;
+  color: #CBD5E1 !important;
+  font-weight: 600 !important;
+  font-size: 0.92rem !important;
+  letter-spacing: 0.5px !important;
+}
+
+.matrix-footer-cell {
+  text-align: center !important;
+}
+
+.btn-matrix-action {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  max-width: 170px !important;
+  padding: 0.65rem 1rem !important;
+  border-radius: 999px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.85px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.35) !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  color: #FFFFFF !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+}
+
+.btn-matrix-action:hover {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25) !important;
+}
+
+.btn-matrix-action.featured {
+  background: linear-gradient(135deg, #D4AF37 0%, #B38B59 100%) !important;
+  color: #0B1914 !important;
+  border-color: #D4AF37 !important;
+  box-shadow: 0 4px 18px rgba(212, 175, 55, 0.35) !important;
+}
+
+.btn-matrix-action.featured:hover {
+  background: #FFDF73 !important;
+  box-shadow: 0 6px 24px rgba(255, 223, 115, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+
+/* FAQ Cards Contrast */
+.faq-grid-luxury {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 3.5rem;
+}
+
+.faq-card-luxury {
+  background: #FFFFFF !important;
+  border: 1.5px solid #D8DFD0 !important;
+  border-radius: 16px !important;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+  transition: all var(--transition-smooth);
+}
+
+.faq-card-luxury:hover {
+  border-color: #C28B52 !important;
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(36, 48, 35, 0.12) !important;
+}
+
+.faq-question-luxury {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 700 !important;
+  color: #0F172A !important;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.faq-question-luxury i {
+  color: #9C6C38 !important;
+  font-size: 0.9rem;
+}
+
+.faq-answer-luxury {
+  font-size: 0.95rem;
+  color: #334155 !important;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .pricing-grid-luxury {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card-luxury.featured {
+    transform: none;
+  }
+
+  .faq-grid-luxury {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero-title {
+    font-size: 2.6rem;
+  }
+}
