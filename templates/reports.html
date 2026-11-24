@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reports - Prime Property Management</title>
+
+    <link rel="icon" type="image/png" href="/images/prime_logo.png">
+
+    <link rel="stylesheet" href="/css/index.css?v=20261023_emerald_slate_01">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    <script src="/js/auth.js"></script>
+
+    <script src="/js/page-transition.js?v=20261015_13"></script>
+
+    <script src="/js/navigation.js"></script>
+
+  <link rel="stylesheet" href="/css/reports.css">
+
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261116_chatbot_text_visible_final">
+
+</head>
+
+<body class="dark-dashboard">
+
+    <!-- Sidebar Navigation -->
+
+    <nav class="sidebar">
+
+        <div class="sidebar-header">
+
+            <a href="/admin-dashboard" class="sidebar-logo">
+
+                <img src="/images/prime_logo.png" alt="Prime Property" style="height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));">
+
+                <span class="script-font">Prime Property</span>
+
+            </a>
+
+        </div>
+
+        
+
+        <div class="sidebar-nav">
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">Dashboard</div>
+
+                <a href="/admin-dashboard" data-nav="admin-dashboard" class="nav-item">
+
+                    <i class="fas fa-tachometer-alt"></i>
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="/analytics" data-nav="analytics" class="nav-item">
+
+                    <i class="fas fa-chart-line"></i>
+
+                    <span>Analytics</span>
+
+                </a>
+
+                <a href="/notifications" data-nav="notifications" class="nav-item">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span>Notifications</span>
+
+                    <span class="nav-badge">5</span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">Management</div>
+
+                <a href="/users" data-nav="users" class="nav-item">
+
+                    <i class="fas fa-users"></i>
+
+                    <span>Users</span>
+
+                </a>
+
+                <a href="/admin-properties" data-nav="properties" class="nav-item">
+
+                    <i class="fas fa-building"></i>
+
+                    <span>Properties</span>
+
+                </a>
+
+                <a href="/owners" data-nav="owners" class="nav-item">
+
+                    <i class="fas fa-user-tie"></i>
+
+                    <span>Property Owners</span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">Financial</div>
+
+                <a href="/revenue" data-nav="revenue" class="nav-item">
+
+                    <i class="fas fa-dollar-sign"></i>
+
+                    <span>Revenue</span>
+
+                </a>
+
+                <a href="/invoices" data-nav="invoices" class="nav-item">
+
+                    <i class="fas fa-file-invoice"></i>
+
+                    <span>Invoices</span>
+
+                </a>
+
+                <a href="/reports" data-nav="reports" class="nav-item active">
+
+                    <i class="fas fa-chart-pie"></i>
+
+                    <span>Reports</span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="nav-section">
+
+                <div class="nav-section-title">System</div>
+
+                <a href="/maintenance" data-nav="maintenance" class="nav-item">
+
+                    <i class="fas fa-tools"></i>
+
+                    <span>Maintenance</span>
+
+                </a>
+
+                <a href="/settings" data-nav="settings" class="nav-item">
+
+                    <i class="fas fa-cog"></i>
+
+                    <span>Settings</span>
+
+                </a>
+
+                <a href="/security" data-nav="security" class="nav-item">
+
+                    <i class="fas fa-shield-alt"></i>
+
+                    <span>Security</span>
+
+                </a>
+
+                <a href="/backup" data-nav="backup" class="nav-item">
+
+                    <i class="fas fa-database"></i>
+
+                    <span>Backup</span>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="nav-section logout-section" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.15);">
+
+                <div class="nav-section-title">Session</div>
+
+                <a href="#" onclick="logout(); return false;" class="nav-item logout-nav-item" style="color: #F87171 !important;">
+
+                    <i class="fas fa-sign-out-alt" style="color: #EF4444 !important;"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <!-- Top Navigation -->
+
+        <div class="top-nav">
+
+            <div class="nav-left">
+
+                <button class="mobile-menu-toggle" id="mobileSidebarToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+
+                <div class="breadcrumb">
+
+                    <a href="/admin-dashboard" data-nav="admin-dashboard">Dashboard</a>
+
+                    <i class="fas fa-chevron-right"></i>
+
+                    <span>Reports</span>
+
+                </div>
+
+            </div>
+
+            <div class="nav-right">
+
+                <div class="search-box">
+
+                    <i class="fas fa-search"></i>
+
+                    <input type="text" placeholder="Search reports...">
+
+                </div>
+
+                <button class="notification-btn">
+
+                    <i class="fas fa-bell"></i>
+
+                    <span class="notification-badge">5</span>
+
+                </button>
+
+                <div class="user-profile" id="userProfileDropdown" >
+
+                    <div class="user-avatar">AU</div>
+
+                    <div class="user-info">
+
+                        <div class="user-name">Admin User</div>
+
+                        <div class="user-role">System Administrator</div>
+
+                    </div>
+
+                    
+
+                    
+
+                    
+
+                </div>
+
+
+
+                <!-- Direct Top Nav Logout Button -->
+
+                <button type="button" class="direct-logout-btn" onclick="logout()" title="Logout of your account" style="margin-left: 0.75rem;">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Page Content -->
+
+        <div class="page-content">
+
+            <div class="page-header">
+
+                <h1 class="page-title">Reports</h1>
+
+                <p class="page-subtitle">Generate and view comprehensive reports for your property management business</p>
+
+            </div>
+
+
+
+            <!-- Reports Container -->
+
+            <div class="reports-container">
+
+                <!-- Financial Report -->
+
+                <div class="report-card">
+
+                    <div class="report-header">
+
+                        <div class="report-icon">
+
+                            <i class="fas fa-dollar-sign"></i>
+
+                        </div>
+
+                        <h3 class="report-title">Financial Report</h3>
+
+                    </div>
+
+                    <div class="report-content">
+
+                        <p class="report-description">Comprehensive financial overview including revenue, expenses, and profit margins.</p>
+
+                        <div class="report-stats">
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">$2.8M</div>
+
+                                <div class="stat-label">Total Revenue</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">$1.2M</div>
+
+                                <div class="stat-label">Total Expenses</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="report-actions">
+
+                            <button class="action-btn btn-primary">
+
+                                <i class="fas fa-download"></i>
+
+                                Generate
+
+                            </button>
+
+                            <button class="action-btn btn-secondary">
+
+                                <i class="fas fa-eye"></i>
+
+                                Preview
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Property Performance Report -->
+
+                <div class="report-card">
+
+                    <div class="report-header">
+
+                        <div class="report-icon">
+
+                            <i class="fas fa-building"></i>
+
+                        </div>
+
+                        <h3 class="report-title">Property Performance</h3>
+
+                    </div>
+
+                    <div class="report-content">
+
+                        <p class="report-description">Detailed analysis of property performance, occupancy rates, and rental income.</p>
+
+                        <div class="report-stats">
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">94%</div>
+
+                                <div class="stat-label">Occupancy Rate</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">247</div>
+
+                                <div class="stat-label">Total Properties</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="report-actions">
+
+                            <button class="action-btn btn-primary">
+
+                                <i class="fas fa-download"></i>
+
+                                Generate
+
+                            </button>
+
+                            <button class="action-btn btn-secondary">
+
+                                <i class="fas fa-eye"></i>
+
+                                Preview
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Tenant Report -->
+
+                <div class="report-card">
+
+                    <div class="report-header">
+
+                        <div class="report-icon">
+
+                            <i class="fas fa-users"></i>
+
+                        </div>
+
+                        <h3 class="report-title">Tenant Report</h3>
+
+                    </div>
+
+                    <div class="report-content">
+
+                        <p class="report-description">Tenant demographics, payment history, and lease renewal statistics.</p>
+
+                        <div class="report-stats">
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">1,847</div>
+
+                                <div class="stat-label">Active Buyers</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">92%</div>
+
+                                <div class="stat-label">Payment Rate</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="report-actions">
+
+                            <button class="action-btn btn-primary">
+
+                                <i class="fas fa-download"></i>
+
+                                Generate
+
+                            </button>
+
+                            <button class="action-btn btn-secondary">
+
+                                <i class="fas fa-eye"></i>
+
+                                Preview
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Maintenance Report -->
+
+                <div class="report-card">
+
+                    <div class="report-header">
+
+                        <div class="report-icon">
+
+                            <i class="fas fa-tools"></i>
+
+                        </div>
+
+                        <h3 class="report-title">Maintenance Report</h3>
+
+                    </div>
+
+                    <div class="report-content">
+
+                        <p class="report-description">Maintenance requests, completion times, and cost analysis.</p>
+
+                        <div class="report-stats">
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">247</div>
+
+                                <div class="stat-label">Total Requests</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">2.3</div>
+
+                                <div class="stat-label">Avg Days</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="report-actions">
+
+                            <button class="action-btn btn-primary">
+
+                                <i class="fas fa-download"></i>
+
+                                Generate
+
+                            </button>
+
+                            <button class="action-btn btn-secondary">
+
+                                <i class="fas fa-eye"></i>
+
+                                Preview
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Owner Report -->
+
+                <div class="report-card">
+
+                    <div class="report-header">
+
+                        <div class="report-icon">
+
+                            <i class="fas fa-user-tie"></i>
+
+                        </div>
+
+                        <h3 class="report-title">Owner Report</h3>
+
+                    </div>
+
+                    <div class="report-content">
+
+                        <p class="report-description">Property owner performance, portfolio analysis, and revenue distribution.</p>
+
+                        <div class="report-stats">
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">156</div>
+
+                                <div class="stat-label">Total Owners</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">$18.2K</div>
+
+                                <div class="stat-label">Avg Revenue</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="report-actions">
+
+                            <button class="action-btn btn-primary">
+
+                                <i class="fas fa-download"></i>
+
+                                Generate
+
+                            </button>
+
+                            <button class="action-btn btn-secondary">
+
+                                <i class="fas fa-eye"></i>
+
+                                Preview
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Custom Report -->
+
+                <div class="report-card">
+
+                    <div class="report-header">
+
+                        <div class="report-icon">
+
+                            <i class="fas fa-chart-pie"></i>
+
+                        </div>
+
+                        <h3 class="report-title">Custom Report</h3>
+
+                    </div>
+
+                    <div class="report-content">
+
+                        <p class="report-description">Create custom reports with your own parameters and data filters.</p>
+
+                        <div class="report-stats">
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">12</div>
+
+                                <div class="stat-label">Templates</div>
+
+                            </div>
+
+                            <div class="stat-item">
+
+                                <div class="stat-value">5</div>
+
+                                <div class="stat-label">Saved</div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="report-actions">
+
+                            <button class="action-btn btn-primary">
+
+                                <i class="fas fa-plus"></i>
+
+                                Create
+
+                            </button>
+
+                            <button class="action-btn btn-secondary">
+
+                                <i class="fas fa-list"></i>
+
+                                Templates
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+  <script src="/js/reports.js"></script>
+
+</body>
+
+</html>

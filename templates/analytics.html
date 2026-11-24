@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Analytics Dashboard - Prime Property Management</title>
+
+
+
+    <link rel="icon" type="image/png" href="/images/prime_logo.png">
+
+
+
+    <link rel="stylesheet" href="/css/index.css?v=20261023_emerald_slate_01">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+    <script src="/js/auth.js"></script>
+
+
+
+    <script src="/js/page-transition.js?v=20261015_13"></script>
+
+
+
+    <script src="/js/navigation.js"></script>
+
+
+
+  <link rel="stylesheet" href="/css/analytics.css">
+
+
+
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261116_chatbot_text_visible_final">
+
+
+
+</head>
+
+
+
+<body class="dark-dashboard">
+
+
+
+    <!-- Sidebar Navigation -->
+
+
+
+    <nav class="sidebar">
+
+
+
+        <div class="sidebar-header">
+
+
+
+            <a href="/admin-dashboard" class="sidebar-logo">
+
+
+
+                <img src="/images/prime_logo.png" alt="Prime Property" style="height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));">
+
+
+
+                <span class="script-font">Prime Property</span>
+
+
+
+            </a>
+
+
+
+        </div>
+
+
+
+        
+
+
+
+        <div class="sidebar-nav">
+
+
+
+            <div class="nav-section">
+
+
+
+                <div class="nav-section-title">Dashboard</div>
+
+
+
+                <a href="/admin-dashboard" data-nav="admin-dashboard" class="nav-item">
+
+
+
+                <i class="fas fa-tachometer-alt"></i>
+
+
+
+                <span>Dashboard</span>
+
+
+
+            </a>
+
+
+
+                <a href="/analytics" data-nav="analytics" class="nav-item active">
+
+
+
+                <i class="fas fa-chart-line"></i>
+
+
+
+                <span>Analytics</span>
+
+
+
+            </a>
+
+
+
+                <a href="/notifications" data-nav="notifications" class="nav-item">
+
+
+
+                <i class="fas fa-bell"></i>
+
+
+
+                <span>Notifications</span>
+
+
+
+                    <span class="nav-badge">5</span>
+
+
+
+            </a>
+
+
+
+            </div>
+
+
+
+            
+
+
+
+            <div class="nav-section">
+
+
+
+            <div class="nav-section-title">Management</div>
+
+
+
+                <a href="/users" data-nav="users" class="nav-item">
+
+
+
+                <i class="fas fa-users"></i>
+
+
+
+                <span>Users</span>
+
+
+
+            </a>
+
+
+
+                <a href="/admin-properties" data-nav="properties" class="nav-item">
+
+
+
+                <i class="fas fa-building"></i>
+
+
+
+                <span>Properties</span>
+
+
+
+            </a>
+
+
+
+                <a href="/owners" data-nav="owners" class="nav-item">
+
+
+
+                <i class="fas fa-user-tie"></i>
+
+
+
+                <span>Property Owners</span>
+
+
+
+            </a>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="nav-section">
+
+
+
+                <div class="nav-section-title">Services</div>
+
+
+
+                <a href="/service-requests" data-nav="service-requests" class="nav-item">
+
+
+
+                    <i class="fas fa-concierge-bell"></i>
+
+
+
+                    <span>Service Requests</span>
+
+
+
+                </a>
+
+
+
+                <a href="/maintenance" data-nav="maintenance" class="nav-item">
+
+
+
+                    <i class="fas fa-tools"></i>
+
+
+
+                    <span>Maintenance</span>
+
+
+
+                </a>
+
+
+
+    </div>
+
+
+
+            <div class="nav-section logout-section" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.15);">
+
+
+
+                <div class="nav-section-title">Session</div>
+
+
+
+                <a href="#" onclick="logout(); return false;" class="nav-item logout-nav-item" style="color: #F87171 !important;">
+
+
+
+                    <i class="fas fa-sign-out-alt" style="color: #EF4444 !important;"></i>
+
+
+
+                    <span>Logout</span>
+
+
+
+                </a>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </nav>
+
+
+
+
+
+
+
+    <!-- Main Content -->
+
+
+
+    <div class="main-content">
+
+
+
+        <!-- Top Navigation -->
+
+
+
+        <div class="top-nav">
+
+
+
+            <div class="nav-left">
+
+
+
+                <button class="mobile-menu-toggle" id="mobileSidebarToggle" aria-label="Toggle Menu">
+
+
+
+                    <i class="fas fa-bars"></i>
+
+
+
+                </button>
+
+
+
+                <div class="breadcrumb">
+
+
+
+                    <a href="/admin-dashboard" data-nav="admin-dashboard">Dashboard</a>
+
+
+
+                    <i class="fas fa-chevron-right"></i>
+
+
+
+                    <span>Analytics</span>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="nav-right">
+
+
+
+                <div class="search-box">
+
+
+
+                    <i class="fas fa-search"></i>
+
+
+
+                    <input type="text" placeholder="Search analytics...">
+
+
+
+                </div>
+
+
+
+                <button class="notification-btn" id="notificationBtn">
+
+
+
+                    <i class="fas fa-bell"></i>
+
+
+
+                    <span class="notification-badge" id="notificationBadge">0</span>
+
+
+
+                </button>
+
+
+
+                
+
+
+
+                <!-- Notification Panel -->
+
+
+
+                <div class="notification-panel" id="notificationPanel">
+
+
+
+                    <div class="notification-header">
+
+
+
+                        <h3>Notifications</h3>
+
+
+
+                        <div class="notification-actions">
+
+
+
+                            <button class="mark-all-read" id="markAllReadBtn">Mark All Read</button>
+
+
+
+                            <button class="close-panel" id="closePanelBtn">
+
+
+
+                                <i class="fas fa-times"></i>
+
+
+
+                            </button>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="notification-list" id="notificationList">
+
+
+
+                        <div class="notification-empty">
+
+
+
+                            <i class="fas fa-spinner fa-spin"></i>
+
+
+
+                            <p>Loading notifications...</p>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="notification-footer">
+
+
+
+                        <a href="/notifications" class="view-all-notifications">View All Notifications</a>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="user-profile" id="userProfileDropdown" style="cursor: default;">
+
+
+
+                    <div class="user-avatar">
+
+
+
+                        <i class="fas fa-user-shield"></i>
+
+
+
+                    </div>
+
+
+
+                    <div class="user-info">
+
+
+
+                        <div class="user-name">Loading...</div>
+
+
+
+                        <div class="user-role">System Administrator</div>
+
+
+
+                    </div>
+
+
+
+                    
+
+
+
+                </div>
+
+
+
+                
+
+
+
+                
+
+
+
+                <!-- Direct Top Nav Logout Button -->
+
+                <button type="button" class="direct-logout-btn" onclick="logout()" title="Logout of your account" style="margin-left: 0.75rem;">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Analytics Content -->
+
+
+
+        <div class="analytics-content">
+
+
+
+            <div class="page-header">
+
+
+
+                <h1 class="page-title">Analytics Dashboard</h1>
+
+
+
+                <p class="page-subtitle">Comprehensive insights into your property management performance</p>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Analytics Grid -->
+
+
+
+            <div class="analytics-grid">
+
+
+
+                <!-- Property Distribution -->
+
+
+
+                <div class="analytics-card">
+
+
+
+                    <div class="card-header">
+
+
+
+                        <div class="card-header-content">
+
+
+
+                            <div class="card-title-section">
+
+
+
+                                <i class="fas fa-chart-pie card-icon"></i>
+
+
+
+                                <h3 class="card-title">Property Distribution</h3>
+
+
+
+                            </div>
+
+
+
+                            <div class="card-actions">
+
+
+
+                                <button class="card-action-btn">
+
+
+
+                                    <i class="fas fa-download"></i>
+
+
+
+                                </button>
+
+
+
+                                <button class="card-action-btn">
+
+
+
+                                    <i class="fas fa-expand"></i>
+
+
+
+                                </button>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="card-content">
+
+
+
+                        <div class="chart-container">
+
+
+
+                            <canvas id="propertyChart"></canvas>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- Maintenance Analytics -->
+
+
+
+                <div class="analytics-card">
+
+
+
+                    <div class="card-header">
+
+
+
+                        <div class="card-header-content">
+
+
+
+                            <div class="card-title-section">
+
+
+
+                                <i class="fas fa-tools card-icon"></i>
+
+
+
+                                <h3 class="card-title">Maintenance Analytics</h3>
+
+
+
+                            </div>
+
+
+
+                            <div class="card-actions">
+
+
+
+                                <button class="card-action-btn">
+
+
+
+                                    <i class="fas fa-download"></i>
+
+
+
+                                </button>
+
+
+
+                                <button class="card-action-btn">
+
+
+
+                                    <i class="fas fa-expand"></i>
+
+
+
+                                </button>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="card-content">
+
+
+
+                        <div class="chart-container">
+
+
+
+                            <canvas id="maintenanceChart"></canvas>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- Payment Analytics -->
+
+
+
+                <div class="analytics-card">
+
+
+
+                    <div class="card-header">
+
+
+
+                        <div class="card-header-content">
+
+
+
+                            <div class="card-title-section">
+
+
+
+                                <i class="fas fa-credit-card card-icon"></i>
+
+
+
+                                <h3 class="card-title">Payment Analytics</h3>
+
+
+
+                            </div>
+
+
+
+                            <div class="card-actions">
+
+
+
+                                <button class="card-action-btn">
+
+
+
+                                    <i class="fas fa-download"></i>
+
+
+
+                                </button>
+
+
+
+                                <button class="card-action-btn">
+
+
+
+                                    <i class="fas fa-expand"></i>
+
+
+
+                                </button>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="card-content">
+
+
+
+                        <div class="chart-container">
+
+
+
+                            <canvas id="paymentChart"></canvas>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- Top Performing Consultants -->
+
+
+
+                <div class="analytics-card consultants-card-wide">
+
+
+
+                    <div class="card-header">
+
+
+
+                        <div class="card-header-content">
+
+
+
+                            <div class="card-title-section">
+
+
+
+                                <i class="fas fa-user-tie card-icon"></i>
+
+
+
+                                <h3 class="card-title">Top Performing Consultants</h3>
+
+
+
+                            </div>
+
+
+
+                            <div class="card-actions">
+
+
+
+                                <button class="card-action-btn">
+
+
+
+                                    <i class="fas fa-download"></i>
+
+
+
+                                </button>
+
+
+
+                                <button class="card-action-btn">
+
+
+
+                                    <i class="fas fa-expand"></i>
+
+
+
+                                </button>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="card-content">
+
+
+
+                        <div class="table-container">
+
+
+
+<table class="data-table consultants-table">
+
+
+
+                            <thead>
+
+
+
+                                <tr>
+
+
+
+                                    <th>Consultant</th>
+
+
+
+                                    <th>Clients</th>
+
+
+
+                                    <th>Leads</th>
+
+
+
+                                    <th>Conversion Rate</th>
+
+
+
+                                    <th>Specialization</th>
+
+
+
+                                    <th>Status</th>
+
+
+
+                                </tr>
+
+
+
+                            </thead>
+
+
+
+                            <tbody id="consultantsTableBody">
+
+
+
+                                <tr>
+
+
+
+                                    <td colspan="6" style="text-align: center; padding: 2rem;">
+
+
+
+                                        <i class="fas fa-spinner fa-spin" style="margin-right: 0.5rem;"></i>
+
+
+
+                                        Loading consultants...
+
+
+
+                                    </td>
+
+
+
+                                </tr>
+
+
+
+                            </tbody>
+
+
+
+                        </table>
+
+
+
+</div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+  <script src="/js/analytics.js"></script>
+
+
+
+</body>
+
+
+
+</html>
+
+
+
+
+
+

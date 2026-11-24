@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create an Account | Prime Properties Elite Portfolio</title>
+  <meta name="description" content="Create your Prime Properties private investor portal, property owner dashboard, or client account.">
+  <link rel="icon" type="image/png" href="/images/prime_logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/index.css?v=20261116_google_btn_small_01">
+  <link rel="stylesheet" href="/css/login.css?v=20261116_google_btn_small_01">
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261116_google_btn_small_01">
+</head>
+<body class="login-page-body">
+
+  <!-- ================= Navigation Header ================= -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo" aria-label="Prime Property Real Estate">
+        <img src="/images/prime_logo.png" alt="Prime Property Real Estate" class="brand-main-logo">
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/property" class="nav-link">Properties</a></li>
+          <li><a href="/foreign-investors" class="nav-link" style="color: var(--color-bronze-dark, #9C6C38); font-weight: 700;"><i class="fas fa-passport"></i> Foreign Buyers</a></li>
+          <li><a href="/investment-dashboard" class="nav-link"><i class="fas fa-chart-pie"></i> Investments</a></li>
+          <li><a href="/service" class="nav-link">Services</a></li>
+          <li><a href="/about" class="nav-link">About Us</a></li>
+          <li><a href="/pricing" class="nav-link">Pricing</a></li>
+          <li><a href="/#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="/" class="nav-link" style="font-weight: 600;">
+          <i class="fas fa-arrow-left"></i> Return Home
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= Login Main Section ================= -->
+  <main class="login-main-section">
+    <div class="login-card-wrapper">
+      <div class="login-card">
+        <div class="login-card-header">
+          <img src="/images/prime_logo.png" alt="Prime Properties" class="login-brand-logo">
+          <h1 class="login-card-title" id="authMainTitle" style="color: #FFFFFF !important; font-family: 'Playfair Display', Georgia, serif; font-size: 2.15rem; font-weight: 700; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);">Create an <span style="background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #D4AF37;">Account</span></h1>
+          <p class="login-card-subtitle" id="authMainSubtitle" style="color: #CBD5E1 !important; font-size: 0.92rem; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);">Join Prime Properties private investor network and client portal</p>
+        </div>
+
+        <!-- Mode Switcher Tabs (Sign In vs Create Account) -->
+        <div class="auth-mode-tabs" id="authModeTabs">
+          <button type="button" class="auth-mode-tab" id="tabSignInBtn" onclick="switchAuthMode('login')">
+            <i class="fas fa-sign-in-alt"></i> Sign In
+          </button>
+          <button type="button" class="auth-mode-tab active" id="tabSignUpBtn" onclick="switchAuthMode('register')">
+            <i class="fas fa-user-plus"></i> Create Account
+          </button>
+        </div>
+
+        <!-- Alert Notification for Errors -->
+        <div class="login-error-alert" id="loginErrorAlert"></div>
+
+        <!-- ================= Sign In Section ================= -->
+        <div id="loginSection" style="display: none;">
+          <!-- Google Sign-In Option -->
+          <button type="button" class="google-auth-btn" id="googleLoginBtn" onclick="handleGoogleAuth('Sign In')">
+            <svg class="google-svg-icon" viewBox="0 0 24 24" width="20" height="20">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Continue with Google</span>
+          </button>
+
+          <div class="auth-divider">
+            <span>OR SIGN IN WITH EMAIL</span>
+          </div>
+
+          <form class="login-form" id="loginForm" autocomplete="off">
+            <div class="login-form-group">
+              <label for="email" style="color: var(--login-gold, #D4AF37) !important;">Email Address</label>
+              <div class="login-input-wrapper">
+                <input type="email" id="email" class="login-input" placeholder="e.g. admin@primeproperties.com" required autocomplete="off">
+                <i class="fas fa-envelope login-input-icon"></i>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label for="password" style="color: var(--login-gold, #D4AF37) !important;">Password</label>
+              <div class="login-input-wrapper">
+                <input type="password" id="password" class="login-input" placeholder="Enter your secret password" required autocomplete="new-password">
+                <i class="fas fa-lock login-input-icon"></i>
+                <button type="button" class="login-password-toggle" id="togglePassword" aria-label="Toggle password visibility" title="Show password">
+                  <i class="fas fa-eye"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Remember Me, Show Password, & Forgot Password Row -->
+            <div class="login-options-wrapper" style="display: flex; justify-content: space-between; align-items: flex-start; margin-top: 0.35rem; margin-bottom: 1.6rem; gap: 1rem;">
+              <div class="login-checkbox-group" style="display: flex; flex-direction: column; gap: 0.65rem; align-items: flex-start;">
+                <label class="login-checkbox-label" for="rememberMe" style="display: inline-flex; align-items: center; gap: 0.55rem; cursor: pointer; margin: 0; padding: 0; user-select: none;">
+                  <input type="checkbox" id="rememberMe" class="login-checkbox-input" style="width: 18px; min-width: 18px; max-width: 18px; height: 18px; min-height: 18px; max-height: 18px; accent-color: #D4AF37; cursor: pointer; margin: 0; padding: 0; appearance: checkbox; -webkit-appearance: checkbox; flex-shrink: 0;">
+                  <span class="login-checkbox-text" style="color: var(--login-gold, #D4AF37); font-size: 0.9rem; font-weight: 500; text-transform: none; letter-spacing: normal; line-height: 1.2; display: inline-block;">Remember me</span>
+                </label>
+                <label class="login-checkbox-label" for="showPasswordCheckbox" id="showPasswordLabel" title="Show or hide password" style="display: inline-flex; align-items: center; gap: 0.55rem; cursor: pointer; margin: 0; padding: 0; user-select: none;">
+                  <input type="checkbox" id="showPasswordCheckbox" class="login-checkbox-input" style="width: 18px; min-width: 18px; max-width: 18px; height: 18px; min-height: 18px; max-height: 18px; accent-color: #D4AF37; cursor: pointer; margin: 0; padding: 0; appearance: checkbox; -webkit-appearance: checkbox; flex-shrink: 0;">
+                  <span class="login-checkbox-text" style="color: var(--login-gold, #D4AF37); font-size: 0.9rem; font-weight: 500; text-transform: none; letter-spacing: normal; line-height: 1.2; display: inline-block;">Show password</span>
+                </label>
+              </div>
+              <div class="login-forgot-wrapper" style="padding-top: 0.15rem; flex-shrink: 0;">
+                <a href="mailto:concierge@primeproperties.com?subject=Password%20Reset%20Request" class="login-forgot-link" style="color: #D4AF37; font-size: 0.88rem; font-weight: 600; text-decoration: none;">Forgot password?</a>
+              </div>
+            </div>
+
+            <button type="submit" class="login-submit-btn" id="loginSubmitBtn">
+              <span>Sign In to Portfolio</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+
+          <!-- Quick Demo Credentials for Fast Testing -->
+          <div class="demo-accounts-card">
+            <div class="demo-accounts-title">
+              <span><i class="fas fa-key"></i> Quick Fill Demo Accounts</span>
+              <small>1-Click Test</small>
+            </div>
+            <div class="demo-chip-group">
+              <button type="button" class="demo-chip" onclick="fillDemoCredentials('admin@primeproperties.com', 'admin123')">
+                <i class="fas fa-shield-alt"></i> Admin: admin@primeproperties.com / admin123
+              </button>
+              <button type="button" class="demo-chip" onclick="fillDemoCredentials('ravihr08@gmail.com', '123456')">
+                <i class="fas fa-user-tie"></i> Owner: ravihr08@gmail.com / 123456
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= Register / Create Account Section ================= -->
+        <div id="registerSection" style="display: block;">
+          <!-- Google Register Option -->
+          <button type="button" class="google-auth-btn" id="googleRegisterBtn" onclick="handleGoogleAuth('Sign Up')">
+            <svg class="google-svg-icon" viewBox="0 0 24 24" width="20" height="20">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+            </svg>
+            <span>Sign up with Google</span>
+          </button>
+
+          <div class="auth-divider">
+            <span>OR REGISTER WITH DETAILS</span>
+          </div>
+
+          <form class="login-form" id="pageRegisterForm">
+            <!-- Account Role Selection -->
+            <div class="user-type-selector" style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem;">
+              <button type="button" class="demo-chip active" id="regBuyerBtn" onclick="selectRegisterType('buyer')" style="flex: 1; text-align: center; padding: 0.55rem; font-weight: 700; background: #C28B52; color: #FFFFFF;">
+                <i class="fas fa-key"></i> Buyer
+              </button>
+              <button type="button" class="demo-chip" id="regOwnerBtn" onclick="selectRegisterType('owner')" style="flex: 1; text-align: center; padding: 0.55rem; font-weight: 700;">
+                <i class="fas fa-home"></i> Owner
+              </button>
+              <button type="button" class="demo-chip" id="regConsultantBtn" onclick="selectRegisterType('consultant')" style="flex: 1; text-align: center; padding: 0.55rem; font-weight: 700;">
+                <i class="fas fa-user-tie"></i> Consultant
+              </button>
+            </div>
+            <input type="hidden" id="registerUserType" value="buyer">
+
+            <div style="display: flex; gap: 0.85rem; margin-bottom: 0.85rem;">
+              <div class="login-form-group" style="flex: 1; margin-bottom: 0;">
+                <label for="regFirstName" style="color: var(--login-gold, #D4AF37) !important;">First Name *</label>
+                <div class="login-input-wrapper">
+                  <input type="text" id="regFirstName" class="login-input" style="padding-left: 1rem !important;" placeholder="First name" required>
+                </div>
+              </div>
+              <div class="login-form-group" style="flex: 1; margin-bottom: 0;">
+                <label for="regLastName" style="color: var(--login-gold, #D4AF37) !important;">Last Name *</label>
+                <div class="login-input-wrapper">
+                  <input type="text" id="regLastName" class="login-input" style="padding-left: 1rem !important;" placeholder="Last name" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label for="regEmail" style="color: var(--login-gold, #D4AF37) !important;">Email Address *</label>
+              <div class="login-input-wrapper">
+                <input type="email" id="regEmail" class="login-input" placeholder="e.g. client@primeproperties.com" required>
+                <i class="fas fa-envelope login-input-icon"></i>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label for="regPhone" style="color: var(--login-gold, #D4AF37) !important;">Phone Number</label>
+              <div class="login-input-wrapper">
+                <input type="tel" id="regPhone" class="login-input" placeholder="+91 / +1 (555) 000-0000">
+                <i class="fas fa-phone login-input-icon"></i>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label for="regPassword" style="color: var(--login-gold, #D4AF37) !important;">Password *</label>
+              <div class="login-input-wrapper">
+                <input type="password" id="regPassword" class="login-input" placeholder="At least 6 characters" required minlength="6">
+                <i class="fas fa-lock login-input-icon"></i>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label for="regConfirmPassword" style="color: var(--login-gold, #D4AF37) !important;">Confirm Password *</label>
+              <div class="login-input-wrapper">
+                <input type="password" id="regConfirmPassword" class="login-input" placeholder="Re-enter password" required minlength="6">
+                <i class="fas fa-check-double login-input-icon"></i>
+              </div>
+            </div>
+
+            <button type="submit" class="login-submit-btn" id="regSubmitBtn" style="margin-top: 1.5rem;">
+              <span>Create Estate Account</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="login-card-footer" id="authFooterNote" style="color: var(--login-gold, #D4AF37) !important;">
+          Already have an estate account? <a href="/login" onclick="switchAuthMode('login')" style="color: var(--login-gold-bright, #FFDF73) !important; font-weight: 700; text-decoration: underline;">Sign In here</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- External JavaScript Files -->
+  <script src="/js/auth.js?v=20261116_google_contrast_fix_03"></script>
+  <script src="/js/page-transition.js?v=20261113_google_oauth_01"></script>
+  <script src="/js/login.js?v=20261116_join_prime_01"></script>
+  <script src="/js/international.js?v=20261116_chatbot_fix_02"></script>
+  <script src="/js/ai_chatbot.js?v=20261116_chatbot_text_visible_final"></script>
+</body>
+</html>
+

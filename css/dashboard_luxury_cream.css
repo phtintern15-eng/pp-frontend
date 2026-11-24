@@ -1,0 +1,483 @@
+/* ==========================================================================
+   PRIME PROPERTY - LUXURY CREAM & FOREST SAGE PROFILE / DASHBOARD THEME
+   Unified across Buyer (Client), Owner, and Consultant Portals
+   ========================================================================== */
+
+/* 1. Global Reset & Typography */
+html, body {
+  background-color: #FBFBF9 !important;
+  background: #FBFBF9 !important;
+  color: #232C22 !important;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif !important;
+}
+
+body::before,
+body::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* 2. Top Navigation Bar */
+nav,
+.site-header {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border-bottom: 1.5px solid #EAE5DC !important;
+  box-shadow: 0 4px 20px rgba(25, 27, 31, 0.04) !important;
+}
+
+nav .brand-logo,
+.site-header .brand-logo {
+  margin-left: -2.5rem !important;
+  margin-right: auto !important;
+}
+
+nav .nav-links li a,
+.site-header .nav-links li a {
+  color: #232C22 !important;
+  font-weight: 600 !important;
+}
+
+nav .nav-links li a:hover,
+.site-header .nav-links li a:hover {
+  color: #C28B52 !important;
+}
+
+nav .nav-links li a.active,
+.site-header .nav-links li a.active {
+  color: #9C6C38 !important;
+  font-weight: 700 !important;
+  border-bottom: 2px solid #C28B52 !important;
+}
+
+/* User Profile Badge in Top Nav */
+.user-profile,
+.nav-user-container .user-profile {
+  background: #F3F5EE !important;
+  border: 1.5px solid #EAE5DC !important;
+  color: #232C22 !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 2px 8px rgba(35, 44, 34, 0.04) !important;
+}
+
+.user-profile:hover {
+  background: #FFFFFF !important;
+  border-color: #C28B52 !important;
+  box-shadow: 0 4px 14px rgba(194, 139, 82, 0.2) !important;
+}
+
+.user-profile .user-avatar {
+  background: linear-gradient(135deg, #C28B52 0%, #9C6C38 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.user-profile .user-name {
+  color: #232C22 !important;
+  font-weight: 700 !important;
+}
+
+.user-profile .user-role {
+  color: #9C6C38 !important;
+  font-weight: 600 !important;
+}
+
+.user-profile .dropdown-arrow {
+  color: #9C6C38 !important;
+}
+
+/* Direct Top Nav Logout Button */
+.direct-logout-btn {
+  background: #F3F5EE !important;
+  border: 1.5px solid #EAE5DC !important;
+  color: #B91C1C !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  transition: all 0.25s ease !important;
+}
+
+.direct-logout-btn:hover {
+  background: #FEE2E2 !important;
+  border-color: #F87171 !important;
+  color: #991B1B !important;
+  transform: translateY(-2px) !important;
+}
+
+/* 3. Executive Hero Profile Banner (Owner & Consultant) */
+.profile-header {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 24px !important;
+  box-shadow: 0 12px 35px rgba(35, 44, 34, 0.06) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.profile-header::before,
+.profile-header::after {
+  display: none !important;
+  content: none !important;
+}
+
+.profile-header:hover {
+  border-color: #C28B52 !important;
+  box-shadow: 0 16px 45px rgba(156, 108, 56, 0.12) !important;
+}
+
+/* Profile Avatar Frame */
+.profile-avatar {
+  background: linear-gradient(135deg, #243023 0%, #1B251A 100%) !important;
+  border: 4px solid #C28B52 !important;
+  color: #E6BC8A !important;
+  box-shadow: 0 10px 25px rgba(36, 48, 35, 0.25) !important;
+}
+
+.profile-avatar i {
+  color: #E6BC8A !important;
+}
+
+/* Profile Name & Subtitle */
+.profile-name {
+  color: #243023 !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 800 !important;
+  text-shadow: none !important;
+}
+
+.profile-name .script-font {
+  color: #9C6C38 !important;
+  font-style: italic !important;
+  background: none !important;
+  -webkit-text-fill-color: #9C6C38 !important;
+}
+
+.profile-title {
+  color: #5A6258 !important;
+  font-weight: 600 !important;
+}
+
+/* 4. Profile Stat Boxes inside Hero Banner */
+.profile-stats {
+  display: flex !important;
+  gap: 1rem !important;
+}
+
+.profile-stat {
+  background: #F3F5EE !important;
+  background-color: #F3F5EE !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 16px !important;
+  box-shadow: 0 4px 12px rgba(35, 44, 34, 0.03) !important;
+}
+
+.profile-stat:hover {
+  border-color: #C28B52 !important;
+  background: #FFFFFF !important;
+  transform: translateY(-2px) !important;
+}
+
+.profile-stat-number {
+  color: #243023 !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 800 !important;
+  background: none !important;
+  -webkit-text-fill-color: #243023 !important;
+  font-size: 1.75rem !important;
+}
+
+.profile-stat-label {
+  color: #5A6258 !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.75px !important;
+}
+
+/* Action Consultation Button */
+.consultation-btn,
+.request-btn {
+  background: linear-gradient(135deg, #C28B52 0%, #9C6C38 100%) !important;
+  color: #FFFFFF !important;
+  border: none !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  box-shadow: 0 6px 18px rgba(156, 108, 56, 0.28) !important;
+  transition: all 0.25s ease !important;
+}
+
+.consultation-btn:hover,
+.request-btn:hover {
+  background: linear-gradient(135deg, #D49D63 0%, #AA7842 100%) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 24px rgba(156, 108, 56, 0.38) !important;
+}
+
+/* 5. Workspace Tab Bar (Consultant Profile) */
+.workspace-tabs {
+  background: #FFFFFF !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 18px !important;
+  box-shadow: 0 6px 20px rgba(35, 44, 34, 0.04) !important;
+  padding: 0.5rem !important;
+}
+
+.tab-btn {
+  background: transparent !important;
+  color: #5A6258 !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  border: none !important;
+  transition: all 0.2s ease !important;
+}
+
+.tab-btn i {
+  color: #9C6C38 !important;
+}
+
+.tab-btn:hover {
+  background: #F3F5EE !important;
+  color: #243023 !important;
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, #C28B52 0%, #9C6C38 100%) !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(156, 108, 56, 0.3) !important;
+}
+
+.tab-btn.active i {
+  color: #FFFFFF !important;
+}
+
+.tab-badge {
+  background: rgba(255, 255, 255, 0.25) !important;
+  color: #FFFFFF !important;
+}
+
+/* 6. Profile Cards, Lead Sections & Panels */
+.profile-card,
+.buyer-management-section,
+.panel-box,
+.dashboard-card {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 22px !important;
+  box-shadow: 0 10px 30px rgba(35, 44, 34, 0.05) !important;
+}
+
+.profile-card:hover,
+.buyer-management-section:hover {
+  border-color: #C28B52 !important;
+  box-shadow: 0 16px 40px rgba(156, 108, 56, 0.1) !important;
+}
+
+.card-header,
+.section-header {
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  border-bottom: 1.5px solid #EAE5DC !important;
+}
+
+.card-header h3,
+.section-header h2,
+.card-title {
+  color: #243023 !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-weight: 700 !important;
+}
+
+.card-header h3 i,
+.card-icon i,
+.section-header h2 i {
+  color: #C28B52 !important;
+}
+
+.card-content {
+  background: #FFFFFF !important;
+}
+
+/* 7. Information & Contact Items */
+.info-item,
+.contact-item {
+  background: #F3F5EE !important;
+  background-color: #F3F5EE !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 14px !important;
+  padding: 1rem 1.25rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.info-item:hover,
+.contact-item:hover {
+  background: #FFFFFF !important;
+  border-color: #C28B52 !important;
+  transform: translateX(4px) !important;
+  box-shadow: 0 4px 14px rgba(156, 108, 56, 0.08) !important;
+}
+
+.info-icon,
+.contact-icon {
+  background: linear-gradient(135deg, #C28B52 0%, #9C6C38 100%) !important;
+  color: #FFFFFF !important;
+  border-radius: 12px !important;
+  border: none !important;
+  box-shadow: 0 4px 12px rgba(156, 108, 56, 0.25) !important;
+}
+
+.info-icon i,
+.contact-icon i {
+  color: #FFFFFF !important;
+}
+
+.info-label,
+.contact-label {
+  color: #5A6258 !important;
+  font-size: 0.75rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.75px !important;
+}
+
+.info-value,
+.contact-value,
+.contact-value a {
+  color: #243023 !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+}
+
+.contact-value a:hover {
+  color: #C28B52 !important;
+}
+
+/* ==========================================================================
+   8. PROPERTY PORTFOLIO ITEM CARD (INSIDE OWNER PROFILE)
+   Clean Cream/Sage Surface matching Home & Buyer Pages
+   ========================================================================== */
+.property-item {
+  background: #F3F5EE !important;
+  background-color: #F3F5EE !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 16px !important;
+  padding: 1.15rem 1.35rem !important;
+  margin-bottom: 1rem !important;
+  box-shadow: 0 4px 16px rgba(35, 44, 34, 0.04) !important;
+  transition: all 0.3s ease !important;
+}
+
+.property-item:hover {
+  background: #FFFFFF !important;
+  border-color: #C28B52 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px rgba(156, 108, 56, 0.12) !important;
+}
+
+.property-item .property-image {
+  background: #EAE5DC !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 12px !important;
+  color: #9C6C38 !important;
+  box-shadow: 0 2px 8px rgba(35, 44, 34, 0.06) !important;
+}
+
+.property-item .property-image i {
+  color: #9C6C38 !important;
+  font-size: 1.6rem !important;
+}
+
+.property-item .property-title {
+  color: #243023 !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.15rem !important;
+  font-weight: 700 !important;
+}
+
+.property-item .property-address {
+  color: #5A6258 !important;
+  font-size: 0.88rem !important;
+}
+
+.property-item .property-type {
+  background: #FFFFFF !important;
+  color: #243023 !important;
+  border: 1px solid #EAE5DC !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  font-size: 0.72rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px !important;
+  box-shadow: none !important;
+}
+
+.property-item .property-price {
+  color: #9C6C38 !important;
+  font-weight: 800 !important;
+  font-size: 1.05rem !important;
+}
+
+.property-item .property-status.available,
+.property-item .property-status.status-vacant {
+  background: rgba(21, 128, 61, 0.12) !important;
+  color: #15803D !important;
+  border: 1px solid rgba(21, 128, 61, 0.3) !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  box-shadow: none !important;
+  min-width: auto !important;
+  height: auto !important;
+  padding: 0.25rem 0.75rem !important;
+}
+
+.property-item .property-status.occupied,
+.property-item .property-status.status-occupied {
+  background: rgba(194, 139, 82, 0.12) !important;
+  color: #9C6C38 !important;
+  border: 1px solid rgba(194, 139, 82, 0.3) !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  box-shadow: none !important;
+  min-width: auto !important;
+  height: auto !important;
+  padding: 0.25rem 0.75rem !important;
+}
+
+.property-item .btn-secondary,
+.property-item .property-actions button {
+  background: #FFFFFF !important;
+  border: 1.5px solid #EAE5DC !important;
+  color: #243023 !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  transition: all 0.2s ease !important;
+}
+
+.property-item .btn-secondary:hover,
+.property-item .property-actions button:hover {
+  border-color: #C28B52 !important;
+  color: #9C6C38 !important;
+  background: #F3F5EE !important;
+}
+
+/* Edit Profile Buttons */
+.edit-profile-btn {
+  background: #FFFFFF !important;
+  border: 1.5px solid #EAE5DC !important;
+  color: #243023 !important;
+  border-radius: 9999px !important;
+  font-weight: 700 !important;
+  padding: 0.5rem 1.25rem !important;
+  transition: all 0.25s ease !important;
+}
+
+.edit-profile-btn:hover {
+  background: #F3F5EE !important;
+  border-color: #C28B52 !important;
+  color: #9C6C38 !important;
+  transform: translateY(-2px) !important;
+}

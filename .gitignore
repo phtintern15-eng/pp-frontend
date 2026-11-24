@@ -1,0 +1,41 @@
+# ==============================================================================
+# Frontend .gitignore - Web Assets & User Uploads
+# ==============================================================================
+
+# Dynamic User Uploads
+uploads/
+
+# Node Modules & Package Manager artifacts (if npm/yarn/pnpm are used)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# Build, Dist & Bundler Outputs
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Sass / CSS Source Maps & Caches
+.sass-cache/
+*.css.map
+*.js.map
+
+# Temporary, Backup & Swap Files
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# Operating System & Editor Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+.idea/
+.vscode/

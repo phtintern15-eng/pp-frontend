@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>Service Requests - Prime Property Management</title>
+
+
+
+    <link rel="icon" type="image/png" href="/images/prime_logo.png">
+
+
+
+    <link rel="stylesheet" href="/css/index.css?v=20261023_emerald_slate_01">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+
+
+    <script src="/js/auth.js"></script>
+
+
+
+    <script src="/js/page-transition.js?v=20261015_13"></script>
+
+
+
+    <script src="/js/navigation.js"></script>
+
+
+
+  <link rel="stylesheet" href="/css/service_requests.css?v=20261116_home_theme_slider_02">
+
+
+
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261116_home_theme_slider_02">
+
+
+
+</head>
+
+
+
+<body class="dark-dashboard service-requests-page">
+
+    <!-- Luxury Background Image Slider (Matching Home Page) -->
+    <div class="service-hero-bg" id="serviceHeroBg">
+      <div class="service-hero-slide active" style="background-image: url(/images/hero_luxury_villa.jpg);"></div>
+      <div class="service-hero-slide" style="background-image: url(/images/hero_architecture.jpg);"></div>
+      <div class="service-hero-slide" style="background-image: url(/images/hero_penthouse.jpg);"></div>
+      <div class="service-hero-slide" style="background-image: url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85');"></div>
+      <div class="service-hero-slide" style="background-image: url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=2000&q=85');"></div>
+      <div class="service-hero-overlay"></div>
+    </div>
+
+
+
+    <!-- Sidebar Navigation -->
+
+
+
+    <nav class="sidebar">
+
+
+
+        <div class="sidebar-header">
+
+
+
+            <a href="/admin-dashboard" class="sidebar-logo">
+
+
+
+                <img src="/images/prime_logo.png" alt="Prime Property" style="height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));">
+
+
+
+                <span class="script-font">Prime Property</span>
+
+
+
+            </a>
+
+
+
+        </div>
+
+
+
+        
+
+
+
+        <div class="sidebar-nav">
+
+
+
+            <div class="nav-section">
+
+
+
+                <div class="nav-section-title">Dashboard</div>
+
+
+
+                <a href="/admin-dashboard" data-nav="admin-dashboard" class="nav-item">
+
+
+
+                    <i class="fas fa-tachometer-alt"></i>
+
+
+
+                    <span>Dashboard</span>
+
+
+
+                </a>
+
+
+
+                <a href="/analytics" data-nav="analytics" class="nav-item">
+
+
+
+                    <i class="fas fa-chart-line"></i>
+
+
+
+                    <span>Analytics</span>
+
+
+
+                </a>
+
+
+
+                <a href="/notifications" data-nav="notifications" class="nav-item">
+
+
+
+                    <i class="fas fa-bell"></i>
+
+
+
+                    <span>Notifications</span>
+
+
+
+                    <span class="nav-badge">5</span>
+
+
+
+                </a>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="nav-section">
+
+
+
+                <div class="nav-section-title">Management</div>
+
+
+
+                <a href="/users" data-nav="users" class="nav-item">
+
+
+
+                    <i class="fas fa-users"></i>
+
+
+
+                    <span>Users</span>
+
+
+
+                </a>
+
+
+
+                <a href="/admin-properties" data-nav="properties" class="nav-item">
+
+
+
+                    <i class="fas fa-building"></i>
+
+
+
+                    <span>Properties</span>
+
+
+
+                </a>
+
+
+
+                <a href="/owners" data-nav="owners" class="nav-item">
+
+
+
+                    <i class="fas fa-user-tie"></i>
+
+
+
+                    <span>Property Owners</span>
+
+
+
+                </a>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="nav-section">
+
+
+
+                <div class="nav-section-title">Services</div>
+
+
+
+                <a href="/service-requests" data-nav="service-requests" class="nav-item active">
+
+
+
+                    <i class="fas fa-concierge-bell"></i>
+
+
+
+                    <span>Service Requests</span>
+
+
+
+                </a>
+
+
+
+                <a href="/maintenance" data-nav="maintenance" class="nav-item">
+
+
+
+                    <i class="fas fa-tools"></i>
+
+
+
+                    <span>Maintenance</span>
+
+
+
+                </a>
+
+
+
+            </div>
+
+            <div class="nav-section logout-section" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.15);">
+
+                <div class="nav-section-title">Session</div>
+
+                <a href="#" onclick="logout(); return false;" class="nav-item logout-nav-item" style="color: #F87171 !important;">
+
+                    <i class="fas fa-sign-out-alt" style="color: #EF4444 !important;"></i>
+
+                    <span>Logout</span>
+
+                </a>
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </nav>
+
+
+
+
+
+
+
+    <!-- Main Content -->
+
+
+
+    <div class="main-content">
+
+
+
+        <!-- Top Navigation -->
+
+
+
+        <div class="top-nav">
+
+
+
+            <div class="nav-left">
+
+
+
+                <button class="mobile-menu-toggle" id="mobileSidebarToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+
+
+
+                <div class="breadcrumb">
+
+
+
+                    <a href="/admin-dashboard" data-nav="admin-dashboard">Dashboard</a>
+
+
+
+                    <i class="fas fa-chevron-right"></i>
+
+
+
+                    <span>Service Requests</span>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="nav-right">
+
+
+
+                <div class="search-box">
+
+
+
+                    <i class="fas fa-search"></i>
+
+
+
+                    <input type="text" placeholder="Search service requests...">
+
+
+
+                </div>
+
+
+
+                <button class="notification-btn">
+
+
+
+                    <i class="fas fa-bell"></i>
+
+
+
+                    <span class="notification-badge">5</span>
+
+
+
+                </button>
+
+
+
+                <div class="user-profile" id="userProfileDropdown" >
+
+
+
+                    <div class="user-avatar">AU</div>
+
+
+
+                    <div class="user-info">
+
+
+
+                        <div class="user-name">Admin User</div>
+
+
+
+                        <div class="user-role">System Administrator</div>
+
+
+
+                    </div>
+
+
+
+                    
+
+
+
+                    
+
+
+
+                    
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- Direct Top Nav Logout Button -->
+
+
+
+                <button type="button" class="direct-logout-btn" onclick="logout()" title="Logout of your account" style="margin-left: 0.75rem;">
+
+
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+
+
+                    <span>Logout</span>
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Page Content -->
+
+
+
+        <div class="page-content">
+
+
+
+            <div class="page-header">
+
+
+
+                <h1 class="page-title script-font" style="font-family: 'Playfair Display', Georgia, serif !important; font-weight: 700 !important; color: #FFFFFF !important; background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%) !important; -webkit-background-clip: text !important; background-clip: text !important; -webkit-text-fill-color: transparent !important;">Service Requests</h1>
+
+
+
+                <p class="page-subtitle" style="color: #F1F5F9 !important; font-size: 1.05rem !important; font-weight: 500 !important; text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7) !important;">Manage all service requests including electrician, plumber, maid services, and other property services</p>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Service Controls -->
+
+
+
+            <div class="service-controls">
+
+
+
+                <div class="filter-tabs">
+
+
+
+                    <button class="filter-tab active" data-filter="all">All Requests</button>
+
+
+
+                    <button class="filter-tab" data-filter="pending">Pending</button>
+
+
+
+                    <button class="filter-tab" data-filter="assigned">Assigned</button>
+
+
+
+                    <button class="filter-tab" data-filter="in-progress">In Progress</button>
+
+
+
+                    <button class="filter-tab" data-filter="completed">Completed</button>
+
+
+
+                </div>
+
+
+
+                <div class="service-actions">
+
+
+
+                    <button class="action-btn btn-secondary">
+
+
+
+                        <i class="fas fa-download"></i>
+
+
+
+                        Export Reports
+
+
+
+                    </button>
+
+
+
+                    <button class="action-btn btn-primary">
+
+
+
+                        <i class="fas fa-plus"></i>
+
+
+
+                        New Request
+
+
+
+                    </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Service Stats -->
+
+
+
+            <div class="service-stats">
+
+
+
+                <div class="stat-card fade-in-up">
+
+
+
+                    <div class="stat-header">
+
+
+
+                        <div class="stat-title">Total Requests</div>
+
+
+
+                        <div class="stat-icon total">
+
+
+
+                            <i class="fas fa-concierge-bell"></i>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="stat-value" id="totalServiceRequests">0</div>
+
+
+
+                    <div class="stat-change positive" id="totalServiceRequestsChange">
+
+
+
+                        <i class="fas fa-arrow-up"></i>
+
+
+
+                        <span>Loading...</span>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="stat-card fade-in-up">
+
+
+
+                    <div class="stat-header">
+
+
+
+                        <div class="stat-title">Pending Requests</div>
+
+
+
+                        <div class="stat-icon pending">
+
+
+
+                            <i class="fas fa-clock"></i>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="stat-value" id="pendingServiceRequests">0</div>
+
+
+
+                    <div class="stat-change negative" id="pendingServiceRequestsChange">
+
+
+
+                        <i class="fas fa-info-circle"></i>
+
+
+
+                        <span>Awaiting assignment</span>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="stat-card fade-in-up">
+
+
+
+                    <div class="stat-header">
+
+
+
+                        <div class="stat-title">Assigned</div>
+
+
+
+                        <div class="stat-icon assigned">
+
+
+
+                            <i class="fas fa-user-check"></i>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="stat-value" id="assignedServiceRequests">0</div>
+
+
+
+                    <div class="stat-change positive" id="assignedServiceRequestsChange">
+
+
+
+                        <i class="fas fa-arrow-up"></i>
+
+
+
+                        <span>Active assignments</span>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="stat-card fade-in-up">
+
+
+
+                    <div class="stat-header">
+
+
+
+                        <div class="stat-title">Completed</div>
+
+
+
+                        <div class="stat-icon completed">
+
+
+
+                            <i class="fas fa-check-circle"></i>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="stat-value" id="completedServiceRequests">0</div>
+
+
+
+                    <div class="stat-change positive" id="completedServiceRequestsChange">
+
+
+
+                        <i class="fas fa-arrow-up"></i>
+
+
+
+                        <span>This month</span>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Service Requests List -->
+
+
+
+            <div class="service-requests">
+
+
+
+                <div class="requests-header">
+
+
+
+                    <h3 class="requests-title" style="color: #FFFFFF !important; font-family: 'Playfair Display', Georgia, serif !important; font-weight: 700 !important; font-size: 1.35rem !important; text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7) !important;">Service Requests</h3>
+
+
+
+                    <div class="requests-actions">
+
+
+
+                        <button class="requests-action-btn" title="Refresh" onclick="loadServiceRequests()">
+
+
+
+                            <i class="fas fa-sync-alt"></i>
+
+
+
+                        </button>
+
+
+
+                        <button class="requests-action-btn" title="Filter">
+
+
+
+                            <i class="fas fa-filter"></i>
+
+
+
+                        </button>
+
+
+
+                        <button class="requests-action-btn" title="Settings">
+
+
+
+                            <i class="fas fa-cog"></i>
+
+
+
+                        </button>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="requests-list" id="serviceRequestsList">
+
+
+
+                    <div class="request-item">
+
+
+
+                        <div class="request-icon">
+
+
+
+                            <i class="fas fa-spinner fa-spin"></i>
+
+
+
+                        </div>
+
+
+
+                        <div class="request-details">
+
+
+
+                            <div class="request-title">Loading Service Requests</div>
+
+
+
+                            <div class="request-description">Please wait while we fetch service requests...</div>
+
+
+
+                            <div class="request-meta">
+
+
+
+                                <span><i class="fas fa-clock"></i> Loading...</span>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="request-status status-pending">Loading</div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+  <script src="/js/service_requests.js?v=20261116_bg_slider_01"></script>
+
+
+
+  <script src="/js/international.js?v=20261116_chatbot_fix_02"></script>
+  <script src="/js/ai_chatbot.js?v=20261116_chatbot_text_visible_final"></script>
+</body>
+
+
+
+</html>
+
+
+
+
+
+

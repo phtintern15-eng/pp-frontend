@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investment Dashboard &amp; Market Trends | Prime Properties International</title>
+  <meta name="description" content="Institutional-grade investment intelligence, live macro market trends across global capital hubs, and full relocation concierge advisory.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/prime_logo.png">
+
+  <!-- Luxury Google Fonts (Playfair Display + Plus Jakarta Sans + Manrope) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Unified Architectural Stylesheets (Exact Match with Home & Foreign Investors) -->
+  <link rel="stylesheet" href="/css/index.css?v=20261120_mobile_relocation_fix">
+  <link rel="stylesheet" href="/css/foreign_investors.css?v=20261120_mobile_relocation_fix">
+  <link rel="stylesheet" href="/css/investment_dashboard.css?v=20261120_mobile_relocation_fix">
+  <link rel="stylesheet" href="/css/home_theme_shared.css?v=20261120_mobile_relocation_fix">
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261120_mobile_relocation_fix">
+</head>
+<body class="investment-dashboard-page">
+
+  <!-- ================= Top Announcement Bar ================= -->
+  <aside class="top-bar" aria-label="Direct Concierge and Operating Hours">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <div class="top-bar-item">
+          <i class="fas fa-chart-line"></i>
+          <span>Global Real Estate Intelligence &amp; Private Portfolio Desk</span>
+        </div>
+        <div class="top-bar-item">
+          <i class="fas fa-phone-alt"></i>
+          <span>Direct Concierge: <a href="tel:+918045678900" class="top-bar-link" style="color: inherit; text-decoration: none;">+91 80 4567 8900</a></span>
+        </div>
+      </div>
+      <div class="top-bar-right">
+        <div class="top-bar-item">
+          <i class="fas fa-clock"></i>
+          <span>Mon - Sat: 9:00 AM - 7:00 PM IST</span>
+        </div>
+        <div class="top-bar-item">
+          <span class="currency-badge">USD ($) | INR (₹) | AED (AED)</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ================= Navigation Header ================= -->
+  <header class="site-header" id="navbar">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo" aria-label="Prime Property Real Estate">
+        <img src="/images/prime_logo.png" alt="Prime Property Real Estate" class="brand-main-logo">
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li class="mobile-drawer-header">
+            <span class="mobile-drawer-title"><i class="fas fa-compass" style="color: var(--color-gold, #C28B52); margin-right: 0.5rem;"></i> Navigation</span>
+            <button type="button" class="mobile-drawer-close" id="mobileDrawerClose" aria-label="Close menu">&times;</button>
+          </li>
+          <li><a href="/" class="nav-link">Home</a></li>
+          <li><a href="/property" class="nav-link">Properties</a></li>
+          <li><a href="/foreign-investors" class="nav-link" style="color: #9C6C38; font-weight: 700;"><i class="fas fa-passport"></i> Foreign Buyers</a></li>
+          <li><a href="/investment-dashboard" class="nav-link active" style="color: #9C6C38; font-weight: 700;"><i class="fas fa-chart-pie"></i> Investments</a></li>
+          <li><a href="/service" class="nav-link">Services</a></li>
+          <li><a href="/about" class="nav-link">About Us</a></li>
+          <li><a href="/pricing" class="nav-link">Pricing</a></li>
+          <li><a href="/#contact" class="nav-link">Contact</a></li>
+          <li class="mobile-drawer-auth">
+            <button type="button" onclick="openLoginModal()" class="btn-drawer-login">
+              <i class="fas fa-user"></i> Login
+            </button>
+            <button type="button" onclick="openRegisterModal()" class="btn-drawer-register">
+              <i class="fas fa-user-plus"></i> Register
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="saved-btn" id="savedPropertiesBtn" title="View Saved Collections">
+          <i class="fas fa-bookmark" style="color: var(--color-gold, #D4AF37);"></i>
+          <span>Saved</span>
+          <span class="saved-badge" id="savedCountBadge">0</span>
+        </button>
+
+        <div id="navAuthContainer" style="display: inline-flex; align-items: center; gap: 0.85rem;">
+          <button onclick="openLoginModal()" class="nav-link" style="font-weight: 600; background: none; border: none; cursor: pointer; color: var(--color-forest, #243023);">
+            <i class="fas fa-user"></i> Login
+          </button>
+          <button onclick="openRegisterModal()" class="btn-primary" style="padding: 0.55rem 1.35rem; font-size: 0.85rem;">
+            Register
+          </button>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero Section (Matching Foreign Investors Page) ================= -->
+    <section class="hero-international">
+      <div class="hero-content">
+        <div class="hero-badge-global">
+          <i class="fas fa-chart-line"></i> Institutional Market Intelligence &amp; Advisory
+        </div>
+        <h1 class="hero-title" style="color: #FFFFFF !important;">
+          Global Real Estate <span>Investment Dashboard</span>
+        </h1>
+        <p class="hero-desc" style="color: #F8FAFC !important; font-weight: 500;">
+          Real-time capital velocity, institutional market benchmarks, official government SR circle valuations, and cross-border settlement advisory.
+        </p>
+
+        <!-- 4 Global KPIs in Hero using canonical .grid-4 -->
+        <div class="grid-4" style="margin-top: 2.75rem; text-align: left;">
+          <div class="card-luxury" style="background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border-radius: 18px; padding: 1.6rem 1.6rem; border: 1.5px solid rgba(194, 139, 82, 0.35);">
+            <div style="font-size: 0.78rem; color: #526053; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fas fa-vault" style="color: #9C6C38;"></i> Portfolio Under Advisory
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #243023; font-family: 'Playfair Display', Georgia, serif; line-height: 1.1;">$4.85B</div>
+            <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 99px; margin-top: 0.6rem; color: #065F46; background: #E8ECE3; border: 1px solid rgba(5, 150, 105, 0.3);">
+              <i class="fas fa-arrow-up" style="color: #059669;"></i> +14.8% YoY
+            </span>
+          </div>
+
+          <div class="card-luxury" style="background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border-radius: 18px; padding: 1.6rem 1.6rem; border: 1.5px solid rgba(194, 139, 82, 0.35);">
+            <div style="font-size: 0.78rem; color: #526053; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fas fa-percentage" style="color: #9C6C38;"></i> Average Luxury Net Yield
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #243023; font-family: 'Playfair Display', Georgia, serif; line-height: 1.1;">7.82%</div>
+            <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 99px; margin-top: 0.6rem; color: #065F46; background: #E8ECE3; border: 1px solid rgba(5, 150, 105, 0.3);">
+              <i class="fas fa-arrow-up" style="color: #059669;"></i> +85 bps vs 2025
+            </span>
+          </div>
+
+          <div class="card-luxury" style="background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border-radius: 18px; padding: 1.6rem 1.6rem; border: 1.5px solid rgba(194, 139, 82, 0.35);">
+            <div style="font-size: 0.78rem; color: #526053; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fas fa-stopwatch" style="color: #9C6C38;"></i> Days to Liquidity
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #243023; font-family: 'Playfair Display', Georgia, serif; line-height: 1.1;">22 Days</div>
+            <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 99px; margin-top: 0.6rem; color: #065F46; background: #E8ECE3; border: 1px solid rgba(5, 150, 105, 0.3);">
+              <i class="fas fa-bolt" style="color: #059669;"></i> Off-market velocity
+            </span>
+          </div>
+
+          <div class="card-luxury" style="background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); border-radius: 18px; padding: 1.6rem 1.6rem; border: 1.5px solid rgba(194, 139, 82, 0.35);">
+            <div style="font-size: 0.78rem; color: #526053; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem;">
+              <i class="fas fa-stamp" style="color: #9C6C38;"></i> Repatriation Compliance
+            </div>
+            <div style="font-size: 2.2rem; font-weight: 800; color: #243023; font-family: 'Playfair Display', Georgia, serif; line-height: 1.1;">100%</div>
+            <span style="display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 99px; margin-top: 0.6rem; color: #065F46; background: #E8ECE3; border: 1px solid rgba(5, 150, 105, 0.3);">
+              <i class="fas fa-shield-alt" style="color: #059669;"></i> 15CA/CB Certified
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section 1: Macro Velocity Matrix (Market Trends Benchmark) ================= -->
+    <section class="section-wrap">
+      <div style="text-align: center; margin-bottom: 3rem;">
+        <span class="section-eyebrow">Macro Velocity Matrix</span>
+        <h2 class="section-heading-dark">Q4 2026 Key City Market Trend Benchmark</h2>
+        <p class="section-subtitle-dark">
+          Institutional yield benchmarks, pricing velocity, and deterministic hourly momentum across prime global corridors.
+        </p>
+        <div id="marketTrendsHourlyPill" style="display: inline-flex; align-items: center; gap: 0.55rem; margin-top: 1rem; font-size: 0.82rem; background: #F3F5EE; border: 1.5px solid #EAE5DC; padding: 0.4rem 1.15rem; border-radius: 9999px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #059669; box-shadow: 0 0 8px #059669;"></span>
+          <span style="color: #243023; font-weight: 700;">Hourly Benchmark: <span id="trendCurrentHour" style="color: #065F46;">Active</span></span>
+          <span style="color: #CBD5E1;">•</span>
+          <span style="color: #526053;">Next hourly update in: <strong id="trendCountdown" style="color: #9C6C38;">calculating...</strong></span>
+        </div>
+      </div>
+
+      <div class="hub-table-card">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1.5px solid #EAE5DC; padding-bottom: 1.25rem;">
+          <div>
+            <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.45rem; color: #243023; margin: 0; font-weight: 700;">
+              Live Global Corridor Matrix
+            </h3>
+            <span id="trendLastUpdatedText" style="font-size: 0.85rem; color: #64748B;">Auto-updates deterministically every 1 hour</span>
+          </div>
+          <button onclick="loadMarketTrends(true)" class="btn-primary" id="btnRefreshTrends" style="padding: 0.55rem 1.35rem; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.45rem;">
+            <i class="fas fa-sync-alt" id="refreshTrendsIcon"></i> Refresh Trends
+          </button>
+        </div>
+
+        <div class="table-container" style="overflow-x: auto;">
+          <table class="hub-table">
+            <thead>
+              <tr>
+                <th>Global Hub &amp; Corridor</th>
+                <th>Avg. Price / Sq Ft</th>
+                <th>YoY Appreciation</th>
+                <th>Net Rental Yield</th>
+                <th>Liquidity Velocity</th>
+                <th>Institutional Sentiment</th>
+              </tr>
+            </thead>
+            <tbody id="marketTrendsBody">
+              <tr>
+                <td><strong style="color: #243023; font-size: 1.05rem;">🇦🇪 Dubai, UAE</strong><br><small style="color: #64748B; font-size: 0.82rem; font-weight: 500;">Palm Jumeirah, Downtown, Dubai Hills</small></td>
+                <td><strong style="color: #1A241A; font-family: monospace; font-size: 1rem; font-weight: 700;">$1,120</strong></td>
+                <td><span style="color: #065F46; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;"><i class="fas fa-arrow-up" style="color: #059669;"></i> +18.4%</span></td>
+                <td><strong style="color: #9C6C38; font-size: 1.05rem; font-weight: 800;">8.6%</strong></td>
+                <td><span style="color: #1E40AF; font-weight: 600; font-size: 0.92rem;">High (24 days)</span></td>
+                <td><span style="background: #E8ECE3; color: #065F46; border: 1.5px solid rgba(5, 150, 105, 0.4); padding: 0.25rem 0.75rem; border-radius: 99px; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.3rem;"><i class="fas fa-bolt" style="color: #059669;"></i> Very Bullish</span></td>
+              </tr>
+              <tr>
+                <td><strong style="color: #243023; font-size: 1.05rem;">🇮🇳 Bangalore, India</strong><br><small style="color: #64748B; font-size: 0.82rem; font-weight: 500;">Indiranagar, Whitefield, North Airport Corridor</small></td>
+                <td><strong style="color: #1A241A; font-family: monospace; font-size: 1rem; font-weight: 700;">$295 (₹24,500)</strong></td>
+                <td><span style="color: #065F46; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;"><i class="fas fa-arrow-up" style="color: #059669;"></i> +14.2%</span></td>
+                <td><strong style="color: #9C6C38; font-size: 1.05rem; font-weight: 800;">7.8%</strong></td>
+                <td><span style="color: #1E40AF; font-weight: 600; font-size: 0.92rem;">High (18 days)</span></td>
+                <td><span style="background: #E8ECE3; color: #065F46; border: 1.5px solid rgba(5, 150, 105, 0.3); padding: 0.25rem 0.75rem; border-radius: 99px; font-weight: 700; font-size: 0.8rem;">Bullish</span></td>
+              </tr>
+              <tr>
+                <td><strong style="color: #243023; font-size: 1.05rem;">🇬🇧 London, UK</strong><br><small style="color: #64748B; font-size: 0.82rem; font-weight: 500;">Mayfair, Kensington, Belgravia</small></td>
+                <td><strong style="color: #1A241A; font-family: monospace; font-size: 1rem; font-weight: 700;">£2,450</strong></td>
+                <td><span style="color: #065F46; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;"><i class="fas fa-arrow-up" style="color: #059669;"></i> +6.8%</span></td>
+                <td><strong style="color: #9C6C38; font-size: 1.05rem; font-weight: 800;">5.4%</strong></td>
+                <td><span style="color: #475569; font-weight: 600; font-size: 0.92rem;">Moderate (42 days)</span></td>
+                <td><span style="background: #EFF6FF; color: #1E40AF; border: 1.5px solid rgba(59, 130, 246, 0.35); padding: 0.25rem 0.75rem; border-radius: 99px; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.3rem;"><i class="fas fa-shield-alt" style="color: #2563EB;"></i> Safe-Haven</span></td>
+              </tr>
+              <tr>
+                <td><strong style="color: #243023; font-size: 1.05rem;">🇺🇸 Miami, USA</strong><br><small style="color: #64748B; font-size: 0.82rem; font-weight: 500;">Brickell, Star Island, Coconut Grove</small></td>
+                <td><strong style="color: #1A241A; font-family: monospace; font-size: 1rem; font-weight: 700;">$1,450</strong></td>
+                <td><span style="color: #065F46; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;"><i class="fas fa-arrow-up" style="color: #059669;"></i> +12.1%</span></td>
+                <td><strong style="color: #9C6C38; font-size: 1.05rem; font-weight: 800;">6.9%</strong></td>
+                <td><span style="color: #1E40AF; font-weight: 600; font-size: 0.92rem;">High (31 days)</span></td>
+                <td><span style="background: #E8ECE3; color: #065F46; border: 1.5px solid rgba(5, 150, 105, 0.3); padding: 0.25rem 0.75rem; border-radius: 99px; font-weight: 700; font-size: 0.8rem;">Bullish</span></td>
+              </tr>
+              <tr>
+                <td><strong style="color: #243023; font-size: 1.05rem;">🇸🇬 Singapore</strong><br><small style="color: #64748B; font-size: 0.82rem; font-weight: 500;">District 9, Marina Bay, Sentosa Cove</small></td>
+                <td><strong style="color: #1A241A; font-family: monospace; font-size: 1rem; font-weight: 700;">S$3,200</strong></td>
+                <td><span style="color: #065F46; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem;"><i class="fas fa-arrow-up" style="color: #059669;"></i> +7.5%</span></td>
+                <td><strong style="color: #9C6C38; font-size: 1.05rem; font-weight: 800;">4.8%</strong></td>
+                <td><span style="color: #475569; font-weight: 600; font-size: 0.92rem;">Stable (38 days)</span></td>
+                <td><span style="background: #FEF3C7; color: #92400E; border: 1.5px solid rgba(217, 119, 6, 0.35); padding: 0.25rem 0.75rem; border-radius: 99px; font-weight: 700; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 0.3rem;"><i class="fas fa-landmark" style="color: #B45309;"></i> Preservation</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ================= Section 2: Quarterly Publications ================= -->
+      <div style="margin-top: 5rem;">
+        <div style="text-align: center; margin-bottom: 3rem;">
+          <span class="section-eyebrow">Quarterly Publications</span>
+          <h2 class="section-heading-dark">Download Private Market Intelligence Reports</h2>
+          <p class="section-subtitle-dark">
+            Confidential quarterly wealth advisory dossiers, macro real estate indexes, and regulatory clearance summaries.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <!-- Report 1 -->
+          <div class="card-luxury">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span style="background: rgba(194, 139, 82, 0.15); color: var(--color-bronze-dark); padding: 0.3rem 0.85rem; border-radius: 99px; font-size: 0.78rem; font-weight: 700;">Macro Wealth Index</span>
+                <span style="color: #64748B; font-size: 0.8rem; font-weight: 600;">October 2026</span>
+              </div>
+              <h3 style="font-size: 1.35rem; color: #243023; line-height: 1.35; margin-bottom: 0.75rem;">2026 Global Ultra-Prime Wealth &amp; Real Estate Report</h3>
+              <p style="color: #526053; font-size: 0.92rem; line-height: 1.65;">
+                Analyzing capital flight patterns, cross-border currency hedges, and the surge in residential tech corridors across Bangalore, Dubai, and Miami.
+              </p>
+            </div>
+            <div style="margin-top: 2rem; border-top: 1.5px solid var(--color-sage-border); padding-top: 1.15rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="color: #64748B; font-size: 0.85rem; font-weight: 600;"><i class="fas fa-file-pdf" style="color: #EF4444; margin-right: 0.3rem;"></i> PDF · 38 Pages</span>
+              <button onclick="openRegisterModal()" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.82rem;">
+                <i class="fas fa-download"></i> Access Report
+              </button>
+            </div>
+          </div>
+
+          <!-- Report 2 -->
+          <div class="card-luxury">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span style="background: rgba(36, 48, 35, 0.12); color: var(--color-forest); padding: 0.3rem 0.85rem; border-radius: 99px; font-size: 0.78rem; font-weight: 700;">FEMA &amp; Tax Compliance</span>
+                <span style="color: #64748B; font-size: 0.8rem; font-weight: 600;">September 2026</span>
+              </div>
+              <h3 style="font-size: 1.35rem; color: #243023; line-height: 1.35; margin-bottom: 0.75rem;">Cross-Border NRI &amp; Foreign Acquisition Dossier</h3>
+              <p style="color: #526053; font-size: 0.92rem; line-height: 1.65;">
+                A deep dive into remote Embassy POA registration, DTAA double-tax agreements, and Form 15CA/CB fast-track capital repatriation.
+              </p>
+            </div>
+            <div style="margin-top: 2rem; border-top: 1.5px solid var(--color-sage-border); padding-top: 1.15rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="color: #64748B; font-size: 0.85rem; font-weight: 600;"><i class="fas fa-file-pdf" style="color: #EF4444; margin-right: 0.3rem;"></i> PDF · 24 Pages</span>
+              <button onclick="openRegisterModal()" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.82rem;">
+                <i class="fas fa-download"></i> Access Report
+              </button>
+            </div>
+          </div>
+
+          <!-- Report 3 -->
+          <div class="card-luxury">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span style="background: rgba(59, 130, 246, 0.12); color: #2563EB; padding: 0.3rem 0.85rem; border-radius: 99px; font-size: 0.78rem; font-weight: 700;">Global Mobility</span>
+                <span style="color: #64748B; font-size: 0.8rem; font-weight: 600;">August 2026</span>
+              </div>
+              <h3 style="font-size: 1.35rem; color: #243023; line-height: 1.35; margin-bottom: 0.75rem;">Golden Visa &amp; Sovereign Residency Benchmark</h3>
+              <p style="color: #526053; font-size: 0.92rem; line-height: 1.65;">
+                Comparative breakdown of real estate acquisition thresholds for 10-year Golden Visas across UAE, Portugal, Spain, and Greece.
+              </p>
+            </div>
+            <div style="margin-top: 2rem; border-top: 1.5px solid var(--color-sage-border); padding-top: 1.15rem; display: flex; justify-content: space-between; align-items: center;">
+              <span style="color: #64748B; font-size: 0.85rem; font-weight: 600;"><i class="fas fa-file-pdf" style="color: #EF4444; margin-right: 0.3rem;"></i> PDF · 31 Pages</span>
+              <button onclick="openRegisterModal()" class="btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.82rem;">
+                <i class="fas fa-download"></i> Access Report
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= Section 3: Sub-Registrar (SR) Guidance Value Valuation Suite ================= -->
+      <div class="sr-valuation-suite" id="sr-valuation-tool">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-bottom: 1.5px solid var(--color-sage-border); padding-bottom: 1.5rem; margin-bottom: 2rem;">
+          <div>
+            <span class="section-eyebrow">
+              <i class="fas fa-stamp" style="margin-right: 0.35rem;"></i> Sub-Registrar Guidance Registry
+            </span>
+            <h2 class="section-heading-dark" style="margin: 0.35rem 0 0.25rem;">
+              Government SR (Guidance) Value Calculator
+            </h2>
+            <p class="section-subtitle-dark" style="margin: 0; text-align: left;">
+              Official circle rates, stamp duties, and statutory registration fees across notified jurisdictions.
+            </p>
+          </div>
+          <span style="font-size: 0.82rem; background: #E8ECE3; color: #065F46; border: 1.5px solid rgba(5, 150, 105, 0.35); padding: 0.45rem 1rem; border-radius: 9999px; font-weight: 700; display: inline-flex; align-items: center; gap: 0.45rem;">
+            <i class="fas fa-check-circle" style="color: #059669;"></i> Live Q4 Registry Rates
+          </span>
+        </div>
+
+        <!-- 2x2 Dropdown Hierarchy Grid matching user design -->
+        <div class="grid-2" style="gap: 1.75rem 2.25rem;">
+          <!-- STATE & DISTRICT ROW -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label class="sr-label" for="srState">State</label>
+            <select id="srState" class="sr-select" onchange="onSRStateChange()">
+              <option value="Karnataka" selected>KARNATAKA</option>
+              <option value="Maharashtra">MAHARASHTRA</option>
+              <option value="Delhi">DELHI-NCR</option>
+              <option value="Tamil Nadu">TAMIL NADU</option>
+              <option value="Telangana">TELANGANA</option>
+              <option value="Goa">GOA</option>
+            </select>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label class="sr-label" for="srDistrict">District</label>
+            <select id="srDistrict" class="sr-select" onchange="onSRDistrictChange()">
+              <option value="">-- SELECT DISTRICT --</option>
+            </select>
+          </div>
+
+          <!-- TALUKA & HOBLI ROW -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label class="sr-label" for="srTaluk">Taluka</label>
+            <select id="srTaluk" class="sr-select" onchange="onSRTalukChange()">
+              <option value="">-- SELECT TALUKA --</option>
+            </select>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label class="sr-label" for="srHobli">Hobli/Town</label>
+            <select id="srHobli" class="sr-select" onchange="onSRHobliChange()">
+              <option value="">-- SELECT HOBLI/TOWN --</option>
+            </select>
+          </div>
+
+          <!-- INDEX II: VILLAGE ROW -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label class="sr-label" for="srVillage">
+              Index II: <span style="background: rgba(36, 48, 35, 0.1); color: var(--color-forest); border: 1px solid rgba(194, 139, 82, 0.4); padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 700;">Village</span>
+            </label>
+            <select id="srVillage" class="sr-select" onchange="onSRVillageChange()">
+              <option value="">-- SELECT VILLAGE / SECTOR --</option>
+            </select>
+          </div>
+
+          <!-- PROPERTY EXTENT / SQ FT -->
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <label class="sr-label" for="srAreaSqft">Property Extent (Sq Ft)</label>
+            <input type="number" id="srAreaSqft" class="sr-input" value="1500" placeholder="e.g. 1500" oninput="calculateSRValuation()">
+          </div>
+        </div>
+
+        <!-- Calculation Trigger CTA Button -->
+        <div style="margin-top: 2rem; display: flex; justify-content: flex-end; gap: 1rem; align-items: center; flex-wrap: wrap;">
+          <button type="button" onclick="calculateSRValuation()" class="btn-primary" style="padding: 0.85rem 2.25rem; font-weight: 700; font-size: 0.95rem;">
+            <i class="fas fa-calculator" style="margin-right: 0.45rem;"></i> Fetch Official SR Value &amp; Stamp Duty
+          </button>
+        </div>
+
+        <!-- Dynamic Output Valuation Matrix Display -->
+        <div id="srResultsContainer" class="sr-results-box">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; border-bottom: 1.5px solid #D8DFD0; padding-bottom: 0.85rem;">
+            <div>
+              <span style="color: #526053; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700;">Notified Location Jurisdiction</span>
+              <h4 id="srOutLocationTitle" style="color: #243023; margin: 0.25rem 0 0; font-size: 1.4rem; font-family: 'Playfair Display', Georgia, serif; font-weight: 700;">
+                Bengaluru Urban &bull; Bengaluru South &bull; Begur Hobli &bull; Electronic City Phase 1
+              </h4>
+            </div>
+            <span style="background: #E8ECE3; color: #065F46; border: 1px solid rgba(5, 150, 105, 0.4); padding: 0.35rem 0.85rem; border-radius: 99px; font-size: 0.8rem; font-weight: 700;">
+              <i class="fas fa-file-contract"></i> Kaveri 2.0 / IGR Compliant
+            </span>
+          </div>
+
+          <div class="grid-4" style="margin-top: 1.5rem; gap: 1.25rem;">
+            <div class="card-luxury" style="padding: 1.25rem; border-radius: 14px;">
+              <div style="color: #526053; font-size: 0.78rem; text-transform: uppercase; font-weight: 700;">Official Govt SR Rate</div>
+              <div id="srOutRatePerSqft" style="color: #243023; font-size: 1.4rem; font-weight: 800; margin-top: 0.35rem; font-family: 'Playfair Display', Georgia, serif;">₹6,800 / sq ft</div>
+              <small style="color: #64748B;">Notified Minimum Base</small>
+            </div>
+
+            <div class="card-luxury" style="padding: 1.25rem; border-radius: 14px;">
+              <div style="color: #526053; font-size: 0.78rem; text-transform: uppercase; font-weight: 700;">Total Guidance Value</div>
+              <div id="srOutTotalGuidance" style="color: #9C6C38; font-size: 1.4rem; font-weight: 800; margin-top: 0.35rem; font-family: 'Playfair Display', Georgia, serif;">₹1,02,00,000</div>
+              <small style="color: #64748B;">Minimum Registration Base</small>
+            </div>
+
+            <div class="card-luxury" style="padding: 1.25rem; border-radius: 14px;">
+              <div style="color: #526053; font-size: 0.78rem; text-transform: uppercase; font-weight: 700;">Est. Stamp Duty (5.1%)</div>
+              <div id="srOutStampDuty" style="color: #1E40AF; font-size: 1.4rem; font-weight: 800; margin-top: 0.35rem; font-family: 'Playfair Display', Georgia, serif;">₹5,20,200</div>
+              <small style="color: #64748B;">Payable to State Treasury</small>
+            </div>
+
+            <div class="card-luxury" style="padding: 1.25rem; border-radius: 14px;">
+              <div style="color: #526053; font-size: 0.78rem; text-transform: uppercase; font-weight: 700;">Registration Fee (1%)</div>
+              <div id="srOutRegistrationFee" style="color: #065F46; font-size: 1.4rem; font-weight: 800; margin-top: 0.35rem; font-family: 'Playfair Display', Georgia, serif;">₹1,02,000</div>
+              <small style="color: #64748B;">Sub-Registrar Office Fee</small>
+            </div>
+          </div>
+
+          <div style="margin-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 1rem; border-top: 1.5px solid #D8DFD0;">
+            <div style="color: #475569; font-size: 0.88rem; max-width: 680px;">
+              <i class="fas fa-info-circle" style="color: var(--color-bronze); margin-right: 0.35rem;"></i>
+              Guidance value (Circle Rate) is the statutory base below which property cannot be registered. Need legal deed preparation or encumbrance verification?
+            </div>
+            <button onclick="window.openWhatsAppConcierge('Hi, I need legal assistance for sub-registrar deed registration and guidance valuation verification.')" class="btn-primary" style="padding: 0.65rem 1.4rem; font-size: 0.85rem; background: linear-gradient(135deg, #25D366, #128C7E); border: none; white-space: normal; text-align: center;">
+              <i class="fab fa-whatsapp"></i> Speak to Legal Counsel
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ================= Section 4: Full Relocation Services Feature Banner ================= -->
+      <div class="section-dark-banner">
+        <div class="grid-2 relocation-banner-grid">
+          <div class="relocation-info-col">
+            <div class="relocation-badge">
+              <i class="fas fa-plane-arrival"></i> Turnkey Mobility &amp; Settlement
+            </div>
+            <h2 class="relocation-banner-heading">
+              Comprehensive <span class="relocation-heading-highlight">Full Relocation Services</span> for Buyers &amp; Families
+            </h2>
+            <p class="relocation-banner-desc">
+              End-to-end global family relocation advisory:
+            </p>
+            <div class="grid-2 relocation-bullets-grid">
+              <div class="relocation-bullet-item">
+                <i class="fas fa-check-circle" style="color: #34D399; margin-top: 4px; flex-shrink: 0;"></i>
+                <span style="color: #F8FAFC !important; font-size: 0.92rem;"><strong style="color: #FFFFFF !important;">Golden Visa &amp; Residency:</strong> Fast-track residency filing and family visas.</span>
+              </div>
+              <div class="relocation-bullet-item">
+                <i class="fas fa-check-circle" style="color: #34D399; margin-top: 4px; flex-shrink: 0;"></i>
+                <span style="color: #F8FAFC !important; font-size: 0.92rem;"><strong style="color: #FFFFFF !important;">Elite School Admissions:</strong> Private interviews &amp; British/IB curriculum placement.</span>
+              </div>
+              <div class="relocation-bullet-item">
+                <i class="fas fa-check-circle" style="color: #34D399; margin-top: 4px; flex-shrink: 0;"></i>
+                <span style="color: #F8FAFC !important; font-size: 0.92rem;"><strong style="color: #FFFFFF !important;">Private Wealth Banking:</strong> Multicurrency NRE/NRO and private bank onboarding.</span>
+              </div>
+              <div class="relocation-bullet-item">
+                <i class="fas fa-check-circle" style="color: #34D399; margin-top: 4px; flex-shrink: 0;"></i>
+                <span style="color: #F8FAFC !important; font-size: 0.92rem;"><strong style="color: #FFFFFF !important;">Diplomatic Freight &amp; Customs:</strong> Fine art, exotic vehicles, and pet relocation.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="dark-banner-form-card">
+            <h3 class="dark-banner-form-title">
+              <i class="fas fa-passport" style="color: var(--color-bronze, #C28B52); flex-shrink: 0;"></i> Request Relocation Mandate
+            </h3>
+            <p class="dark-banner-form-desc">
+              Connect for confidential relocation briefing.
+            </p>
+            <div class="dark-banner-form-fields">
+              <input type="text" id="reloName" placeholder="Your Full Name">
+              <input type="text" id="reloDest" placeholder="Relocation Destination (e.g. Bangalore, Dubai, London)">
+              <button onclick="requestRelocationMandate()" class="btn-primary btn-relocation-submit">
+                <i class="fas fa-paper-plane" style="margin-right: 0.4rem;"></i> Submit Confidential Relocation Request
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<!-- ================= Canonical Site Footer (Matching Home Page) ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Bio -->
+        <div class="footer-brand">
+          <a href="/" class="brand-logo" style="margin-bottom: 1.25rem;" aria-label="Prime Property Real Estate">
+            <img src="/images/prime_logo.png" alt="Prime Property Real Estate" class="footer-main-logo">
+          </a>
+          <p class="footer-desc">
+            Curating world-class luxury sanctuaries, institutional real estate benchmarks, and bespoke private acquisitions across global hubs.
+          </p>
+          <div class="footer-socials">
+            <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="/" class="footer-link"><i class="fas fa-chevron-right"></i> Home Page</a></li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Luxury Catalog</a></li>
+            <li><a href="/foreign-investors" class="footer-link"><i class="fas fa-chevron-right"></i> Foreign Buyers</a></li>
+            <li><a href="/investment-dashboard" class="footer-link"><i class="fas fa-chevron-right"></i> Investments</a></li>
+            <li><a href="/about" class="footer-link"><i class="fas fa-chevron-right"></i> About Us</a></li>
+            <li><a href="/service" class="footer-link"><i class="fas fa-chevron-right"></i> Services &amp; Concierge</a></li>
+            <li><a href="/pricing" class="footer-link"><i class="fas fa-chevron-right"></i> Owner Plans</a></li>
+            <li><a href="/#contact" class="footer-link"><i class="fas fa-chevron-right"></i> Private Inquiries</a></li>
+          </ul>
+        </div>
+
+        <!-- Property Categories -->
+        <div class="footer-col">
+          <h4>Collections</h4>
+          <ul class="footer-links">
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Modernist Villas</a></li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Skyline Penthouses</a></li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Waterfront Properties</a></li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Ski Chalets &amp; Retreats</a></li>
+            <li><a href="/property" class="footer-link"><i class="fas fa-chevron-right"></i> Prime Commercial</a></li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <div class="footer-col">
+          <h4>Quarterly Gazette</h4>
+          <p style="font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.75rem; color: #E2E8F0; font-weight: 500;">
+            Get private off-market listings and institutional quarterly benchmarks.
+          </p>
+          <div class="newsletter-box">
+            <form id="newsletterForm" class="newsletter-form">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+          <small style="display: block; margin-top: 0.75rem; color: #E2E8F0; font-weight: 500; font-size: 0.78rem;">
+            We respect your privacy. Strict discretion guaranteed.
+          </small>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Prime Properties International Inc. All rights reserved. Equal Housing Opportunity.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Legal Disclosure</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= Login Modal ================= -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="login-modal">
+      <button class="modal-close" onclick="closeLoginModal()">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title" style="color: #C28B52 !important;">Welcome Back</h2>
+        <p class="modal-subtitle" style="color: #C28B52 !important; opacity: 0.95;">Sign in to your Prime Properties account</p>
+      </div>
+      <!-- Google Sign-In Option -->
+      <button type="button" class="google-auth-btn" onclick="handleGoogleAuth('Sign In')">
+        <svg class="google-svg-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+        </svg>
+        <span>Continue with Google</span>
+      </button>
+      <div class="auth-divider">
+        <span>OR SIGN IN WITH EMAIL</span>
+      </div>
+      <form class="login-form" id="loginForm">
+        <div class="form-group">
+          <label for="email" style="color: #C28B52 !important; font-weight: 700; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.6px;">Email Address</label>
+          <input type="email" id="email" placeholder="e.g. admin@primeproperties.com" required>
+        </div>
+        <div class="form-group" style="position: relative;">
+          <label for="password" style="color: #C28B52 !important; font-weight: 700; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.6px;">Password</label>
+          <div style="position: relative; display: flex; align-items: center;">
+            <input type="password" id="password" placeholder="Enter your password" required style="width: 100%; padding-right: 2.75rem;">
+            <button type="button" class="modal-password-toggle" id="togglePassword" aria-label="Toggle password visibility" title="Show password" style="position: absolute; right: 0.85rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: #C28B52; cursor: pointer; font-size: 1rem; padding: 0.25rem; display: flex; align-items: center; justify-content: center;">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        <div class="login-remember-row" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.65rem 1rem;">
+          <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+            <label class="login-remember-label" for="rememberMe" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 0.5rem !important; margin-bottom: 0 !important; cursor: pointer !important; color: #C28B52 !important; font-size: 0.88rem !important; font-weight: 600 !important; text-transform: none !important; letter-spacing: normal !important;">
+              <input type="checkbox" id="rememberMe" class="login-remember-checkbox" style="width: 17px !important; height: 17px !important; accent-color: #C28B52 !important; margin: 0 !important; cursor: pointer !important; flex-shrink: 0 !important; display: inline-block !important;">
+              <span style="color: #C28B52 !important; display: inline-block !important;">Remember me</span>
+            </label>
+            <label class="login-show-password-label" for="modalShowPasswordCheckbox" style="display: inline-flex !important; flex-direction: row !important; align-items: center !important; gap: 0.5rem !important; margin-bottom: 0 !important; cursor: pointer !important; color: #C28B52 !important; font-size: 0.88rem !important; font-weight: 600 !important; text-transform: none !important; letter-spacing: normal !important;">
+              <input type="checkbox" id="modalShowPasswordCheckbox" style="width: 17px !important; height: 17px !important; accent-color: #C28B52 !important; margin: 0 !important; cursor: pointer !important; flex-shrink: 0 !important; display: inline-block !important;">
+              <span style="color: #C28B52 !important; display: inline-block !important;">Show password</span>
+            </label>
+          </div>
+          <a href="#" onclick="event.preventDefault(); alert('For account security, please contact our concierge desk at concierge@primeproperties.com or call +91 (80) 4123-4567 to verify your identity and reset your credentials.');" style="color: #C28B52 !important; font-size: 0.88rem !important; font-weight: 600 !important; text-decoration: none !important;">Forgot password?</a>
+        </div>
+        <button type="submit" class="modal-btn">Sign In to Portfolio</button>
+      </form>
+      <div class="modal-footer" style="color: #C28B52 !important;">
+        Don't have an account? <a href="#" onclick="event.preventDefault(); switchToRegister();" style="color: #C28B52 !important; font-weight: 700 !important; text-decoration: underline !important;">Create an account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Registration Modal ================= -->
+  <div class="modal-overlay" id="registerModal">
+    <div class="register-modal">
+      <button class="modal-close" onclick="closeRegisterModal()">&times;</button>
+      <div class="modal-header">
+        <h2 class="modal-title" style="color: #FFFFFF !important; font-family: 'Playfair Display', Georgia, serif !important; font-weight: 700 !important; font-size: 2.15rem !important; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7) !important;">Join <span style="background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: #D4AF37;">Prime Properties</span></h2>
+        <p class="modal-subtitle" style="color: #CBD5E1 !important; font-size: 0.95rem !important; text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important;">Select your account profile to get started</p>
+      </div>
+      <!-- Google Sign-Up Option -->
+      <button type="button" class="google-auth-btn" onclick="handleGoogleAuth('Sign Up')">
+        <svg class="google-svg-icon" viewBox="0 0 24 24" width="20" height="20">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+        </svg>
+        <span>Sign up with Google</span>
+      </button>
+      <div class="auth-divider">
+        <span>OR REGISTER WITH DETAILS</span>
+      </div>
+      <div class="user-type-selector">
+        <button type="button" class="user-type-btn active" data-type="buyer" id="buyerTypeBtn">
+          <i class="fas fa-key"></i> <span>Buyer / Investor</span>
+        </button>
+        <button type="button" class="user-type-btn" data-type="owner" id="ownerTypeBtn">
+          <i class="fas fa-home"></i> <span>Property Owner</span>
+        </button>
+        <button type="button" class="user-type-btn" data-type="consultant" id="consultantTypeBtn">
+          <i class="fas fa-user-tie"></i> <span>Consultant</span>
+        </button>
+      </div>
+
+      <!-- Buyer / Investor Registration Form -->
+      <form class="register-form active" id="buyerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="buyerFirstName">First Name *</label>
+            <input type="text" id="buyerFirstName" required>
+          </div>
+          <div class="form-group">
+            <label for="buyerLastName">Last Name *</label>
+            <input type="text" id="buyerLastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="buyerEmail">Email Address *</label>
+          <input type="email" id="buyerEmail" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="buyerPhone">Phone Number</label>
+            <input type="tel" id="buyerPhone">
+          </div>
+          <div class="form-group">
+            <label for="buyerPreferredCity">Preferred Acquisition City</label>
+            <input type="text" id="buyerPreferredCity" placeholder="e.g. Bangalore, Dubai, London">
+          </div>
+        </div>
+
+        <!-- Overseas / Foreign Buyer Interactive Section -->
+        <div class="foreign-buyer-card">
+          <div class="foreign-header-row">
+            <label class="foreign-title-label">
+              <i class="fas fa-globe-americas"></i> Are you an Overseas / Foreign Buyer or NRI?
+            </label>
+            <div class="foreign-toggle-pill">
+              <button type="button" id="buyerIsForeignerYes" onclick="setForeignBuyerMode(true, 'buyer')" class="foreign-toggle-btn is-active">YES</button>
+              <button type="button" id="buyerIsForeignerNo" onclick="setForeignBuyerMode(false, 'buyer')" class="foreign-toggle-btn">NO</button>
+            </div>
+          </div>
+
+          <div id="buyerForeignFieldsContainer">
+            <div class="form-row" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label for="buyerResidenceCountry" class="foreign-field-label">
+                  <i class="fas fa-map-marker-alt" style="color: #FFDF73;"></i> Current Country of Residence *
+                </label>
+                <select id="buyerResidenceCountry" class="foreign-select">
+                  <option value="United Arab Emirates">United Arab Emirates (UAE)</option>
+                  <option value="United States" selected>United States of America</option>
+                  <option value="United Kingdom">United Kingdom (UK)</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Germany">Germany</option>
+                  <option value="France">France</option>
+                  <option value="Saudi Arabia">Saudi Arabia</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="Other">Other Foreign Country</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="buyerTargetPurchaseCountry" class="foreign-field-label">
+                  <i class="fas fa-landmark" style="color: #34D399;"></i> Where do you want to buy property / land? *
+                </label>
+                <select id="buyerTargetPurchaseCountry" class="foreign-select" style="border-color: rgba(52, 211, 153, 0.45) !important;">
+                  <option value="India" selected>India (Bangalore, Mumbai, Goa, Delhi-NCR)</option>
+                  <option value="United States">United States (New York, Miami, Aspen, LA)</option>
+                  <option value="United Arab Emirates">United Arab Emirates (Dubai, Abu Dhabi)</option>
+                  <option value="United Kingdom">United Kingdom (London, Surrey)</option>
+                  <option value="Global Portfolio">Multi-Country Global Portfolio</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 0.85rem;">
+              <label for="buyerCitizenshipStatus" class="foreign-field-label">
+                <i class="fas fa-passport" style="color: #FFDF73;"></i> Citizenship / Legal Status
+              </label>
+              <select id="buyerCitizenshipStatus" class="foreign-select">
+                <option value="nri">Non-Resident Indian (NRI - Indian Passport abroad)</option>
+                <option value="oci">Overseas Citizen of India (OCI Card Holder)</option>
+                <option value="foreign_national">Foreign National (Non-Indian Citizen)</option>
+                <option value="foreign_corporate">Foreign Corporate / Institutional Fund</option>
+              </select>
+            </div>
+
+            <div class="foreign-quiz-card">
+              <div class="foreign-quiz-header">
+                <i class="fas fa-clipboard-check"></i> Remote Acquisition & Legal Readiness (Yes / No)
+              </div>
+              <input type="hidden" id="quiz_buyer_need_poa" value="yes">
+              <input type="hidden" id="quiz_buyer_repatriate_funds" value="yes">
+              <input type="hidden" id="quiz_buyer_tax_lawyer" value="yes">
+
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-file-signature"></i>
+                  <div>
+                    <span>Do you require Embassy POA for remote paperless closing?</span>
+                    <small>Our legal desk arranges embassy consular attestation so you close without flying in.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active" onclick="toggleQuizOption(this, 'buyer_need_poa', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn" onclick="toggleQuizOption(this, 'buyer_need_poa', 'no')">NO</button>
+                </div>
+              </div>
+
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-exchange-alt"></i>
+                  <div>
+                    <span>Will you repatriate rental yields & capital gains abroad?</span>
+                    <small>100% compliant NRE/NRO repatriable banking setup with Form 15CA/CB documentation.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active" onclick="toggleQuizOption(this, 'buyer_repatriate_funds', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn" onclick="toggleQuizOption(this, 'buyer_repatriate_funds', 'no')">NO</button>
+                </div>
+              </div>
+
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-balance-scale"></i>
+                  <div>
+                    <span>Do you require a dedicated cross-border tax lawyer consultation?</span>
+                    <small>Pair with an accredited international real estate attorney before purchase.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active" onclick="toggleQuizOption(this, 'buyer_tax_lawyer', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn" onclick="toggleQuizOption(this, 'buyer_tax_lawyer', 'no')">NO</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="buyerPassword">Password *</label>
+          <input type="password" id="buyerPassword" required>
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="buyerConfirmPassword">Confirm Password *</label>
+          <input type="password" id="buyerConfirmPassword" required>
+        </div>
+
+        <button type="submit" class="modal-btn">Create Buyer Account</button>
+      </form>
+
+      <!-- Consultant Registration Form -->
+      <form class="register-form" id="consultantForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="consultantFirstName">First Name *</label>
+            <input type="text" id="consultantFirstName" required>
+          </div>
+          <div class="form-group">
+            <label for="consultantLastName">Last Name *</label>
+            <input type="text" id="consultantLastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="consultantEmail">Email Address *</label>
+          <input type="email" id="consultantEmail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="consultantPhone">Phone Number</label>
+          <input type="tel" id="consultantPhone">
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="consultantPassword">Password *</label>
+          <input type="password" id="consultantPassword" required>
+        </div>
+
+        <div class="form-group" style="position: relative;">
+          <label for="consultantConfirmPassword">Confirm Password *</label>
+          <input type="password" id="consultantConfirmPassword" required>
+        </div>
+
+        <button type="submit" class="modal-btn">Create Consultant Account</button>
+      </form>
+
+      <!-- Owner Registration Form -->
+      <form class="register-form" id="ownerForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ownerFirstName">First Name *</label>
+            <input type="text" id="ownerFirstName" required>
+          </div>
+          <div class="form-group">
+            <label for="ownerLastName">Last Name *</label>
+            <input type="text" id="ownerLastName" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="ownerEmail">Email Address *</label>
+          <input type="email" id="ownerEmail" required>
+        </div>
+
+        <div class="form-group">
+          <label for="ownerPhone">Phone Number</label>
+          <input type="tel" id="ownerPhone">
+        </div>
+
+        <div class="form-group">
+          <label for="ownerCompany">Company / Estate Portfolio</label>
+          <input type="text" id="ownerCompany" placeholder="e.g. Apex Living Group">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="ownerPropertyCount">Properties Count</label>
+            <select id="ownerPropertyCount" required>
+              <option value="1-5">1 - 5 Properties</option>
+              <option value="6-20">6 - 20 Properties</option>
+              <option value="21-50">21 - 50 Properties</option>
+              <option value="50+">50+ Properties</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ownerLocation">Primary City / Region</label>
+            <input type="text" id="ownerLocation" placeholder="e.g. Dubai, London, New York, Mumbai">
+          </div>
+        </div>
+
+        <!-- Overseas / Foreign Buyer Interactive Section -->
+        <div class="foreign-buyer-card">
+          <div class="foreign-header-row">
+            <label class="foreign-title-label">
+              <i class="fas fa-globe-americas"></i> Are you an Overseas / Foreign Buyer or NRI?
+            </label>
+            <div class="foreign-toggle-pill">
+              <button type="button" id="isForeignerYes" onclick="setForeignBuyerMode(true)" class="foreign-toggle-btn is-active">YES</button>
+              <button type="button" id="isForeignerNo" onclick="setForeignBuyerMode(false)" class="foreign-toggle-btn">NO</button>
+            </div>
+          </div>
+
+          <div id="foreignFieldsContainer">
+            <div class="form-row" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label for="residenceCountry" class="foreign-field-label">
+                  <i class="fas fa-map-marker-alt" style="color: #FFDF73;"></i> Current Country of Residence *
+                </label>
+                <select id="residenceCountry" class="foreign-select">
+                  <option value="United Arab Emirates">United Arab Emirates (UAE)</option>
+                  <option value="United States" selected>United States of America</option>
+                  <option value="United Kingdom">United Kingdom (UK)</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Germany">Germany</option>
+                  <option value="France">France</option>
+                  <option value="Saudi Arabia">Saudi Arabia</option>
+                  <option value="Qatar">Qatar</option>
+                  <option value="Other">Other Foreign Country</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="targetPurchaseCountry" class="foreign-field-label">
+                  <i class="fas fa-landmark" style="color: #34D399;"></i> Where do you want to buy property / land? *
+                </label>
+                <select id="targetPurchaseCountry" class="foreign-select" style="border-color: rgba(52, 211, 153, 0.45) !important;">
+                  <option value="India" selected>India (Bangalore, Mumbai, Goa, Delhi-NCR)</option>
+                  <option value="United States">United States (New York, Miami, Aspen, LA)</option>
+                  <option value="United Arab Emirates">United Arab Emirates (Dubai, Abu Dhabi)</option>
+                  <option value="United Kingdom">United Kingdom (London, Surrey)</option>
+                  <option value="Global Portfolio">Multi-Country Global Portfolio</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 0.85rem;">
+              <label for="citizenshipStatus" class="foreign-field-label">
+                <i class="fas fa-passport" style="color: #FFDF73;"></i> Citizenship / Legal Status
+              </label>
+              <select id="citizenshipStatus" class="foreign-select">
+                <option value="nri">Non-Resident Indian (NRI - Indian Passport abroad)</option>
+                <option value="oci">Overseas Citizen of India (OCI Card Holder)</option>
+                <option value="foreign_national">Foreign National (Non-Indian Citizen)</option>
+                <option value="foreign_corporate">Foreign Corporate / Institutional Fund</option>
+              </select>
+            </div>
+
+            <div class="foreign-quiz-card">
+              <div class="foreign-quiz-header">
+                <i class="fas fa-clipboard-check"></i> Remote Acquisition & Legal Readiness (Yes / No)
+              </div>
+              <input type="hidden" id="quiz_need_poa" value="yes">
+              <input type="hidden" id="quiz_repatriate_funds" value="yes">
+              <input type="hidden" id="quiz_tax_lawyer" value="yes">
+
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-file-signature"></i>
+                  <div>
+                    <span>Do you require Embassy POA for remote paperless closing?</span>
+                    <small>Our legal desk arranges embassy consular attestation so you close without flying in.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active" onclick="toggleQuizOption(this, 'need_poa', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn" onclick="toggleQuizOption(this, 'need_poa', 'no')">NO</button>
+                </div>
+              </div>
+
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-exchange-alt"></i>
+                  <div>
+                    <span>Will you repatriate rental yields & capital gains abroad?</span>
+                    <small>100% compliant NRE/NRO repatriable banking setup with Form 15CA/CB documentation.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active" onclick="toggleQuizOption(this, 'repatriate_funds', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn" onclick="toggleQuizOption(this, 'repatriate_funds', 'no')">NO</button>
+                </div>
+              </div>
+
+              <div class="foreign-quiz-row">
+                <div class="foreign-quiz-question">
+                  <i class="fas fa-balance-scale"></i>
+                  <div>
+                    <span>Do you require a dedicated cross-border tax lawyer consultation?</span>
+                    <small>Pair with an accredited international real estate attorney before purchase.</small>
+                  </div>
+                </div>
+                <div class="foreign-quiz-options">
+                  <button type="button" class="foreign-quiz-btn is-active" onclick="toggleQuizOption(this, 'tax_lawyer', 'yes')">YES</button>
+                  <button type="button" class="foreign-quiz-btn" onclick="toggleQuizOption(this, 'tax_lawyer', 'no')">NO</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="subscriptionPlan">Subscription Tier</label>
+          <select id="subscriptionPlan" required>
+            <option value="Executive">Executive Member</option>
+            <option value="Presidential">Presidential Portfolio</option>
+            <option value="Enterprise">Enterprise Elite</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="ownerPassword">Password *</label>
+          <input type="password" id="ownerPassword" required>
+        </div>
+
+        <div class="form-group">
+          <label for="ownerConfirmPassword">Confirm Password *</label>
+          <input type="password" id="ownerConfirmPassword" required>
+        </div>
+
+        <button type="submit" class="modal-btn">Create Owner Account</button>
+      </form>
+
+      <div class="modal-footer">
+        Already registered? <a href="#" onclick="event.preventDefault(); switchToLogin();">Log in here</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/auth.js"></script>
+  <script src="/js/script.js?v=20261026_06"></script>
+  <script src="/js/karnataka_sr_data.js?v=20261027_01"></script>
+  <script src="/js/international.js?v=20261113_chatbot_contrast_fix_01"></script>
+  <script src="/js/ai_chatbot.js?v=20261116_chatbot_text_visible_final"></script>
+  <script src="/js/investment_dashboard.js"></script>
+</body>
+</html>

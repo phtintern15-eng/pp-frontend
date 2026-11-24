@@ -1,0 +1,524 @@
+/* ==============================================================================
+   PRIME PROPERTIES — ABOUT US ARCHITECTURAL HERITAGE STYLESHEET
+   Aesthetic: Architectural Luxury (Cream #FBFBF6, Deep Sage #243023, Warm Bronze #C28B52)
+   ============================================================================== */
+
+body {
+  background-color: #FBFBF6 !important;
+  color: #232C22 !important;
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================= 1. Page Hero Banner ================= */
+.page-hero {
+  position: relative;
+  min-height: 48vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 50% 35%, rgba(15, 23, 19, 0.72) 0%, rgba(10, 16, 13, 0.92) 100%),
+              url('/images/hero_architecture.jpg') center center / cover no-repeat;
+  text-align: center;
+  padding: 6.5rem 1.5rem 5rem;
+  border-bottom: 1px solid rgba(194, 139, 82, 0.3);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.page-hero .section-tag {
+  background: rgba(194, 139, 82, 0.18) !important;
+  border: 1px solid rgba(194, 139, 82, 0.5) !important;
+  color: #F6E7B0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.45rem 1.15rem !important;
+  border-radius: 999px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.2px !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.page-hero .section-tag i {
+  color: #F6E7B0 !important;
+}
+
+.page-hero-title,
+body .page-hero-title,
+body:not(.dark-dashboard) .page-hero-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 3.6rem !important;
+  font-weight: 700 !important;
+  color: #FFFFFF !important;
+  margin-bottom: 1rem !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+}
+
+.page-hero-title span,
+body .page-hero-title span,
+body:not(.dark-dashboard) .page-hero-title span {
+  background: linear-gradient(135deg, #FFFFFF 15%, #F6E7B0 60%, #D4AF37 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
+}
+
+.page-hero-desc,
+body .page-hero-desc,
+body:not(.dark-dashboard) .page-hero-desc {
+  font-size: 1.2rem !important;
+  color: #E2E8F0 !important;
+  max-width: 680px !important;
+  margin: 0 auto !important;
+  line-height: 1.7 !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* ================= 2. Architectural Metrics Strip ================= */
+.stats-strip,
+body .stats-strip,
+body:not(.dark-dashboard) .stats-strip {
+  background: #FFFFFF !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 20px !important;
+  padding: 1.75rem 2rem !important;
+  box-shadow: 0 15px 40px rgba(36, 48, 35, 0.08) !important;
+}
+
+.stats-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+  align-items: center !important;
+}
+
+.stat-card,
+body .stat-card,
+body:not(.dark-dashboard) .stat-card,
+body:not(.dark-dashboard) .stats-strip .stat-card {
+  background: #FBFBF6 !important;
+  border: 1px solid #EAE5DC !important;
+  border-radius: 14px !important;
+  padding: 1.25rem 1.35rem !important;
+  box-shadow: 0 4px 15px rgba(36, 48, 35, 0.04) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 1.15rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.stat-card:hover,
+body .stat-card:hover,
+body:not(.dark-dashboard) .stat-card:hover {
+  transform: translateY(-3px) !important;
+  border-color: #C28B52 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 8px 25px rgba(194, 139, 82, 0.15) !important;
+}
+
+.stat-icon,
+body .stat-icon,
+body:not(.dark-dashboard) .stat-icon,
+body:not(.dark-dashboard) .stat-card .stat-icon {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 14px !important;
+  background: #F3F5EE !important;
+  border: 1px solid #EAE5DC !important;
+  color: #C28B52 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.3rem !important;
+  flex-shrink: 0 !important;
+  transition: all 0.3s ease !important;
+}
+
+.stat-card:hover .stat-icon {
+  background: #C28B52 !important;
+  color: #FFFFFF !important;
+  border-color: #C28B52 !important;
+  transform: scale(1.05) !important;
+}
+
+.stat-value,
+body .stat-value,
+body:not(.dark-dashboard) .stat-value,
+body:not(.dark-dashboard) .stat-card .stat-value,
+body:not(.dark-dashboard) .stats-strip .stat-value {
+  color: #243023 !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.1rem !important;
+  font-weight: 800 !important;
+  line-height: 1.1 !important;
+  margin-bottom: 0.2rem !important;
+  letter-spacing: -0.5px !important;
+}
+
+.stat-label,
+body .stat-label,
+body:not(.dark-dashboard) .stat-label,
+body:not(.dark-dashboard) .stat-card .stat-label,
+body:not(.dark-dashboard) .stats-strip .stat-label {
+  color: #526053 !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.8px !important;
+  line-height: 1.3 !important;
+}
+
+/* ================= 3. Architectural Story Section ================= */
+.about-section {
+  padding: 6.5rem 0 5rem;
+}
+
+.story-grid-luxury {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4.5rem;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.story-card-visual {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1.5px solid var(--color-bronze-border, rgba(156, 108, 56, 0.3));
+  box-shadow: 0 15px 40px rgba(36, 48, 35, 0.12);
+  height: 480px;
+}
+
+.story-card-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.story-card-visual:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= 4. Four Core Pillars Matrix ================= */
+.pillars-section {
+  padding: 5.5rem 0;
+  background: var(--color-obsidian-deep, #FBFBF6);
+}
+
+.pillars-grid-four {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.5rem !important;
+}
+
+.pillar-card,
+body .pillar-card,
+body:not(.dark-dashboard) .pillar-card,
+body:not(.dark-dashboard) .pillars-section .pillar-card {
+  background: #FFFFFF !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 18px !important;
+  padding: 2rem 1.6rem !important;
+  box-shadow: 0 8px 25px rgba(36, 48, 35, 0.05) !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.pillar-card:hover,
+body .pillar-card:hover,
+body:not(.dark-dashboard) .pillar-card:hover {
+  transform: translateY(-6px) !important;
+  border-color: #C28B52 !important;
+  box-shadow: 0 16px 40px rgba(36, 48, 35, 0.1), 0 0 20px rgba(194, 139, 82, 0.15) !important;
+}
+
+.pillar-icon,
+body .pillar-icon,
+body:not(.dark-dashboard) .pillar-icon,
+body:not(.dark-dashboard) .pillar-card .pillar-icon {
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 14px !important;
+  background: #F3F5EE !important;
+  border: 1px solid #EAE5DC !important;
+  color: #C28B52 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 1.25rem !important;
+  margin-bottom: 1.35rem !important;
+  transition: all 0.3s ease !important;
+}
+
+.pillar-card:hover .pillar-icon {
+  background: #C28B52 !important;
+  color: #FFFFFF !important;
+  border-color: #C28B52 !important;
+  transform: scale(1.08) rotate(4deg) !important;
+}
+
+.pillar-title,
+body .pillar-title,
+body:not(.dark-dashboard) .pillar-title,
+body:not(.dark-dashboard) .pillar-card .pillar-title {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.28rem !important;
+  font-weight: 700 !important;
+  color: #243023 !important;
+  margin-bottom: 0.65rem !important;
+  transition: color 0.25s ease !important;
+  text-shadow: none !important;
+}
+
+.pillar-card:hover .pillar-title {
+  color: #9C6C38 !important;
+}
+
+.pillar-desc,
+body .pillar-desc,
+body:not(.dark-dashboard) .pillar-desc,
+body:not(.dark-dashboard) .pillar-card .pillar-desc {
+  font-size: 0.92rem !important;
+  color: #526053 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+  text-shadow: none !important;
+}
+
+/* ================= 5. Advisory Board & Leadership Team ================= */
+.team-section {
+  padding: 6.5rem 0;
+  background: var(--color-obsidian, #F5F6F0);
+}
+
+.team-grid-luxury {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.75rem !important;
+  margin-top: 3.5rem !important;
+}
+
+.team-card-luxury,
+body .team-card-luxury,
+body:not(.dark-dashboard) .team-card-luxury,
+body:not(.dark-dashboard) .team-section .team-card-luxury {
+  background: #FFFFFF !important;
+  border: 1.5px solid #EAE5DC !important;
+  border-radius: 20px !important;
+  padding: 2.5rem 1.75rem !important;
+  text-align: center !important;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative !important;
+  box-shadow: 0 10px 30px rgba(36, 48, 35, 0.06) !important;
+}
+
+.team-card-luxury:hover,
+body .team-card-luxury:hover,
+body:not(.dark-dashboard) .team-card-luxury:hover {
+  transform: translateY(-8px) !important;
+  border-color: #C28B52 !important;
+  box-shadow: 0 20px 45px rgba(36, 48, 35, 0.12), 0 0 25px rgba(194, 139, 82, 0.15) !important;
+}
+
+.team-avatar-luxury,
+body .team-avatar-luxury,
+body:not(.dark-dashboard) .team-avatar-luxury {
+  width: 90px !important;
+  height: 90px !important;
+  border-radius: 50% !important;
+  background: #F3F5EE !important;
+  border: 2px solid #C28B52 !important;
+  color: #C28B52 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 2.2rem !important;
+  margin: 0 auto 1.5rem !important;
+  transition: all 0.35s ease !important;
+}
+
+.team-card-luxury:hover .team-avatar-luxury {
+  transform: scale(1.1) rotate(6deg) !important;
+  background: #C28B52 !important;
+  color: #FFFFFF !important;
+  box-shadow: 0 0 20px rgba(194, 139, 82, 0.4) !important;
+}
+
+.team-name,
+body .team-name,
+body:not(.dark-dashboard) .team-name,
+body:not(.dark-dashboard) .team-card-luxury .team-name {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+  color: #243023 !important;
+  margin-bottom: 0.35rem !important;
+  transition: color 0.25s ease !important;
+}
+
+.team-card-luxury:hover .team-name {
+  color: #9C6C38 !important;
+}
+
+.team-role,
+body .team-role,
+body:not(.dark-dashboard) .team-role,
+body:not(.dark-dashboard) .team-card-luxury .team-role {
+  font-size: 0.82rem !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.3px !important;
+  color: #9C6C38 !important;
+  font-weight: 700 !important;
+  margin-bottom: 1rem !important;
+}
+
+.team-bio,
+body .team-bio,
+body:not(.dark-dashboard) .team-bio,
+body:not(.dark-dashboard) .team-card-luxury .team-bio {
+  font-size: 0.92rem !important;
+  color: #526053 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* ================= 6. Call-to-Action Consultation Banner ================= */
+.cta-banner-section,
+body .cta-banner-section,
+body:not(.dark-dashboard) .cta-banner-section {
+  position: relative !important;
+  padding: 6.5rem 0 !important;
+  background: linear-gradient(135deg, #152C25 0%, #243023 60%, #1A2820 100%) !important;
+  border-top: 1px solid var(--color-bronze-border, rgba(156, 108, 56, 0.35)) !important;
+  text-align: center !important;
+  color: #FFFFFF !important;
+}
+
+.cta-banner-section .section-tag,
+body .cta-banner-section .section-tag,
+body:not(.dark-dashboard) .cta-banner-section .section-tag {
+  background: rgba(194, 139, 82, 0.2) !important;
+  border: 1px solid rgba(194, 139, 82, 0.6) !important;
+  color: #F6E7B0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  padding: 0.45rem 1.15rem !important;
+  border-radius: 999px !important;
+  font-size: 0.82rem !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1.2px !important;
+  margin-bottom: 1.25rem !important;
+}
+
+.cta-banner-section .section-tag i {
+  color: #F6E7B0 !important;
+}
+
+.cta-banner-section .section-title,
+body .cta-banner-section .section-title,
+body:not(.dark-dashboard) .cta-banner-section .section-title {
+  color: #FFFFFF !important;
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: 2.75rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 1.25rem !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.45) !important;
+}
+
+.cta-banner-section .section-title span,
+body .cta-banner-section .section-title span,
+body:not(.dark-dashboard) .cta-banner-section .section-title span {
+  background: linear-gradient(135deg, #FFFFFF 20%, #F6E7B0 60%, #D4AF37 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: #F6E7B0 !important;
+  text-shadow: none !important;
+}
+
+.cta-banner-section .section-subtitle,
+body .cta-banner-section .section-subtitle,
+body:not(.dark-dashboard) .cta-banner-section .section-subtitle {
+  color: #E2E8DE !important;
+  font-size: 1.1rem !important;
+  max-width: 650px !important;
+  margin: 0 auto 2.5rem !important;
+  line-height: 1.6 !important;
+}
+
+.cta-banner-section .btn-primary {
+  background: linear-gradient(135deg, #C28B52 0%, #9C6C38 100%) !important;
+  color: #FFFFFF !important;
+  border: 1px solid #C28B52 !important;
+  padding: 0.85rem 2rem !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+}
+
+.cta-banner-section .btn-outline {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #FFFFFF !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.6) !important;
+  padding: 0.85rem 2rem !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+  transition: all 0.3s ease !important;
+}
+
+.cta-banner-section .btn-outline:hover {
+  background: #FFFFFF !important;
+  color: #243023 !important;
+  border-color: #FFFFFF !important;
+}
+
+/* ================= 7. Responsive Styles ================= */
+@media (max-width: 1024px) {
+  .team-grid-luxury {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .story-grid-luxury {
+    grid-template-columns: 1fr !important;
+  }
+  .pillars-grid-four {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .team-grid-luxury {
+    grid-template-columns: 1fr !important;
+  }
+  .pillars-grid-four {
+    grid-template-columns: 1fr !important;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .page-hero-title {
+    font-size: 2.4rem !important;
+  }
+  .cta-banner-section .section-title {
+    font-size: 2rem !important;
+  }
+}

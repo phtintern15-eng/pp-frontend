@@ -1,0 +1,2439 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+
+
+<head>
+
+
+
+    <meta charset="UTF-8">
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <title>User Management - Prime Property Management</title>
+
+
+
+    <link rel="icon" type="image/png" href="/images/prime_logo.png">
+
+
+
+    <link rel="stylesheet" href="/css/index.css?v=20261023_emerald_slate_01">
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+
+
+    <script src="/js/auth.js"></script>
+
+
+
+    <script src="/js/page-transition.js?v=20261015_13"></script>
+
+
+
+    <script src="/js/navigation.js"></script>
+
+
+
+  <link rel="stylesheet" href="/css/users.css">
+
+
+
+  <link rel="stylesheet" href="/css/mobile_responsive.css?v=20261116_chatbot_text_visible_final">
+
+
+
+</head>
+
+
+
+<body class="dark-dashboard">
+
+
+
+    <!-- Sidebar -->
+
+
+
+    <div class="sidebar">
+
+
+
+        <div class="sidebar-header">
+
+
+
+            <a href="/admin-dashboard" class="sidebar-logo">
+
+
+
+                <img src="/images/prime_logo.png" alt="Prime Property" style="height: 38px; width: auto; object-fit: contain; filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));">
+
+
+
+                <div>
+
+
+
+                    <h2 class="script-font" style="margin: 0; line-height: 1.1;">Prime Property</h2>
+
+
+
+                    <p style="margin: 0; font-size: 0.75rem; opacity: 0.8;">User Management</p>
+
+
+
+                </div>
+
+
+
+            </a>
+
+
+
+        </div>
+
+
+
+        <nav class="sidebar-nav">
+
+
+
+            <div class="nav-section">
+
+
+
+                <div class="nav-section-title">Dashboard</div>
+
+
+
+                <a href="/admin-dashboard" class="nav-item">
+
+
+
+                    <i class="fas fa-tachometer-alt"></i>
+
+
+
+                    <span>Dashboard</span>
+
+
+
+                </a>
+
+
+
+                <a href="/analytics" class="nav-item">
+
+
+
+                    <i class="fas fa-chart-line"></i>
+
+
+
+                    <span>Analytics</span>
+
+
+
+                </a>
+
+
+
+                <a href="/notifications" class="nav-item">
+
+
+
+                    <i class="fas fa-bell"></i>
+
+
+
+                    <span>Notifications</span>
+
+
+
+                    <span class="nav-badge">5</span>
+
+
+
+                </a>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="nav-section">
+
+
+
+                <div class="nav-section-title">Management</div>
+
+
+
+                <a href="/users" class="nav-item active">
+
+
+
+                    <i class="fas fa-users"></i>
+
+
+
+                    <span>Users</span>
+
+
+
+                </a>
+
+
+
+                <a href="/admin-properties" class="nav-item">
+
+
+
+                    <i class="fas fa-building"></i>
+
+
+
+                    <span>Properties</span>
+
+
+
+                </a>
+
+
+
+                <a href="/owners" class="nav-item">
+
+
+
+                    <i class="fas fa-user-tie"></i>
+
+
+
+                    <span>Property Owners</span>
+
+
+
+                </a>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <div class="nav-section">
+
+
+
+                <div class="nav-section-title">Services</div>
+
+
+
+                <a href="/service-requests" data-nav="service-requests" class="nav-item">
+
+
+
+                    <i class="fas fa-concierge-bell"></i>
+
+
+
+                    <span>Service Requests</span>
+
+
+
+                </a>
+
+
+
+                <a href="/maintenance" class="nav-item">
+
+
+
+                    <i class="fas fa-tools"></i>
+
+
+
+                    <span>Maintenance</span>
+
+
+
+                </a>
+
+
+
+            <div class="nav-section logout-section" style="margin-top: auto; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.15);">
+
+
+
+                <div class="nav-section-title">Session</div>
+
+
+
+                <a href="#" onclick="logout(); return false;" class="nav-item logout-nav-item" style="color: #F87171 !important;">
+
+
+
+                    <i class="fas fa-sign-out-alt" style="color: #EF4444 !important;"></i>
+
+
+
+                    <span>Logout</span>
+
+
+
+                </a>
+
+
+
+            </div>
+
+
+
+            </div>
+
+
+
+        </nav>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Main Content -->
+
+
+
+    <div class="main-content">
+
+
+
+        <!-- Top Navigation -->
+
+
+
+        <div class="top-nav">
+
+
+
+            <div class="nav-left">
+
+
+
+                <button class="mobile-menu-toggle" id="mobileSidebarToggle" aria-label="Toggle Menu"><i class="fas fa-bars"></i></button>
+
+
+
+                <div class="breadcrumb">
+
+
+
+                    <a href="/admin-dashboard">Dashboard</a>
+
+
+
+                    <i class="fas fa-chevron-right"></i>
+
+
+
+                    <span>User Management</span>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="nav-right">
+
+
+
+                <div class="search-box">
+
+
+
+                    <i class="fas fa-search"></i>
+
+
+
+                    <input type="text" placeholder="Search users...">
+
+
+
+                </div>
+
+
+
+                <button class="notification-btn">
+
+
+
+                    <i class="fas fa-bell"></i>
+
+
+
+                    <span class="notification-badge">5</span>
+
+
+
+                </button>
+
+
+
+                <div class="user-profile" id="userProfileDropdown" style="cursor: default;">
+
+
+
+                    <div class="user-avatar">AU</div>
+
+
+
+                    <div class="user-info">
+
+
+
+                        <div class="user-name">Admin User</div>
+
+
+
+                        <div class="user-role">System Administrator</div>
+
+
+
+                    </div>
+
+
+
+                    
+
+
+
+                    
+
+
+
+                    
+
+
+
+                <!-- Direct Top Nav Logout Button -->
+
+                <button type="button" class="direct-logout-btn" onclick="logout()" title="Logout of your account" style="margin-left: 0.75rem;">
+
+                    <i class="fas fa-sign-out-alt"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+        <!-- Page Content -->
+
+
+
+        <div class="page-content">
+
+
+
+            <div class="page-header">
+
+
+
+                <h1 class="page-title">User Management</h1>
+
+
+
+                <p class="page-subtitle">Manage all system users, roles, and permissions</p>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- User Controls -->
+
+
+
+            <div class="user-controls">
+
+
+
+                <div class="filter-tabs">
+
+
+
+                    <button class="filter-tab active" data-filter="all">All Users</button>
+
+
+
+                    <button class="filter-tab" data-filter="active">Active</button>
+
+
+
+                    <button class="filter-tab" data-filter="inactive">Inactive</button>
+
+
+
+                </div>
+
+
+
+                <div class="user-actions">
+
+
+
+                    <button class="action-btn btn-secondary" onclick="exportUsers()">
+
+
+
+                        <i class="fas fa-download"></i>
+
+
+
+                        Export Users
+
+
+
+                    </button>
+
+
+
+                    <button class="action-btn btn-primary" onclick="openAddUserModal()">
+
+
+
+                        <i class="fas fa-plus"></i>
+
+
+
+                        Add New User
+
+
+
+                    </button>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- User Stats -->
+
+
+
+            <div class="user-stats">
+
+
+
+                <div class="stat-card fade-in-up">
+
+
+
+                    <div class="stat-header">
+
+
+
+                        <div class="stat-title">Total Users</div>
+
+
+
+                        <div class="stat-icon total">
+
+
+
+                            <i class="fas fa-users"></i>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="stat-value" id="totalUsersValue">0</div>
+
+
+
+                    <div class="stat-change" id="totalUsersChange">
+
+
+
+                        <i class="fas fa-arrow-up"></i>
+
+
+
+                        <span id="totalUsersChangeText">Loading...</span>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="stat-card fade-in-up">
+
+
+
+                    <div class="stat-header">
+
+
+
+                        <div class="stat-title">Active Users</div>
+
+
+
+                        <div class="stat-icon active">
+
+
+
+                            <i class="fas fa-user-check"></i>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="stat-value" id="activeUsersValue">0</div>
+
+
+
+                    <div class="stat-change" id="activeUsersChange">
+
+
+
+                        <i class="fas fa-arrow-up"></i>
+
+
+
+                        <span id="activeUsersChangeText">Loading...</span>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <div class="stat-card fade-in-up">
+
+
+
+                    <div class="stat-header">
+
+
+
+                        <div class="stat-title">Inactive Users</div>
+
+
+
+                        <div class="stat-icon inactive">
+
+
+
+                            <i class="fas fa-user-times"></i>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <div class="stat-value" id="inactiveUsersValue">0</div>
+
+
+
+                    <div class="stat-change" id="inactiveUsersChange">
+
+
+
+                        <i class="fas fa-arrow-up"></i>
+
+
+
+                        <span id="inactiveUsersChangeText">Loading...</span>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+
+
+
+            <!-- User Table -->
+
+
+
+            <div class="user-table-container">
+
+
+
+                <div class="table-header">
+
+
+
+                    <h3 class="table-title">All Users</h3>
+
+
+
+                    <div class="table-actions">
+
+
+
+                        <button class="table-action-btn" id="refreshUsersBtn" title="Refresh" onclick="refreshUsers()">
+
+
+
+                            <i class="fas fa-sync-alt" id="refreshIcon"></i>
+
+
+
+                        </button>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class="table-container">
+
+
+
+                    <table class="user-table">
+
+
+
+                        <thead>
+
+
+
+                            <tr>
+
+
+
+                                <th>User</th>
+
+
+
+                                <th>Role</th>
+
+
+
+                                <th>Status</th>
+
+
+
+                                <th>Last Login</th>
+
+
+
+                                <th>Created</th>
+
+
+
+                                <th>Actions</th>
+
+
+
+                            </tr>
+
+
+
+                        </thead>
+
+
+
+                        <tbody id="usersTableBody">
+
+
+
+                            <tr>
+
+
+
+                                <td colspan="6" style="text-align: center; padding: 3rem;">
+
+
+
+                                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: var(--text-light); margin-bottom: 1rem;"></i>
+
+
+
+                                    <p style="color: var(--text-light);">Loading users...</p>
+
+
+
+                                </td>
+
+
+
+                            </tr>
+
+
+
+                        </tbody>
+
+
+
+                    </table>
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                    </div>
+
+
+
+                                        </div>
+
+
+
+
+
+
+
+    <!-- View User Modal -->
+
+
+
+    <div class="modal-overlay" id="viewUserModal">
+
+
+
+        <div class="modal">
+
+
+
+            <div class="modal-header">
+
+
+
+                <h2 class="modal-title">
+
+
+
+                    <i class="fas fa-user-circle"></i>
+
+
+
+                    User Profile
+
+
+
+                </h2>
+
+
+
+                <button class="modal-close" onclick="closeViewUserModal()">
+
+
+
+                    <i class="fas fa-times"></i>
+
+
+
+                </button>
+
+
+
+                                    </div>
+
+
+
+            <div class="modal-body">
+
+
+
+                <!-- User Profile Section -->
+
+
+
+                <div class="modal-profile-section">
+
+
+
+                    <div class="modal-user-avatar" id="modalUserAvatar">UU</div>
+
+
+
+                    <div class="modal-user-info">
+
+
+
+                        <h3 id="modalUserName">User Name</h3>
+
+
+
+                        <p id="modalUserEmail">user@email.com</p>
+
+
+
+                        <span class="modal-user-status-badge" id="modalUserStatus">Active</span>
+
+
+
+                                    </div>
+
+
+
+                                        </div>
+
+
+
+
+
+
+
+                <!-- Contact Information Card -->
+
+
+
+                <div class="modal-info-card">
+
+
+
+                    <div class="modal-card-header">
+
+
+
+                        <i class="fas fa-address-card"></i>
+
+
+
+                        <h4>Contact Information</h4>
+
+
+
+                                    </div>
+
+
+
+                    <div class="modal-card-content">
+
+
+
+                        <div class="modal-info-item">
+
+
+
+                            <div class="modal-info-icon">
+
+
+
+                                <i class="fas fa-envelope"></i>
+
+
+
+                                    </div>
+
+
+
+                            <div class="modal-info-text">
+
+
+
+                                <span class="modal-info-label">Email</span>
+
+
+
+                                <span class="modal-info-value" id="modalUserEmailDetail">-</span>
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                        <div class="modal-info-item">
+
+
+
+                            <div class="modal-info-icon">
+
+
+
+                                <i class="fas fa-phone"></i>
+
+
+
+                                    </div>
+
+
+
+                            <div class="modal-info-text">
+
+
+
+                                <span class="modal-info-label">Phone</span>
+
+
+
+                                <span class="modal-info-value" id="modalUserPhone">-</span>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="modal-info-item">
+
+
+
+                            <div class="modal-info-icon">
+
+
+
+                                <i class="fas fa-map-marker-alt"></i>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-info-text">
+
+
+
+                                <span class="modal-info-label">Location</span>
+
+
+
+                                <span class="modal-info-value" id="modalUserLocation">-</span>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- Account Information Card -->
+
+
+
+                <div class="modal-info-card">
+
+
+
+                    <div class="modal-card-header">
+
+
+
+                        <i class="fas fa-user-cog"></i>
+
+
+
+                        <h4>Account Information</h4>
+
+
+
+                    </div>
+
+
+
+                    <div class="modal-card-content">
+
+
+
+                        <div class="modal-info-item">
+
+
+
+                            <div class="modal-info-icon">
+
+
+
+                                <i class="fas fa-tag"></i>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-info-text">
+
+
+
+                                <span class="modal-info-label">User Type</span>
+
+
+
+                                <span class="modal-info-value" id="modalUserType">-</span>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="modal-info-item">
+
+
+
+                            <div class="modal-info-icon">
+
+
+
+                                <i class="fas fa-building"></i>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-info-text">
+
+
+
+                                <span class="modal-info-label">Company</span>
+
+
+
+                                <span class="modal-info-value" id="modalUserCompany">-</span>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="modal-info-item">
+
+
+
+                            <div class="modal-info-icon">
+
+
+
+                                <i class="fas fa-home"></i>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-info-text">
+
+
+
+                                <span class="modal-info-label">Properties</span>
+
+
+
+                                <span class="modal-info-value" id="modalUserPropertyCount">-</span>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                        <div class="modal-info-item">
+
+
+
+                            <div class="modal-info-icon">
+
+
+
+                                <i class="fas fa-calendar-alt"></i>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-info-text">
+
+
+
+                                <span class="modal-info-label">Member Since</span>
+
+
+
+                                <span class="modal-info-value" id="modalUserCreatedAt">-</span>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+
+                <button class="action-btn btn-secondary" onclick="closeViewUserModal()">
+
+
+
+                    <i class="fas fa-times"></i>
+
+
+
+                    Close
+
+
+
+                </button>
+
+
+
+                <button class="action-btn btn-primary" id="modalEditButton" onclick="editUserFromModal()">
+
+
+
+                    <i class="fas fa-edit"></i>
+
+
+
+                    Edit User
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Edit User Modal -->
+
+
+
+    <div class="modal-overlay" id="editUserModal">
+
+
+
+        <div class="modal">
+
+
+
+            <div class="modal-header">
+
+
+
+                <h2 class="modal-title">
+
+
+
+                    <i class="fas fa-user-edit"></i>
+
+
+
+                    Edit User
+
+
+
+                </h2>
+
+
+
+                <button class="modal-close" onclick="closeEditUserModal()">
+
+
+
+                    <i class="fas fa-times"></i>
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+
+                <form id="editUserForm" onsubmit="saveUserChanges(event)">
+
+
+
+                    <!-- Personal Information -->
+
+
+
+                    <div class="modal-info-card">
+
+
+
+                        <div class="modal-card-header">
+
+
+
+                            <i class="fas fa-user"></i>
+
+
+
+                            <h4>Personal Information</h4>
+
+
+
+                        </div>
+
+
+
+                        <div class="modal-card-content">
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-user"></i>
+
+
+
+                                    First Name
+
+
+
+                                </label>
+
+
+
+                                <input type="text" id="editFirstName" class="modal-form-input" required>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-user"></i>
+
+
+
+                                    Last Name
+
+
+
+                                </label>
+
+
+
+                                <input type="text" id="editLastName" class="modal-form-input" required>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-envelope"></i>
+
+
+
+                                    Email
+
+
+
+                                </label>
+
+
+
+                                <input type="email" id="editEmail" class="modal-form-input" required>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-phone"></i>
+
+
+
+                                    Phone
+
+
+
+                                </label>
+
+
+
+                                <input type="tel" id="editPhone" class="modal-form-input">
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <!-- Account Information -->
+
+
+
+                    <div class="modal-info-card">
+
+
+
+                        <div class="modal-card-header">
+
+
+
+                            <i class="fas fa-cog"></i>
+
+
+
+                            <h4>Account Information</h4>
+
+
+
+                        </div>
+
+
+
+                        <div class="modal-card-content">
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-tag"></i>
+
+
+
+                                    User Type
+
+
+
+                                </label>
+
+
+
+                                <select id="editUserType" class="modal-form-input" required>
+
+
+
+                                    <option value="owner">Property Owner</option>
+
+
+
+                                    <option value="consultant">Consultant</option>
+
+
+
+                                    <option value="tenant">Tenant</option>
+
+
+
+                                </select>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-building"></i>
+
+
+
+                                    Company
+
+
+
+                                </label>
+
+
+
+                                <input type="text" id="editCompany" class="modal-form-input">
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-map-marker-alt"></i>
+
+
+
+                                    Location
+
+
+
+                                </label>
+
+
+
+                                <input type="text" id="editLocation" class="modal-form-input">
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-toggle-on"></i>
+
+
+
+                                    Status
+
+
+
+                                </label>
+
+
+
+                                <select id="editIsActive" class="modal-form-input" required>
+
+
+
+                                    <option value="true">Active</option>
+
+
+
+                                    <option value="false">Inactive</option>
+
+
+
+                                </select>
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </form>
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+
+                <button class="action-btn btn-secondary" onclick="closeEditUserModal()">
+
+
+
+                    <i class="fas fa-times"></i>
+
+
+
+                    Cancel
+
+
+
+                </button>
+
+
+
+                <button class="action-btn btn-primary" onclick="saveUserChanges(event)">
+
+
+
+                    <i class="fas fa-save"></i>
+
+
+
+                    Save Changes
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Add User Modal -->
+
+
+
+    <div class="modal-overlay" id="addUserModal">
+
+
+
+        <div class="modal">
+
+
+
+            <div class="modal-header">
+
+
+
+                <h2 class="modal-title">
+
+
+
+                    <i class="fas fa-user-plus"></i>
+
+
+
+                    Add New User
+
+
+
+                </h2>
+
+
+
+                <button class="modal-close" onclick="closeAddUserModal()">
+
+
+
+                    <i class="fas fa-times"></i>
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+
+                <form id="addUserForm" onsubmit="createNewUser(event)">
+
+
+
+                    <!-- Personal Information -->
+
+
+
+                    <div class="modal-info-card">
+
+
+
+                        <div class="modal-card-header">
+
+
+
+                            <i class="fas fa-user"></i>
+
+
+
+                            <h4>Personal Information</h4>
+
+
+
+                        </div>
+
+
+
+                        <div class="modal-card-content">
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-user"></i>
+
+
+
+                                    First Name <span style="color: var(--accent-gold);">*</span>
+
+
+
+                                </label>
+
+
+
+                                <input type="text" id="addFirstName" class="modal-form-input" required>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-user"></i>
+
+
+
+                                    Last Name <span style="color: var(--accent-gold);">*</span>
+
+
+
+                                </label>
+
+
+
+                                <input type="text" id="addLastName" class="modal-form-input" required>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-envelope"></i>
+
+
+
+                                    Email <span style="color: var(--accent-gold);">*</span>
+
+
+
+                                </label>
+
+
+
+                                <input type="email" id="addEmail" class="modal-form-input" required>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-lock"></i>
+
+
+
+                                    Password <span style="color: var(--accent-gold);">*</span>
+
+
+
+                                </label>
+
+
+
+                                <input type="password" id="addPassword" class="modal-form-input" required minlength="6" placeholder="Minimum 6 characters">
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-phone"></i>
+
+
+
+                                    Phone
+
+
+
+                                </label>
+
+
+
+                                <input type="tel" id="addPhone" class="modal-form-input">
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+                    <!-- Account Information -->
+
+
+
+                    <div class="modal-info-card">
+
+
+
+                        <div class="modal-card-header">
+
+
+
+                            <i class="fas fa-cog"></i>
+
+
+
+                            <h4>Account Information</h4>
+
+
+
+                        </div>
+
+
+
+                        <div class="modal-card-content">
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-tag"></i>
+
+
+
+                                    User Type <span style="color: var(--accent-gold);">*</span>
+
+
+
+                                </label>
+
+
+
+                                <select id="addUserType" class="modal-form-input" required>
+
+
+
+                                    <option value="owner">Property Owner</option>
+
+
+
+                                    <option value="consultant">Consultant</option>
+
+
+
+                                    <option value="tenant">Tenant</option>
+
+
+
+                                </select>
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-building"></i>
+
+
+
+                                    Company
+
+
+
+                                </label>
+
+
+
+                                <input type="text" id="addCompany" class="modal-form-input">
+
+
+
+                            </div>
+
+
+
+                            <div class="modal-form-group">
+
+
+
+                                <label class="modal-form-label">
+
+
+
+                                    <i class="fas fa-map-marker-alt"></i>
+
+
+
+                                    Location
+
+
+
+                                </label>
+
+
+
+                                <input type="text" id="addLocation" class="modal-form-input" placeholder="City, Country">
+
+
+
+                            </div>
+
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+                </form>
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+
+                <button class="action-btn btn-secondary" onclick="closeAddUserModal()">
+
+
+
+                    <i class="fas fa-times"></i>
+
+
+
+                    Cancel
+
+
+
+                </button>
+
+
+
+                <button class="action-btn btn-primary" onclick="createNewUser(event)">
+
+
+
+                    <i class="fas fa-plus"></i>
+
+
+
+                    Create User
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- Delete User Confirmation Modal -->
+
+
+
+    <div class="modal-overlay" id="deleteUserModal">
+
+
+
+        <div class="modal" style="max-width: 500px;">
+
+
+
+            <div class="modal-header" style="background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);">
+
+
+
+                <h2 class="modal-title">
+
+
+
+                    <i class="fas fa-exclamation-triangle"></i>
+
+
+
+                    Confirm Delete
+
+
+
+                </h2>
+
+
+
+                <button class="modal-close" onclick="closeDeleteUserModal()">
+
+
+
+                    <i class="fas fa-times"></i>
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+            <div class="modal-body">
+
+
+
+                <div style="text-align: center; padding: 1rem 0;">
+
+
+
+                    <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; border-radius: 50%; background: rgba(231, 76, 60, 0.1); display: flex; align-items: center; justify-content: center;">
+
+
+
+                        <i class="fas fa-user-times" style="font-size: 2.5rem; color: #E74C3C;"></i>
+
+
+
+                    </div>
+
+
+
+                    <h3 style="margin: 0 0 1rem 0; color: var(--text-dark); font-size: 1.5rem;">Delete User?</h3>
+
+
+
+                    <p style="color: var(--text-light); margin: 0 0 1.5rem 0; line-height: 1.6;">
+
+
+
+                        Are you sure you want to delete <strong id="deleteUserName" style="color: var(--text-dark);">this user</strong>?<br>
+
+
+
+                        This action cannot be undone.
+
+
+
+                    </p>
+
+
+
+                    <div style="background: rgba(231, 76, 60, 0.1); padding: 1rem; border-radius: 12px; border-left: 4px solid #E74C3C;">
+
+
+
+                        <p style="margin: 0; color: var(--text-dark); font-size: 0.9rem;">
+
+
+
+                            <i class="fas fa-info-circle" style="color: #E74C3C; margin-right: 0.5rem;"></i>
+
+
+
+                            All associated data will be permanently removed.
+
+
+
+                        </p>
+
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+            <div class="modal-footer">
+
+
+
+                <button class="action-btn btn-secondary" onclick="closeDeleteUserModal()">
+
+
+
+                    <i class="fas fa-times"></i>
+
+
+
+                    Cancel
+
+
+
+                </button>
+
+
+
+                <button class="action-btn" id="confirmDeleteBtn" onclick="confirmDeleteUser()" style="background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%); border: 2px solid #E74C3C; color: white;">
+
+
+
+                    <i class="fas fa-trash"></i>
+
+
+
+                    Delete User
+
+
+
+                </button>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+  <script src="/js/users.js"></script>
+
+
+
+</body>
+
+
+
+</html>
+
+
