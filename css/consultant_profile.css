@@ -112,13 +112,15 @@
             transition: all 0.3s ease;
         }
         .nav-container {
-            max-width: 1360px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            height: 84px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            max-width: 1540px !important;
+            width: 100% !important;
+            margin: 0 auto !important;
+            padding: 0 1.5rem !important;
+            height: 84px !important;
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            gap: 1.25rem !important;
         }
         .brand-logo {
             display: flex;
@@ -183,7 +185,7 @@
         .nav-link:hover, .nav-link.active {
             color: var(--gold-light) !important;
         }
-        .nav-link.active::after {
+        .nav-link:hover::after {
             content: '';
             position: absolute;
             bottom: -6px;
@@ -223,7 +225,7 @@
         }
 
         .nav-links a:hover::after,
-        .nav-links a.active::after {
+        .nav-links a:hover::after {
             width: 100%;
         }
 
@@ -1907,21 +1909,25 @@ html, body {
   display: flex !important;
   align-items: center !important;
   list-style: none !important;
-  gap: 1.6rem !important;
+  gap: 1.15rem !important;
   margin: 0 !important;
   padding: 0 !important;
+  flex-wrap: nowrap !important;
 }
 
 .nav-link {
   color: #CBD5E1 !important;
   text-decoration: none !important;
-  font-size: 0.88rem !important;
+  font-size: 0.82rem !important;
   font-weight: 600 !important;
-  letter-spacing: 0.6px !important;
+  letter-spacing: 0.5px !important;
   text-transform: uppercase !important;
   transition: all 0.25s ease !important;
-  padding: 0.4rem 0 !important;
+  padding: 0.45rem 0.2rem !important;
   position: relative !important;
+  white-space: nowrap !important;
+  display: inline-flex !important;
+  align-items: center !important;
 }
 
 .nav-link:hover {
@@ -1932,7 +1938,7 @@ html, body {
   color: #D4AF37 !important;
 }
 
-.nav-link.active::after {
+.nav-link:hover::after {
   content: '' !important;
   position: absolute !important;
   bottom: -6px !important;
